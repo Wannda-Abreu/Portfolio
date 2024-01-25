@@ -1,0 +1,31 @@
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 75vh;
+  }
+  
+  .cv-image {
+    width: 22vw;
+  }
+  
+  .cv-button {
+    font-size: 1em;
+  }
+   
+  @media (max-width: 768px) {
+    .cv-image {
+      width: 60vw;
+    }
+  
+    .cv-image:hover {
+      width: 65vw;
+    }
+  
+    .cv-container {
+      height: auto; /* Ajusta según sea necesario */
+    }
+  }
+  

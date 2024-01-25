@@ -1,0 +1,19 @@
+.video-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width:100%;
+    background-color: blueviolet;
+}
+video{
+    border: 1px solid white;
+    padding: 1rem;
+    width: 70%;
+    height: 70vh;
+}
+.text-video{
+    padding: 1rem;
+    width: 30vw;
+    color: white;
+}

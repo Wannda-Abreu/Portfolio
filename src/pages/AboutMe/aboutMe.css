@@ -1,0 +1,79 @@
+.aboutme-container {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 80vh;
+  background-color: #8a2be2;
+}
+
+div.card {
+  font-size: 1.3vw;
+  display: flex;
+  color: white;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+}
+div.card-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 80vh;
+}
+
+.about-button {
+  font-size: 1.3em;
+  color: white;
+  margin: 0 10px;
+}
+
+.about-button:hover {
+  color: aqua;
+  font-size: 1.4em;
+}
+
+.about-img {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+.language-badge {
+  margin: 0.1rem;
+  border: 1px solid rgb(191, 135, 244);
+}
+
+@media (max-width: 1020px) {
+  .aboutme-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  div.card-section {
+    margin-top: 5% ;
+    width: 90%;
+    padding: 1rem;
+    height: auto;
+    text-align: center;
+  }
+  .about-img {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+  }
+  div.card {
+    display:flex;
+    width: 100%;
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+}

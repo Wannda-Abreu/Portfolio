@@ -1,0 +1,146 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: blueviolet;
+  width: 100vw;
+  height: 80vh;
+  transition: height 0.5s ease;
+}
+.home-section.col{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  color: white;
+  transition: height 0.5s ease, font-size 0.5s ease;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.home-button {
+  font-size: 1.3rem;
+  color: aqua;
+  transition: font-size 0.5s ease;
+}
+
+.home-button-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  transition: height 0.5s ease, font-size 0.5s ease;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.1em;
+  color: white;
+  transition: font-size 0.5s ease;
+}
+
+button:hover {
+  font-weight: 600;
+  color: aqua;
+}
+
+.img{
+  width: 70%;
+  height: auto;
+  transition: width 0.5s ease;
+}
+
+.stack-icons {
+  font-size: 2em;
+  transition: font-size 0.5s ease;
+}
+
+.stack-icons:hover {
+  justify-content: center;
+  font-size: 2.5em;
+}
+
+div.stack-icons-container.col {
+  display: flex;
+  width: 80%;
+  flex-grow: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem;
+  border: 1px solid transparent;
+  transition: border 0.3s ease-in-out;
+  border-color: rgb(188, 127, 244);
+  animation: animarBorde 2s infinite;
+
+}
+
+@keyframes animarBorde {
+  0% {
+    border-width: 1px;
+  }
+  50% {
+    border-width: 1px;
+  }
+  100% {
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-main-container{
+    display: flex;
+    flex-direction: column-reverse
+    ;
+  }
+  .home-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .home-section.col {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content:space-between;
+    margin: 0;
+  }
+  .image-container{
+    display: flex;
+    flex-direction: column-reverse
+  }
+  .home-button {
+    font-size: 1em; 
+  }
+  .home-button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  div.stack-icons-container.col {
+    display: flex;
+    align-content: space-around;
+    width: 80%;
+    flex-wrap: wrap;
+    flex-grow: 0;
+   }
+  .stack-icons {
+    font-size: 1.5em;
+  }
+
+  .img{
+    display: flex;
+    padding: 1rem;
+    width: 60%; 
+  }
+}
