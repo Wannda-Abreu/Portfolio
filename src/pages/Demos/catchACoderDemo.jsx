@@ -6,6 +6,7 @@ import "./demo.css";
 import { Link } from "react-router-dom";
 
 function catchACoderDemo() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const videoRef = useRef(null);
 
   const handlePlayVideo = () => {
