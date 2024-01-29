@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import roperoVideo from "../../assets/Video/roperosolidariodemo.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faReact,
@@ -24,7 +23,7 @@ function RoperoSolidarioDemo() {
   return (
     <div className="video-container p-4">
       <div className="title-video p-4">
-        <h4>¡Bienvenido a la demo de Ropero solidario</h4>
+        <h4>¡Bienvenido a la demo de Ropero solidario!</h4>
         <p className="text-video mt-3">
           Proyecto creado para la fundación San José, con el fin de automatizar
           las citas de los usuarios, interfaz amigable para el usuario.
@@ -46,7 +45,7 @@ function RoperoSolidarioDemo() {
             <FontAwesomeIcon icon={faCss3Alt} /> 
           </div> 
           <div className="stack-icons text-white" >
-           Ts
+            <FontAwesomeIcon icon={faCode} />
           </div>
         </div>
         <p className="mt-2">
@@ -65,7 +64,7 @@ function RoperoSolidarioDemo() {
           </button>
         </div>
       </div>
-      <video ref={videoRef} src={roperoVideo} controls></video>
+      <video ref={videoRef} src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1706490641/roperosolidariodemo_zzto2d.mp4" controls></video>
     </div>
   );
 }
