@@ -106,7 +106,7 @@ function Home() {
               </Link>
             </div>
             <div className="button-navigation m-2">
-              <Link to="/aboutme">
+              <Link to="/mycv">
                 <button className="background-button">
                   <FontAwesomeIcon
                     className="home-button "
