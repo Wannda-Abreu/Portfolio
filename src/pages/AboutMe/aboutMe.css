@@ -7,7 +7,8 @@
 }
 
 div.card {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
+  font-weight: 300;
   display: flex;
   color: white;
   background-color: transparent;
@@ -18,19 +19,22 @@ div.card-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  padding: 2rem;
+  width: 60%;
   height: 80vh;
 }
 
 .about-button {
-  font-size: 1.3em;
+  font-size: 1.7em;
+  font-weight: 350;
   color: white;
   margin: 0 10px;
 }
 
 .about-button:hover {
-  color: aqua;
-  font-size: 1.4em;
+  font-size: 1.8em;
+  font-weight: 450;
+
 }
 
 .about-img {
@@ -39,24 +43,29 @@ div.card-section {
   height: 80vh;
   object-fit: cover;
 }
-.language-badge {
-  margin: 0.1rem;
+span.language-badge.badge.bg-primary {
+  --bs-bg-opacity: 0;
+  margin: 0.2rem;
   border: 1px solid rgb(191, 135, 244);
+}
+
+span.language-badge.badge.bg-primary:hover {
+  border: 2px solid white;
 }
 
 @media (max-width: 1020px) {
   .aboutme-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
     height: 100%;
     width: 100%;
-
   }
 
   div.card-section {
-    margin-top: 5% ;
+    margin-top: 5%;
     width: 90%;
     padding: 1rem;
     height: auto;
@@ -69,11 +78,11 @@ div.card-section {
     object-fit: cover;
   }
   div.card {
-    display:flex;
+    display: flex;
     width: 100%;
     font-size: 1.1rem;
     justify-content: center;
     align-items: center;
     align-content: center;
-}
+  }
 }

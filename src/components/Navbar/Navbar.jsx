@@ -1,7 +1,7 @@
-import { useState } from "react";
+import  { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSeedling, faMugHot, faDiagramProject, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faSeedling, faMugHot, faDiagramProject, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -20,7 +20,7 @@ function Header() {
             Wanda Abreu
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-toggler" onClick={handleToggle}>
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={expanded ? faTimes : faBars} />
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="nav">

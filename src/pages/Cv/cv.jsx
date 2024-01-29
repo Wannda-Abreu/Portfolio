@@ -6,7 +6,11 @@ import "./cv.css";
 function MyCv() {
   return (
     <div className="cv-container mt-1">
-      <img className="cv-image mt-5 img-fluid" src={Image} alt="Curriculum Vitae"></img>
+      <img
+        className="cv-image mt-5 img-fluid"
+        src={Image}
+        alt="Curriculum Vitae"
+      ></img>
       <div className="cv-button mt-1 mb-2">
         <button>
           <a
@@ -24,4 +28,3 @@ function MyCv() {
 }
 
 export default MyCv;
-

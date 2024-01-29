@@ -1,19 +1,72 @@
-.video-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    width:100%;
-    background-color: blueviolet;
+.video-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 80vh;
+  width: 100%;
+  background-color: blueviolet;
 }
-video{
-    border: 1px solid white;
-    padding: 1rem;
-    width: 70%;
-    height: 70vh;
+
+video {
+  border: 1px solid white;
+  padding: 1rem;
+  width: 55%;
+  height: fit-content;
 }
-.text-video{
-    padding: 1rem;
-    width: 30vw;
-    color: white;
+
+.title-video {
+  font-size: 2.5vh;
+  width: fit-content;
+  height: fit-content;
+  color: white;
+  text-align: center;
+}
+
+.language-usage {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.play-projects-button{
+    font-size: 1.5rem;
+}
+
+.play-demo-button {
+  animation: pulseAnimation 2s infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.play-demo-button:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 991px) {
+  .video-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  video {
+    width: 100%;
+    height: auto;
+  }
+  .title-video {
+    font-size: 2vh;
+    width: 100%;
+  }
 }
