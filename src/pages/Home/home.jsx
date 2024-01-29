@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import "./Home.css";
+import "./home.css";
 import { Link } from "react-router-dom";
 import Image from "../../assets/Images/coding.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
