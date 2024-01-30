@@ -1,7 +1,14 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSeedling, faMugHot, faDiagramProject, faBars, faTimes, faContactBook } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSeedling,
+  faMugHot,
+  faDiagramProject,
+  faBars,
+  faTimes,
+  faContactBook,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -26,32 +33,56 @@ function Header() {
             <Nav className="nav">
               <Nav.Item>
                 <button onClick={handleToggle}>
-                  <Link to="/aboutme" className="nav-link d-flex align-items-center">
-                    <FontAwesomeIcon className="nav-icon d-flex align-items-center" icon={faMugHot} />
+                  <Link
+                    to="/aboutme"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <FontAwesomeIcon
+                      className="nav-icon d-flex align-items-center"
+                      icon={faMugHot}
+                    />
                     <span className="nav-text mx-2">Sobre mí</span>
                   </Link>
                 </button>
               </Nav.Item>
               <Nav.Item>
                 <button onClick={handleToggle}>
-                  <Link to="/mycv" className="nav-link d-flex align-items-center">
-                    <FontAwesomeIcon className="nav-icon d-flex align-items-center" icon={faSeedling} />
+                  <Link
+                    to="/mycv"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <FontAwesomeIcon
+                      className="nav-icon d-flex align-items-center"
+                      icon={faSeedling}
+                    />
                     <span className="nav-text mx-2">Cv</span>
                   </Link>
                 </button>
               </Nav.Item>
               <Nav.Item>
                 <button onClick={handleToggle}>
-                  <Link to="/projects" className="nav-link d-flex align-items-center">
-                    <FontAwesomeIcon className="nav-icon d-flex align-items-center" icon={faDiagramProject} />
+                  <Link
+                    to="/projects"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <FontAwesomeIcon
+                      className="nav-icon d-flex align-items-center"
+                      icon={faDiagramProject}
+                    />
                     <span className="nav-text mx-2">Proyectos</span>
                   </Link>
                 </button>
               </Nav.Item>
               <Nav.Item>
                 <button onClick={handleToggle}>
-                  <Link to="/contactform" className="nav-link d-flex align-items-center">
-                    <FontAwesomeIcon className="nav-icon d-flex align-items-center" icon={faContactBook} />
+                  <Link
+                    to="/contactform"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <FontAwesomeIcon
+                      className="nav-icon d-flex align-items-center"
+                      icon={faContactBook}
+                    />
                     <span className="nav-text mx-2">Contáctame</span>
                   </Link>
                 </button>
