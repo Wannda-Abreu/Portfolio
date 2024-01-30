@@ -1,7 +1,7 @@
 import  { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSeedling, faMugHot, faDiagramProject, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSeedling, faMugHot, faDiagramProject, faBars, faTimes, faContactBook } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -16,9 +16,9 @@ function Header() {
     <Container>
       <div className="navbar-container">
         <Navbar expand="lg" expanded={expanded}>
-          <Navbar.Brand as={Link} to="/" className="name">
+          <Navbar as={Link} to="/" className="name">
             Wanda Abreu
-          </Navbar.Brand>
+          </Navbar>
           <Navbar.Toggle aria-controls="navbar-toggler" onClick={handleToggle}>
             <FontAwesomeIcon icon={expanded ? faTimes : faBars} />
           </Navbar.Toggle>
@@ -45,6 +45,14 @@ function Header() {
                   <Link to="/projects" className="nav-link d-flex align-items-center">
                     <FontAwesomeIcon className="nav-icon d-flex align-items-center" icon={faDiagramProject} />
                     <span className="nav-text mx-2">Proyectos</span>
+                  </Link>
+                </button>
+              </Nav.Item>
+              <Nav.Item>
+                <button onClick={handleToggle}>
+                  <Link to="/contactform" className="nav-link d-flex align-items-center">
+                    <FontAwesomeIcon className="nav-icon d-flex align-items-center" icon={faContactBook} />
+                    <span className="nav-text mx-2">Contáctame</span>
                   </Link>
                 </button>
               </Nav.Item>

@@ -3,6 +3,7 @@
   flex-direction: row-reverse;
   width: 100%;
   height: 80vh;
+  margin-bottom: 10vh;
   background-color: #8a2be2;
 }
 
@@ -26,14 +27,15 @@ div.card-section {
 
 .about-button {
   font-size: 1.7em;
-  font-weight: 350;
+  font-weight: 300;
   color: white;
   margin: 0 10px;
+  transition: font-size 0.3s ease, font-weight 0.3s ease;
 }
 
 .about-button:hover {
-  font-size: 1.8em;
-  font-weight: 450;
+  font-size: 1.7em;
+  font-weight: 400;
 
 }
 
@@ -43,14 +45,15 @@ div.card-section {
   height: 80vh;
   object-fit: cover;
 }
-span.language-badge.badge.bg-primary {
+.language-badge.badge.bg-primary {
   --bs-bg-opacity: 0;
   margin: 0.2rem;
-  border: 1px solid rgb(191, 135, 244);
+  border: .8px solid rgb(191, 135, 244);
 }
 
 span.language-badge.badge.bg-primary:hover {
-  border: 2px solid white;
+ border: 1.9px solid  rgb(217, 191, 243) ;
+ transition: border 0.3s ease;
 }
 
 @media (max-width: 1020px) {

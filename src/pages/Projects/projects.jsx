@@ -1,32 +1,26 @@
 import { Container, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import madxtremImage from "../../assets/Images/proyecto1.png";
-import roperoImage from "../../assets/Images/proyecto2.png"
-import digitalCrafters from "../../assets/Images/proyecto3.png";
-import catchACoder from "../../assets/Images/proyecto4.png";
 import "./projects.css";
 
 const projectsData = [
- 
   {
     title: "App para automatizar citas.",
-    image: roperoImage,
+    image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524574/proyecto1_iykiwt.avif",
     link: "/roperodemo",
   },
   {
     title: "E-comerce de actividades.",
-    image: madxtremImage,
+    image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524573/proyecto2_n88i32.avif", 
     link: "/madxtremedemo",
   },
   {
     title: "App para elegir alumnos.",
-    image: catchACoder,
+    image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524570/proyecto4_thduoa.avif", 
     link: "/coderdemo",
   },
   {
-    id: 4,
     title: "Web de asesores digitales.",
-    image: digitalCrafters,
+    image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524571/proyecto3_websqj.avif", 
     link: "/crafterdemo",
   },
 ];

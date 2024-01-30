@@ -45,7 +45,7 @@ function RoperoSolidarioDemo() {
             <FontAwesomeIcon icon={faCss3Alt} /> 
           </div> 
           <div className="stack-icons text-white" >
-            <FontAwesomeIcon icon={faCode} />
+           Ts
           </div>
         </div>
         <p className="mt-2">

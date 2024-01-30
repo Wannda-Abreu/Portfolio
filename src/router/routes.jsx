@@ -8,6 +8,7 @@ import CatchACoderDemo from "../pages/Demos/catchACoderDemo";
 import CrafterDemo from "../pages/Demos/crafttersDemo";
 import AboutMe from "../pages/AboutMe/aboutMe";
 import MyCv from "../pages/Cv/cv";
+import ContactForm from "../pages/Contact/ContactForm";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         {
           path: "/mycv",
           element: <MyCv/>
+        },
+        {
+          path: "/contactform",
+          element: <ContactForm/>
         }
     ]
     },

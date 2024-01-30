@@ -2,7 +2,6 @@ import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import Image from "../../assets/Images/wanda.png";
 import "./aboutMe.css";
 
 function AboutMe() {
@@ -61,7 +60,7 @@ function AboutMe() {
           </div>
         </Col>
         <Col className="about-img-container p-0">
-          <img src={Image} alt="Perfil" className="about-img" />
+          <img src="https://res.cloudinary.com/dqj4pvyva/image/upload/v1706523453/wanda_bmyrmt.avif" alt="programadora-fullstack" className="about-img" />
         </Col>
       </Row>
     </Container>

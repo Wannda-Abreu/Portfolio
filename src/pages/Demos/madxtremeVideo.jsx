@@ -15,7 +15,7 @@ function MadxtremeDemo() {
   };
 
   return (
-    <div className="video-container p-4">
+    <div className="video-container">
       <div className="title-video m-2 p-4">
         <h4>¡Bienvenido a la demo de Madxtreme!</h4>
         <p className="text-video mt-4">

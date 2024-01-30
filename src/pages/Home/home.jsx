@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "./home.css";
 import { Link } from "react-router-dom";
-import Image from "../../assets/Images/coding.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faReact,
@@ -123,7 +122,7 @@ function Home() {
           </div>
         </Col>
         <Col className="image-container">
-          <img src={Image} alt="Perfil" className="img" />
+          <img src="https://res.cloudinary.com/dqj4pvyva/image/upload/v1706523443/coding_e4pyyc.avif" alt="fullstackdeveloper" className="img" />
         </Col>
       </Row>
     </Container>

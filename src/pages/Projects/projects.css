@@ -4,8 +4,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: rgb(246 235 255);
+  background-color: #f1effb;;
   height: 80vh;
+  margin-bottom: 20vh;
 }
 .card-container {
   width: 100%;

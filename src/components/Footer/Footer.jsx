@@ -9,7 +9,7 @@ function Footer() {
       <Container>
         <Row>
           <Col xs={12} md={6} className="footer-name-col">
-            <medium className="footer-name">wabreud@gmail.com</medium>
+            <h4 className="footer-name">wabreud@gmail.com</h4>
           </Col>
           <Col
             xs={12}

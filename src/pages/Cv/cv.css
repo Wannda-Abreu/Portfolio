@@ -9,10 +9,15 @@
 
 .cv-image {
   width: 22vw;
+  transition: width 0.3s ease; 
 }
 
 .cv-button {
   font-size: 1em;
+  color: blueviolet;
+}
+.cv-icon {
+  color:blueviolet
 }
 
 @media (max-width: 768px) {
@@ -28,3 +33,4 @@
     height: auto; 
   }
 }
+
