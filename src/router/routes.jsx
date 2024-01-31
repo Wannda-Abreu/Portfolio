@@ -8,7 +8,7 @@ import CatchACoderDemo from "../pages/Demos/catchACoderDemo";
 import CrafterDemo from "../pages/Demos/crafttersDemo";
 import AboutMe from '../pages/AboutMe/aboutMe';
 import MyCv from '../pages/Cv/cv';
-import ContactForm from '../pages/Contact/ContactForm';
+import ContactForm from '../pages/Contact/contactForm';
 
 
 const router = createBrowserRouter([
