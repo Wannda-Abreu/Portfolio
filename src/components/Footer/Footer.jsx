@@ -9,18 +9,14 @@ function Footer() {
       <Container>
         <Row>
           <Col xs={12} md={6} className="footer-name-col">
-            <h4 className="footer-name">wabreud@gmail.com</h4>
+            <a href="mailto:wabreud@gmail.com" className="footer-name">wabreud@gmail.com</a>
           </Col>
-          <Col
-            xs={12}
-            md={6}
-            className="d-flex justify-content-md-end justify-content-center footer-icons-col"
-          >
-            <a href="#" className="footer-icon-link">
-              <FontAwesomeIcon className="footer-text" icon={faLinkedin} />
+          <Col xs={12} md={6} className="d-flex justify-content-md-end justify-content-center footer-icons-col">
+            <a href="https://www.linkedin.com/in/wanda-abreu-developer-marketing/" target="_blank" rel="noopener noreferrer" className="footer-icon-link" aria-label="LinkedIn de Wanda Abreu">
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="#" className="footer-icon-link">
-              <FontAwesomeIcon className="footer-text" icon={faGithub} />
+            <a href="https://github.com/Wannda-Abreu" target="_blank" rel="noopener noreferrer" className="footer-icon-link" aria-label="GitHub de Wanda Abreu">
+              <FontAwesomeIcon icon={faGithub} />
             </a>
           </Col>
         </Row>
@@ -30,3 +26,4 @@ function Footer() {
 }
 
 export default Footer;
+

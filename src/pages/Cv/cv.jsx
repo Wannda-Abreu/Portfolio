@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faExpand} from "@fortawesome/free-solid-svg-icons";
 import "./cv.css";
 
 function MyCv() {
@@ -7,18 +7,19 @@ function MyCv() {
     <div className="cv-container mt-1">
       <img
         className="cv-image mt-5 img-fluid"
-        src="https://res.cloudinary.com/dqj4pvyva/image/upload/v1706562096/wanda-abreu-cv_ebmt9o.avif"
+        src="https://res.cloudinary.com/dqj4pvyva/image/upload/q_auto:best/v1706662914/Original_size_Blue_Clean_Professional_CV_Resume_vtl3wo.avif"
         alt="Curriculum Vitae"
       ></img>
       <div className="cv-button mt-1 mb-2">
         <button>
           <a className="cv-button"
-            href="src\pages\Cv\Wanda -cv.pdf"
+      
+        href="https://wandacv.my.canva.site/-cv-wanda-abreu"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Versión pdf
-            <FontAwesomeIcon className="cv-icon  mt-3 px-2" icon={faDownload} />
+            Ver en pantalla completa
+            <FontAwesomeIcon className="cv-icon  mt-3 px-2" icon={faExpand} />
           </a>
         </button>
       </div>

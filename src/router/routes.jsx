@@ -11,8 +11,6 @@ import MyCv from '../pages/Cv/cv';
 import ContactForm from '../pages/Contact/ContactForm';
 
 
-
-
 const router = createBrowserRouter([
     {
       path: "/",

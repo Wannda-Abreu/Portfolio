@@ -6,21 +6,16 @@
   height: auto;
   padding: 10px 0;
   background-color: rgb(255, 255, 255);
-  color: blueviolet;
 }
 
-.footer-text {
-  font-size: 1.5em;
+.footer-text,
+.footer-name,
+a.footer-icon-link {
   color: blueviolet;
-}
-
-.footer-text:hover {
-  font-size: 1.8em;
 }
 
 .footer-name {
   font-size: 1.2em;
-  color: blueviolet;
   display: block;
   text-align: center;
 }
@@ -29,8 +24,13 @@
   font-weight: 600;
 }
 
-.footer-icon-link {
+a.footer-icon-link {
   margin: 0 10px;
+  font-size: 1.8em;
+}
+
+a.footer-icon-link:hover {
+  font-size: 1.9em;
 }
 
 @media (min-width: 768px) {
