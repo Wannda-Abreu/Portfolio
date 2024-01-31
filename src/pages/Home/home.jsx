@@ -22,7 +22,7 @@ function Home() {
     <Container>
       <Row className="home-main-container">
         <Col className="home-section">
-          <h1 className="lead mt-2">¡Bienvenidos a mi Portfolio!</h1>
+          <h1 className="lead text-center mt-2">¡Bienvenidos a mi Portfolio!</h1>
           <h4 className="title mt-3 px-5 text-center">
             Soy Wanda Abreu Díaz, desarrolladora web Full stack
           </h4>
