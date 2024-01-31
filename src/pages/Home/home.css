@@ -1,10 +1,11 @@
-.home-container {
+.home-main-container {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: blueviolet;
-  width: 100vw;
+  width: 100%;
   height: 80vh;
+  padding-bottom: 20vh;
 }
 
 .home-section.col {
@@ -83,7 +84,7 @@ div.stack-icons-container.col {
 @media (max-width: 991px) {
   .home-main-container {
     flex-direction: column;
-    padding: 10vh;
+     height: fit-content;
   }
   .home-section.col {
         margin-top: 3vh;
@@ -107,7 +108,8 @@ div.stack-icons-container.col {
   .stack-icons {
     font-size: 1.5em;
   }
-  .img {
-    width: 50%;
+
+  img.img {
+  height:fit-content;
   }
 }

@@ -19,7 +19,7 @@ import {
 
 function Home() {
   return (
-    <Container className="home-container">
+    <Container>
       <Row className="home-main-container">
         <Col className="home-section">
           <h1 className="lead mt-2">¡Bienvenidos a mi Portfolio!</h1>
@@ -104,7 +104,7 @@ function Home() {
                 </button>
               </Link>
             </div>
-            <div className="button-navigation m-2">
+            <div className="button-navigation mt-2">
               <Link to="/mycv">
                 <button className="background-button">
                   <FontAwesomeIcon
