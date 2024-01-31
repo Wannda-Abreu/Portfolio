@@ -5,6 +5,7 @@
   background-color: blueviolet;
   width: 100vw;
   height: 80vh;
+  margin-bottom: 10vh;
 }
 
 .home-section.col {
@@ -88,6 +89,7 @@ div.stack-icons-container.col {
         margin-top: 3vh;
   }
   .image-container {
+    height: fit-content;
     flex-direction: column-reverse;
   }
   .home-button {
