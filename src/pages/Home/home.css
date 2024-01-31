@@ -1,11 +1,10 @@
-.home-main-container {
+.home-container {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: blueviolet;
   width: 100vw;
   height: 80vh;
-  margin-bottom: 10vh;
 }
 
 .home-section.col {
@@ -84,6 +83,7 @@ div.stack-icons-container.col {
 @media (max-width: 991px) {
   .home-main-container {
     flex-direction: column;
+    padding: 10vh;
   }
   .home-section.col {
         margin-top: 3vh;
