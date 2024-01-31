@@ -73,8 +73,8 @@ function Home() {
               />
             </a>
           </Col>
-          <div className="home-button-container mt-1">
-            <div className="button-navigation m-2">
+          <div className="home-button-container mt-4">
+            <div className="button-navigation">
               <Link to="/projects">
                 <button className="background-button">
                   <FontAwesomeIcon
@@ -89,7 +89,7 @@ function Home() {
                 </button>
               </Link>
             </div>
-            <div className="button-navigation m-2">
+            <div className="button-navigation">
               <Link to="/aboutme">
                 <button className="background-button">
                   <FontAwesomeIcon
@@ -104,7 +104,7 @@ function Home() {
                 </button>
               </Link>
             </div>
-            <div className="button-navigation mt-2">
+            <div className="button-navigation">
               <Link to="/mycv">
                 <button className="background-button">
                   <FontAwesomeIcon
