@@ -11,7 +11,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   width: auto;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 1rem;
   background-color: #f1effb;
   color: blueviolet;
   border: 1px solid blueviolet;
@@ -40,6 +40,19 @@ textarea.form-control {
 input.form-control:hover,
 textarea.form-control:hover {
   border: 2px solid blueviolet;
+}
+div.contact-message{
+  color: blueviolet;
+  background-color: #f1effb;
+  font-size: 1.3em;
+  padding: 20vw;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+justify-content: center;
+
 }
 
 @media (max-width: 768px) {
