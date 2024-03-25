@@ -11,15 +11,6 @@
   justify-content: center;
   color: white;
 }
-
-.image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
 .home-button {
   font-size: 1.3rem;
   color: aqua;
@@ -44,20 +35,46 @@ button:hover {
   font-weight: 500;
 }
 
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.border-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  height: 55%;
+  border-radius: 50%;
+  background-color: #f1effb;;
+  border: 10px solid rgb(229, 206, 253);
+}
+
+
 .img {
-  width: 70%;
-  height: auto;
+  width: 80%;
+  height: 80%;
+  border-radius: 46%;
+  filter: drop-shadow( 7px 7px 10px  #f1effb);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
+  transform: scale(1.26); 
+}
+
+.img:hover {
+  transform: scale(1.27);
 }
 
 .stack-icons {
-  font-size: 2em;
+  font-size: 2.2em;
 }
 
 .stack-icons:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
-
-div.stack-icons-container.col {
+.stack-icons-container.col {
   display: flex;
   width: 80%;
   flex-grow: 0;
@@ -68,6 +85,20 @@ div.stack-icons-container.col {
   border-color: rgb(188, 127, 244);
   box-shadow: 0 0 10px rgba(188, 127, 244, 0.5);
   animation: animarBorde 2s infinite;
+}
+.tooltip-inner {
+  font-weight: 600;
+  background-color: white !important; 
+  color: blueviolet !important; 
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before,
+.stack-icons-container .tooltip.bs-tooltip-auto[x-placement^="top"] .tooltip-arrow::before {
+  border-top-color: white;
+}
+.stack-icons-container .tooltip.bs-tooltip-bottom .tooltip-arrow::before,
+.stack-icons-container .tooltip.bs-tooltip-auto[x-placement^="bottom"] .tooltip-arrow::before {
+  border-bottom-color: white;
 }
 
 @keyframes animarBorde {
@@ -92,6 +123,20 @@ div.stack-icons-container.col {
     height: fit-content;
     flex-direction: column-reverse;
   }
+    .img {
+      width: 100%; /* Ajustar al 100% del contenedor para que se ajuste mejor */
+      transform: scale(1); /* Restablecer la escala para evitar el efecto de "salida" */
+    }
+    .img:hover {
+      transform: scale(1.02);
+    }
+
+    .border-image {
+    width: 75%; /* Aumentar el porcentaje según necesidad para mejor visualización */
+    height: auto; /* Usar auto para mantener la proporción según el ancho */
+  }
+
+  
   .home-button {
     font-size: 1em;
   }

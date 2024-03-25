@@ -1,7 +1,8 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./home.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Helmet } from 'react-helmet';
 import {
   faReact,
   faGithub,
@@ -17,63 +18,42 @@ import {
   faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
+const technologies = [
+  { icon: faGithub, name: "GitHub", key: "github" },
+  { icon: faHtml5, name: "HTML5", key: "html5" },
+  { icon: faReact, name: "React", key: "react" },
+  { icon: faJs, name: "JavaScript", key: "javascript" },
+  { icon: faCss3Alt, name: "CSS3", key: "css3" },
+  { icon: faBootstrap, name: "Bootstrap", key: "bootstrap" },
+  { icon: faNodeJs, name: "Node.js", key: "nodejs" },
+  { icon: faDatabase, name: "MySQL", key: "mysql" }
+];
+
 function Home() {
   return (
     <Container>
+      <Helmet>
+        <title>Wanda Abreu Díaz - Desarrolladora Web Full Stack</title>
+        <meta name="description" content="Bienvenidos a mi Portfolio. Soy Wanda Abreu Díaz, desarrolladora web Full Stack especializada en tecnologías como React, Node.js, HTML5, y más." />
+      </Helmet>
       <Row className="home-main-container">
         <Col className="home-section">
           <h1 className="lead text-center mt-2">¡Bienvenidos a mi Portfolio!</h1>
-          <h4 className="title mt-3 px-5 text-center">
-            Soy Wanda Abreu Díaz, desarrolladora web Full stack
-          </h4>
-          <Col className="stack-icons-container mt-3">
-            <a href="#" className="">
-              <FontAwesomeIcon
-                className="stack-icons text-white"
-                icon={faGithub}
-              />
-            </a>
-            <a href="#" className="">
-              <FontAwesomeIcon
-                className="stack-icons text-white"
-                icon={faHtml5}
-              />
-            </a>
-            <a href="#" className="">
-              <FontAwesomeIcon
-                className="stack-icons text-white"
-                icon={faReact}
-              />
-            </a>
-            <a href="#" className="">
-              <FontAwesomeIcon className="stack-icons text-white" icon={faJs} />
-            </a>
-            <a href="#" className="">
-              <FontAwesomeIcon
-                className="stack-icons text-white"
-                icon={faNodeJs}
-              />
-            </a>
-            <a href="#" className="">
-              <FontAwesomeIcon
-                className="stack-icons text-white"
-                icon={faCss3Alt}
-              />
-            </a>
-            <a href="#" className="">
-              <FontAwesomeIcon
-                className="stack-icons text-white"
-                icon={faBootstrap}
-              />
-            </a>
-            <a href="#" className="">
-              <FontAwesomeIcon
-                className="stack-icons text-white"
-                icon={faDatabase}
-              />
-            </a>
+          <h4 className="title mt-4 px-5 text-center">Soy Wanda Abreu Díaz, desarrolladora web Full stack</h4>
+          <Col className="stack-icons-container mt-4 mb-3">
+            {technologies.map(({ icon, name, key }) => (
+              <OverlayTrigger
+                key={key}
+                placement="top"
+                overlay={<Tooltip id={`tooltip-${key}`}>{name}</Tooltip>}
+              >
+                <a href="#" className="">
+                  <FontAwesomeIcon className="stack-icons text-white" icon={icon} />
+                </a>
+              </OverlayTrigger>
+            ))}
           </Col>
-          <div className="home-button-container mt-4">
+          <div className="home-button-container mt-5 ">
             <div className="button-navigation">
               <Link to="/projects">
                 <button className="background-button">
@@ -122,7 +102,13 @@ function Home() {
           </div>
         </Col>
         <Col className="image-container">
-          <img src="https://res.cloudinary.com/dqj4pvyva/image/upload/v1706523443/coding_e4pyyc.avif" alt="fullstackdeveloper" className="img" />
+          <div className="border-image">
+        <img
+            src="https://res.cloudinary.com/dsyfal3wa/image/upload/v1711395165/Untitled_design_6_zborwr.avif"
+            alt="fullstackdeveloper"
+            className="img"
+          />
+          </div>
         </Col>
       </Row>
     </Container>
@@ -130,3 +116,4 @@ function Home() {
 }
 
 export default Home;
+

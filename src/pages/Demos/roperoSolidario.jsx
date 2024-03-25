@@ -7,7 +7,12 @@ import {
   faBootstrap,
   faNodeJs,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCode, faArrowAltCircleLeft, faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { faT } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./demo.css";
 import { Link } from "react-router-dom";
 
@@ -19,6 +24,26 @@ function RoperoSolidarioDemo() {
       videoRef.current.play();
     }
   };
+  const technologies = [
+    { icon: faReact, name: "React" },
+    { icon: faJs, name: "JavaScript" },
+    { icon: faNodeJs, name: "Node.js" },
+    { icon: faBootstrap, name: "Bootstrap" },
+    { icon: faCss3Alt, name: "CSS3" },
+    { icon: faT, name: "TypeScript" },
+  ];
+
+  const renderTechIcon = (tech, index) => (
+    <OverlayTrigger
+      key={index}
+      placement="top"
+      overlay={<Tooltip id={`tooltip-tech-${index}`}>{tech.name}</Tooltip>}
+    >
+      <div className="stack-icons text-white">
+        {tech.isText ? tech.name : <FontAwesomeIcon icon={tech.icon} />}
+      </div>
+    </OverlayTrigger>
+  );
 
   return (
     <div className="video-container p-4">
@@ -26,27 +51,16 @@ function RoperoSolidarioDemo() {
         <h4>¡Bienvenido a la demo de Ropero solidario!</h4>
         <p className="text-video mt-3">
           Proyecto creado para la fundación San José, con el fin de automatizar
-          las citas de los usuarios, interfaz amigable para el usuario.
+          las citas. La plataforma se centra en proporcionar una interfaz
+          amigable y accesible, facilitando a los usuarios la reserva de citas
+          sin complicaciones .
+        </p>
+        <p>
+          La aplicación incorpora varias tecnologías modernas de desarrollo web
+          para asegurar una experiencia fluida y responsiva:
         </p>
         <div className="language-usage mt-2 mb-2">
-          <div className="stack-icons text-white" >
-            <FontAwesomeIcon icon={faReact} /> 
-          </div>
-          <div className="stack-icons text-white" >
-            <FontAwesomeIcon icon={faJs} /> 
-          </div>
-          <div className="stack-icons text-white" >
-            <FontAwesomeIcon icon={faNodeJs} /> 
-          </div>
-          <div className="stack-icons text-white" >
-            <FontAwesomeIcon icon={faBootstrap} /> 
-          </div> 
-          <div className="stack-icons text-white" >
-            <FontAwesomeIcon icon={faCss3Alt} /> 
-          </div> 
-          <div className="stack-icons text-white" >
-           Ts
-          </div>
+          {technologies.map(renderTechIcon)}
         </div>
         <p className="mt-2">
           Haz clic en el video a continuación para ver las funcionalidades.
@@ -64,7 +78,11 @@ function RoperoSolidarioDemo() {
           </button>
         </div>
       </div>
-      <video ref={videoRef} src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1706490641/roperosolidariodemo_zzto2d.mp4" controls></video>
+      <video
+        ref={videoRef}
+        src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1706490641/roperosolidariodemo_zzto2d.mp4"
+        controls
+      ></video>
     </div>
   );
 }

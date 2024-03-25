@@ -1,7 +1,11 @@
 import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCss3Alt, faHtml5 } from "@fortawesome/free-brands-svg-icons";
-import { faArrowAltCircleLeft, faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./demo.css";
 import { Link } from "react-router-dom";
 
@@ -9,25 +13,37 @@ function CraftersDemo() {
   const videoRef = useRef(null);
 
   const handlePlayVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
+    videoRef.current?.play();
   };
+
+  const technologyTooltips = [
+    { icon: faHtml5, name: "HTML5" },
+    { icon: faCss3Alt, name: "CSS3" },
+  ];
 
   return (
     <div className="video-container p-4">
       <div className="title-video m-2 p-4">
         <h4>¡Bienvenido a la demo de Digital Crafters!</h4>
         <p className="text-video mt-3">
-          Proyecto de landing page para ofrecer servicios a emprendedores artesanos.
+          Proyecto de landing page para ofrecer servicios a emprendedores
+          artesanos, interfaz sencilla e informativa.
+        </p>
+        <p>
+          La aplicación incorpora varias tecnologías para su funcionamiento:
         </p>
         <div className="language-usage mt-2 mb-2">
-          <div className="stack-icons text-white">
-            <FontAwesomeIcon icon={faHtml5} />
-          </div>
-          <div className="stack-icons text-white">
-            <FontAwesomeIcon icon={faCss3Alt} />
-          </div>
+          {technologyTooltips.map((tech, index) => (
+            <OverlayTrigger
+              key={index}
+              placement="top"
+              overlay={<Tooltip>{tech.name}</Tooltip>}
+            >
+              <div className="stack-icons text-white">
+                <FontAwesomeIcon icon={tech.icon} />
+              </div>
+            </OverlayTrigger>
+          ))}
         </div>
         <p className="mt-2">
           Haz clic en el botón a continuación para ver las funcionalidades.
@@ -45,7 +61,11 @@ function CraftersDemo() {
           </button>
         </div>
       </div>
-      <video ref={videoRef} src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1706490701/democrafters_tvcnlw.mp4" controls></video>
+      <video
+        ref={videoRef}
+        src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1706490701/democrafters_tvcnlw.mp4"
+        controls
+      ></video>
     </div>
   );
 }
