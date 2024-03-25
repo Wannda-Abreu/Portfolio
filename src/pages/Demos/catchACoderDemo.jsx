@@ -22,14 +22,14 @@ function CatchACoderDemo() {
   return (
     <div className="video-container">
       <div className="title-video m-2">
-        <h3>¡Bienvenido a la demo de Catch a Coder!</h3>
-        <p className="text-video mt-3">
+        <h5>¡Bienvenido a la demo de Catch a Coder!</h5>
+        <h6 className="text-video mt-2 px-3">
           Proyecto creado para seleccionar participantes de manera sencilla y divertida con diseño claro y una navegación intuitiva .
-        </p>
-        <p>
+        </h6>
+        <h6>
         La aplicación incorpora varias tecnologías para su funcionamiento:
-        </p>
-        <div className="language-usage mt-2 mb-2">
+        </h6>
+        <div className="language-usage">
           {technologyTooltips.map((tech, index) => (
             <OverlayTrigger
               key={index}
@@ -42,17 +42,17 @@ function CatchACoderDemo() {
             </OverlayTrigger>
           ))}
         </div>
-        <p className="mt-2">Haz clic en el video a continuación para ver las funcionalidades.</p>
-        <div className="mt-5">
+        <h6 className="mt-2">Haz clic en el video a continuación para ver las funcionalidades.</h6>
+        <div className="mt-3">
             <Link to="/projects">
               <button className="mx-5">
                 <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleLeft} />
-                Proyectos
+                <h6> Proyectos </h6>
               </button>
             </Link>
             <button className="mx-2 play-demo-button" onClick={handlePlayVideo}>
               <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleRight} />
-              Play Demo
+              <h5> Play Demo </h5>
             </button>
         </div>
       </div>

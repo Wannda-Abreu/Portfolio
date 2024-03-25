@@ -47,34 +47,33 @@ function RoperoSolidarioDemo() {
 
   return (
     <div className="video-container p-4">
-      <div className="title-video p-4">
-        <h4>¡Bienvenido a la demo de Ropero solidario!</h4>
-        <p className="text-video mt-3">
+      <div className="title-video p-3">
+        <h5>¡Bienvenido a la demo de Ropero solidario!</h5>
+        <h6 className="text-video mt-2">
           Proyecto creado para la fundación San José, con el fin de automatizar
-          las citas. La plataforma se centra en proporcionar una interfaz
-          amigable y accesible, facilitando a los usuarios la reserva de citas
-          sin complicaciones .
-        </p>
-        <p>
-          La aplicación incorpora varias tecnologías modernas de desarrollo web
+          citas. La plataforma se centra en proporcionar una interfaz amigable y
+          accesible.
+        </h6>
+        <h6 className="mt-2">
+          La aplicación incorpora la siguientes tecnologías de desarrollo web
           para asegurar una experiencia fluida y responsiva:
-        </p>
-        <div className="language-usage mt-2 mb-2">
+        </h6>
+        <div className="language-usage p-2">
           {technologies.map(renderTechIcon)}
         </div>
-        <p className="mt-2">
+        <h6 className="mt-1">
           Haz clic en el video a continuación para ver las funcionalidades.
-        </p>
-        <div className="play-projects-button mt-5">
+        </h6>
+        <div className="play-projects-button mt-1">
           <Link to="/projects">
-            <button className="mx-2">
+            <button className="">
               <FontAwesomeIcon icon={faArrowAltCircleLeft} className="mx-2" />
-              Proyectos
+              <h6> Proyectos </h6>
             </button>
           </Link>
           <button className="play-demo-button mx-5" onClick={handlePlayVideo}>
             <FontAwesomeIcon icon={faArrowAltCircleRight} className="mx-2" />
-            Play Demo
+            <h5> Play Demo </h5>
           </button>
         </div>
       </div>

@@ -22,17 +22,17 @@ function CraftersDemo() {
   ];
 
   return (
-    <div className="video-container p-4">
-      <div className="title-video m-2 p-4">
-        <h4>¡Bienvenido a la demo de Digital Crafters!</h4>
-        <p className="text-video mt-3">
+    <div className="video-container p-3">
+      <div className="title-video mt-2 p-4">
+        <h5>¡Bienvenido a la demo de Digital Crafters!</h5>
+        <h6 className="text-video mt-3">
           Proyecto de landing page para ofrecer servicios a emprendedores
           artesanos, interfaz sencilla e informativa.
-        </p>
-        <p>
+        </h6>
+        <h6>
           La aplicación incorpora varias tecnologías para su funcionamiento:
-        </p>
-        <div className="language-usage mt-2 mb-2">
+        </h6>
+        <div className="language-usage">
           {technologyTooltips.map((tech, index) => (
             <OverlayTrigger
               key={index}
@@ -45,19 +45,19 @@ function CraftersDemo() {
             </OverlayTrigger>
           ))}
         </div>
-        <p className="mt-2">
+        <h6 className="mt-2">
           Haz clic en el botón a continuación para ver las funcionalidades.
-        </p>
-        <div className="play-projects-button mt-5">
+        </h6>
+        <div className="play-projects-button mt-3">
           <Link to="/projects">
             <button className="mx-5">
               <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleLeft} />
-              Proyectos
+              <h6> Proyectos </h6>
             </button>
           </Link>
-          <button className="play-demo-button mx-5" onClick={handlePlayVideo}>
+          <button className="play-demo-button mx-2" onClick={handlePlayVideo}>
             <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleRight} />
-            Play Demo
+            <h5> Play Demo </h5>
           </button>
         </div>
       </div>

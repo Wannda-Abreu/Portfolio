@@ -35,17 +35,17 @@ function MadxtremeDemo() {
   return (
     <div className="video-container">
       <div className="title-video m-2 p-4">
-        <h4>¡Bienvenido a la demo de Madxtreme!</h4>
-        <p className="text-video mt-4">
+        <h5>¡Bienvenido a la demo de Madxtreme!</h5>
+        <h6 className="text-video mt-3">
           Proyecto de Web e-commerce creada para la venta de actividades
           extremas en la sierra de Madrid, con interfaz atractiva y amigable al
           usuario.
-        </p>
-        <p>
+        </h6>
+        <h6>
           La aplicación incorpora varias tecnologías para su correcto
           funcionamiento:
-        </p>
-        <div className="language-usage mt-2 mb-2">
+        </h6>
+        <div className="language-usage mt-2">
           {technologyIcons.map((tech, index) => (
             <OverlayTrigger
               key={index}
@@ -60,19 +60,19 @@ function MadxtremeDemo() {
             </OverlayTrigger>
           ))}
         </div>
-        <p className="mt-2">
+        <h6 className="mt-2">
           Haz clic en el video a continuación para ver las funcionalidades.
-        </p>
-        <div className="play-projects-button mt-4">
+        </h6>
+        <div className="play-projects-button">
           <Link to="/projects">
-            <button className="mt-4">
+            <button className="mt-3">
               <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleLeft} />
-              Proyectos
+                 <h6> Proyectos </h6>
             </button>
           </Link>
           <button className="play-demo-button mx-5" onClick={handlePlayVideo}>
             <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleRight} />
-            Play Demo
+            <h5> Play Demo </h5>
           </button>
         </div>
       </div>
