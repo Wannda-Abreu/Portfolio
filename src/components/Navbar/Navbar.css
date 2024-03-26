@@ -19,7 +19,7 @@ nav.navbar.navbar-expand-lg {
   display: flex;
   align-items: center;
   font-size: 1.2em;
-  color: blueviolet;;
+  color: #8a2be2;
   transition: color 0.3s ease-in-out;
 }
 
@@ -78,7 +78,7 @@ a.name:hover {
   button.navbar-toggler {
     font-size: 2em;
     border: 0px solid transparent;
-    color: blueviolet;
+    color: #8a2be2;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
   }

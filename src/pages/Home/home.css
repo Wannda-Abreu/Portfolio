@@ -124,16 +124,16 @@ button:hover {
     flex-direction: column-reverse;
   }
     .img {
-      width: 100%; /* Ajustar al 100% del contenedor para que se ajuste mejor */
-      transform: scale(1); /* Restablecer la escala para evitar el efecto de "salida" */
+      width: 100%; 
+      transform: scale(1); 
     }
     .img:hover {
       transform: scale(1.02);
     }
 
     .border-image {
-    width: 75%; /* Aumentar el porcentaje según necesidad para mejor visualización */
-    height: auto; /* Usar auto para mantener la proporción según el ancho */
+    width: 75%; 
+    height: auto; 
   }
 
   
