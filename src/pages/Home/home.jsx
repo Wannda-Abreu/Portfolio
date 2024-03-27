@@ -104,7 +104,7 @@ function Home() {
         <Col className="image-container">
           <div className="border-image">
         <img
-            src="https://res.cloudinary.com/dsyfal3wa/image/upload/v1711395165/Untitled_design_6_zborwr.avif"
+            src="https://res.cloudinary.com/dsyfal3wa/image/upload/f_avif,fl_aavif,q_100/v1711395165/Untitled_design_6_zborwr.avif"
             alt="fullstackdeveloper"
             className="img"
           />
