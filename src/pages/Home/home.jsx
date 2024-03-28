@@ -103,10 +103,9 @@ function Home() {
         </Col>
         <Col className="image-container">
           <div className="border-image">
-        <img
-            src="https://res.cloudinary.com/dsyfal3wa/image/upload/f_avif,fl_aavif,q_100/v1711395165/Untitled_design_6_zborwr.avif"
+        <img className= "img"
+            src="https://res.cloudinary.com/dsyfal3wa/image/upload/f_avif/v1711576794/programadora-full-stack_jgoqrr.avif"
             alt="fullstackdeveloper"
-            className="img"
           />
           </div>
         </Col>
