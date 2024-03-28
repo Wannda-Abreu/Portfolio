@@ -23,7 +23,7 @@ function Footer() {
               placement="top"
               overlay={renderTooltip({}, "LinkedIn")}
             >
-              <a href="https://www.linkedin.com/in/wanda-abreu-developer-marketing/" target="_blank" rel="noopener noreferrer" className="footer-icon-link">
+              <a href="https://www.linkedin.com/in/wanda-abreu-developer-marketing/" target="_blank" rel="noopener noreferrer" className="footer-icon-link" aria-label="LinkedIn de Wanda Abreu">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </OverlayTrigger>
@@ -31,7 +31,7 @@ function Footer() {
               placement="top"
               overlay={renderTooltip({}, "GitHub")}
             >
-              <a href="https://github.com/Wannda-Abreu" target="_blank" rel="noopener noreferrer" className="footer-icon-link">
+              <a href="https://github.com/Wannda-Abreu" target="_blank" rel="noopener noreferrer" className="footer-icon-link aria-label=Github de Wanda Abreu">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </OverlayTrigger>

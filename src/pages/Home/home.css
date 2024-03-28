@@ -44,11 +44,14 @@ button:hover {
 }
 
 .img {
-  width: auto;
-  height: 50vh;
+  width: 100%;
+  height: 40vh;
   border-radius: 30%;
-  filter: drop-shadow(7px 7px 10px (#ebebef));
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transition: transform 0.3s ease;
+}
+.img:hover{
+  transform: scale(1.1);
+
 }
 
 .stack-icons {
@@ -111,8 +114,9 @@ button:hover {
 
   .img {
     width: 90%;
-    height: auto;
+    height: 100%;
   }
+
   .home-button {
     font-size: 1em;
   }
