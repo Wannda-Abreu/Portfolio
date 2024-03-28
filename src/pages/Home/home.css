@@ -39,31 +39,16 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: AUTO;
   height: 100%;
-}
-.border-image{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70%;
-  height: 60%;
-  border-radius: 100%;
-  background-color: rgb(216, 197, 234);
-  border: 30px solid #E9ECF3;
-}
-.border-image:hover{
-  background-color: rgb(214, 176, 251);
 }
 
 .img {
-  margin-top: 1.7rem;
   width: auto;
-  height: 78%;
-  border-radius: 35% 35% 48% 35%;
-  filter: drop-shadow( 7px 7px 10px (#EBEBEF));
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; 
-  transform: scale(1.22); 
+  height: 50vh;
+  border-radius: 30%;
+  filter: drop-shadow(7px 7px 10px (#ebebef));
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .stack-icons {
@@ -87,21 +72,26 @@ button:hover {
 }
 .tooltip-inner {
   font-weight: 600;
-  background-color: white !important; 
-  color: blueviolet !important; 
+  background-color: white !important;
+  color: #8a2be2 !important;
 }
 
 .tooltip.bs-tooltip-top .tooltip-arrow::before,
-.stack-icons-container .tooltip.bs-tooltip-auto[x-placement^="top"] .tooltip-arrow::before {
+.stack-icons-container
+  .tooltip.bs-tooltip-auto[x-placement^="top"]
+  .tooltip-arrow::before {
   border-top-color: white;
 }
 .stack-icons-container .tooltip.bs-tooltip-bottom .tooltip-arrow::before,
-.stack-icons-container .tooltip.bs-tooltip-auto[x-placement^="bottom"] .tooltip-arrow::before {
+.stack-icons-container
+  .tooltip.bs-tooltip-auto[x-placement^="bottom"]
+  .tooltip-arrow::before {
   border-bottom-color: white;
 }
 
 @keyframes animarBorde {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 10px rgba(188, 127, 244, 0.5);
   }
   20% {
@@ -112,30 +102,17 @@ button:hover {
 @media (max-width: 991px) {
   .home-main-container {
     flex-direction: column;
-     height: fit-content;
-     padding-bottom: 20vh;
+    height: fit-content;
+    padding-bottom: 20vh;
   }
   .home-section.col {
-        margin-top: 3vh;
-  }
-  .image-container {
-    height: fit-content;
-    flex-direction: column-reverse;
-  }
-    .img {
-      width: 100%; 
-      transform: scale(1); 
-    }
-    .img:hover {
-      transform: scale(1.02);
-    }
-
-    .border-image {
-    width: 75%; 
-    height: auto; 
+    margin-top: 3vh;
   }
 
-  
+  .img {
+    width: 90%;
+    height: auto;
+  }
   .home-button {
     font-size: 1em;
   }
@@ -153,6 +130,6 @@ button:hover {
   }
 
   img.img {
-  height:fit-content;
+    height: fit-content;
   }
 }
