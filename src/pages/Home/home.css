@@ -59,7 +59,7 @@ button:hover {
 }
 
 .stack-icons:hover {
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 .stack-icons-container.col {
   display: flex;
@@ -113,8 +113,8 @@ button:hover {
   }
 
   .img {
-    width: 90%;
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
 
   .home-button {

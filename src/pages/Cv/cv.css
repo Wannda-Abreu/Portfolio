@@ -4,12 +4,11 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 75vh;
+  height: 70vh;
 }
 
 .cv-image {
-  width: 22vw;
-  transition: width 0.3s ease; 
+  width: 20vw;
 }
 
 .cv-button {
@@ -23,10 +22,6 @@
 @media (max-width: 768px) {
   .cv-image {
     width: 60vw;
-  }
-
-  .cv-image:hover {
-    width: 65vw;
   }
 
   .cv-container {

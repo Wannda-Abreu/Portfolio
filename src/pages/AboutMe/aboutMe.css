@@ -29,7 +29,7 @@ div.card-section {
 }
 
 .about-button {
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-weight: 300;
   color: white;
   margin: 0 10px;
@@ -37,15 +37,14 @@ div.card-section {
 }
 
 .about-button:hover {
-  font-size: 1.7em;
+  font-size: 1.6em;
   font-weight: 400;
-
 }
 
 .about-img {
   display: flex;
   width: 100%;
-  height: fit-content;
+  height: auto;
   object-fit: cover;
 }
 

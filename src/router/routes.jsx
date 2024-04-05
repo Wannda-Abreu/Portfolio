@@ -9,6 +9,7 @@ import CrafterDemo from "../pages/Demos/crafttersDemo";
 import AboutMe from '../pages/AboutMe/aboutMe';
 import MyCv from '../pages/Cv/cv';
 import ContactForm from '../pages/Contact/contactForm';
+import MarketingProjects from '../pages/MarketingProjects/MarketingProjects';
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         {
           path: "/projects",
           element: <Projects />
+        },
+        {
+          path: "/marketingprojects",
+          element: <MarketingProjects/>
         },
         {
           path: "/roperodemo",

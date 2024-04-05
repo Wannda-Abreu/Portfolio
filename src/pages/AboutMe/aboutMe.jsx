@@ -52,20 +52,20 @@ function AboutMe() {
                   </Badge>
                 ))}
               </div>
-              <Card.Text className="mt-3">
+              <Card.Text className="mt-2">
                 Estoy en la búsqueda de oportunidades que me permitan
                 profundizar y expandir mi conocimiento en programación y
                 tecnologías digitales. Mi objetivo es aplicar y enriquecer mi
                 experiencia, al tiempo que incorporo mis
                 competencias previas en áreas complementarias.
               </Card.Text>
-              <Card.Text className="mt-3">
+              <Card.Text className="mt-2">
                 Creo firmemente en el poder de la perseverancia, el trabajo duro
                 y la colaboración.
               </Card.Text>
             </Card.Body>
           </Card>
-          <div className="about-button-container mt-2 ">
+          <div className="about-button-container mb-1">
             <Link to="/projects">
               <button className="about-button">
                 <FontAwesomeIcon icon={faAngleLeft} />
