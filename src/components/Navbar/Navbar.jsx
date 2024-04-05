@@ -14,7 +14,6 @@ import "./Navbar.css";
 
 function Header() {
   const [expanded, setExpanded] = useState(false);
-
   const handleToggle = () => {
     setExpanded(!expanded);
   };
