@@ -38,9 +38,8 @@ function AboutMe() {
             <Card.Body>
               <h3>¡Hola! Soy Wanda Abreu,</h3>
               <Card.Text className="mt-3 ">
-                Desarrolladora web con experiencia en
-                Marketing, Diseño Gráfico, Administración de Empresas y Servicio
-                al Cliente.
+                Desarrolladora web con experiencia en Marketing, Diseño Gráfico,
+                Administración de Empresas y Servicio al Cliente.
               </Card.Text>
               <Card.Text className="mt-3 ">
                 Mis stacks técnicos incluyen:
@@ -52,14 +51,15 @@ function AboutMe() {
                   </Badge>
                 ))}
               </div>
-              <Card.Text className="mt-2">
-                En busqueda de oportunidades que me permitan expandir mi conocimiento en diversas
-                tecnologías digitales. Mi objetivo es aplicar y enriquecer mi
-                experiencia a traves de mis habilidades técnicas y transversales.
+              <Card.Text className="card-text mt-2">
+                En búsqueda de oportunidades que me permitan expandir mi
+                conocimiento en diversas tecnologías digitales. 🚀
               </Card.Text>
-              <Card.Text className="mt-2">
-              Creo firmemente en el poder de la perseverancia, el trabajo duro y la colaboración.
-               Además de mi pasión por la tecnología, disfruto de momentos de calma tejiendo y nunca digo que no a una buena taza de café.
+              <Card.Text className="card-text mt-2">
+                Creo firmemente en el poder de la perseverancia, el trabajo duro
+                y la colaboración. ✨ Además de mi pasión por la tecnología,
+                disfruto de momentos de calma tejiendo 🧶 y nunca digo que no a
+                una buena taza de café.☕
               </Card.Text>
             </Card.Body>
           </Card>

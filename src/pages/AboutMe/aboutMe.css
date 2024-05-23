@@ -9,10 +9,11 @@
   margin-bottom: 10vh;
   background-color: #8a2be2;
 }
-
+.card-text{
+  font-weight: 350;
+}
 div.card {
-  font-size: 1.2vw;
-  font-weight: 300;
+  font-size: 1.1vw;
   display: flex;
   color: white;
   background-color: transparent;
@@ -21,6 +22,7 @@ div.card {
 }
 div.card-section {
   display: flex;
+  font-weight: 300;
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
