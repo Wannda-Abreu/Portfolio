@@ -24,21 +24,20 @@ const marketingProjectsData = [
       contentType: "video"
     },
     {
-      title: "Creación de Blog informativo para la web del Hotel Caballero Errante",
+      title: "Creación de Blog informativo para la web del Hotel Caballero Errante.",
       contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712246722/Untitled_1280_x_1090_px_1_rgrveo.mp4",
       tooltip: "Haga clic para ver la demostración",
       contentType: "video"
     },
     {
-      title: "Blog personal, artículo “¿Dónde reservar hoteles? consejos esenciales.",
+      title: "Blog personal, artículo ¿Dónde reservar hoteles? consejos esenciales.",
       contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712250169/Untitled_1280_x_1090_px_6_t1ag8a.mp4",
       tooltip: "Haga clic para ver la demostración",
       contentType: "video"
     },
     {
-      title: "Creación y diseño de logos, reflejando su esencia e identidad de manera visual.",
+      title: "Creación y diseño de logos, reflejando su esencia e identidad visual.",
       contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1712273843/Untitled_1280_x_1090_px_2_apbrw1.png",
-      tooltip: "Haga clic para ver la demostración",
       contentType: "image"
     },
   ];

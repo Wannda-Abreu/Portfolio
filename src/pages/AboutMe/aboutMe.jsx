@@ -36,14 +36,14 @@ function AboutMe() {
         <Col md={6} className="card-section">
           <Card>
             <Card.Body>
-              <h3>¡Hola! Soy Wanda Abreu</h3>
+              <h3>¡Hola! Soy Wanda Abreu,</h3>
               <Card.Text className="mt-3 ">
-                Desarrolladora web Full Stack Junior con experiencia en
-                Marketing, Diseño Gráfico, Administración de Empresas y servicio
-                al cliente.
+                Desarrolladora web con experiencia en
+                Marketing, Diseño Gráfico, Administración de Empresas y Servicio
+                al Cliente.
               </Card.Text>
               <Card.Text className="mt-3 ">
-                Mis Stacks Técnicos Incluyen:
+                Mis stacks técnicos incluyen:
               </Card.Text>
               <div className="mt-2">
                 {technicalSkills.map((skills, index) => (
@@ -53,15 +53,13 @@ function AboutMe() {
                 ))}
               </div>
               <Card.Text className="mt-2">
-                Estoy en la búsqueda de oportunidades que me permitan
-                profundizar y expandir mi conocimiento en programación y
+                En busqueda de oportunidades que me permitan expandir mi conocimiento en diversas
                 tecnologías digitales. Mi objetivo es aplicar y enriquecer mi
-                experiencia, al tiempo que incorporo mis
-                competencias previas en áreas complementarias.
+                experiencia a traves de mis habilidades técnicas y transversales.
               </Card.Text>
               <Card.Text className="mt-2">
-                Creo firmemente en el poder de la perseverancia, el trabajo duro
-                y la colaboración.
+              Creo firmemente en el poder de la perseverancia, el trabajo duro y la colaboración.
+               Además de mi pasión por la tecnología, disfruto de momentos de calma tejiendo y nunca digo que no a una buena taza de café.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -84,7 +82,7 @@ function AboutMe() {
         </Col>
         <Col className="about-img-container p-0">
           <img
-            src="https://res.cloudinary.com/dqj4pvyva/image/upload/v1706523453/wanda_bmyrmt.avif"
+            src="https://res.cloudinary.com/dsyfal3wa/image/upload/v1716489969/Foto_de_Perfil_de_Instagram_Agente_Inmobiliario_Profesional_Morado_y_Celeste_Instagram_Post_1_wmur5s.avif"
             alt="programadora-fullstack"
             className="about-img"
           />
