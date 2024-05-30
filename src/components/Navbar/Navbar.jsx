@@ -1,14 +1,7 @@
 import { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSeedling,
-  faMugHot,
-  faDiagramProject,
-  faBars,
-  faTimes,
-  faContactBook,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSeedling, faMugHot, faDiagramProject, faBars, faTimes, faContactBook, faCertificate } from "@fortawesome/free-solid-svg-icons"; // Agregar el icono de certificado
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -83,6 +76,20 @@ function Header() {
                       icon={faContactBook}
                     />
                     <span className="nav-text mx-2">Contáctame</span>
+                  </Link>
+                </button>
+              </Nav.Item>
+              <Nav.Item>
+                <button onClick={handleToggle}>
+                  <Link
+                    to="/certifications"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <FontAwesomeIcon
+                      className="nav-icon d-flex align-items-center"
+                      icon={faCertificate} 
+                    />
+                    <span className="nav-text mx-2">Certificados educativos</span>
                   </Link>
                 </button>
               </Nav.Item>
