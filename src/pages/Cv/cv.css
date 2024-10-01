@@ -8,15 +8,18 @@
 }
 
 .cv-image {
-  width: 20vw;
+  width: 22vw;
 }
 
-.cv-button {
-  font-size: 1em;
+a.btn.btn-outline-primary{
+  font-size: .9em;
   color: blueviolet;
+  border-color: transparent;
+  font-weight: 500;
 }
-.cv-icon {
-  color:blueviolet
+a.btn.btn-outline-primary:hover{
+background-color: transparent;
+font-weight: 700;
 }
 
 @media (max-width: 768px) {

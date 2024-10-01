@@ -1,6 +1,7 @@
 import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css'; // Asegúrate de importar los estilos de zoom
-import "./cv.css";
+import 'react-medium-image-zoom/dist/styles.css'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faDownload } from '@fortawesome/free-solid-svg-icons'; 
 
 function MyCv() {
   return (
@@ -13,13 +14,16 @@ function MyCv() {
         />
       </Zoom>
 
-      <div className="download-container mt-3">
+      <div className="cv-button mt-3">
         <a 
           href="https://drive.google.com/file/d/12e8up99Dxd2c_RmkH-IPVPdPUl0t8_k1/view?usp=drive_link" 
-          className="btn btn-primary"
+          className="btn btn-outline-primary" 
           download 
         >
-          Descargar CV en PDF
+          <FontAwesomeIcon icon={faDownload}  className="me-2" />
+          
+           
+          Descargar Cv
         </a>
       </div>
     </div>
@@ -27,4 +31,3 @@ function MyCv() {
 }
 
 export default MyCv;
-
