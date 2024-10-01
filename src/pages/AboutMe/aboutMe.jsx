@@ -82,7 +82,7 @@ function AboutMe() {
         </Col>
         <Col className="about-img-container p-0">
           <img
-            src="https://res.cloudinary.com/dsyfal3wa/image/upload/v1716489969/Foto_de_Perfil_de_Instagram_Agente_Inmobiliario_Profesional_Morado_y_Celeste_Instagram_Post_1_wmur5s.avif"
+            src="https://res.cloudinary.com/dsyfal3wa/image/upload/q_auto:best/v1727787013/linkfoto_hoipu6.avif"
             alt="programadora-fullstack"
             className="about-img"
           />
