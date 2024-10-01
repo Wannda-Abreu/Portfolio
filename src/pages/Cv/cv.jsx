@@ -7,7 +7,7 @@ function MyCv() {
     <div className="cv-container mt-3">
       <img
         className="cv-image mt-2 img-fluid"
-        src="https://res.cloudinary.com/dsyfal3wa/image/upload/v1711401996/Untitled_design_13_zwvol1.avif"
+        src="https://res.cloudinary.com/dsyfal3wa/image/upload/wanda-abreu-cv-developer_sbcimt.pdf"
         alt="Curriculum Vitae"
       ></img>
       <div className="cv-button mt-2 mb-2">
