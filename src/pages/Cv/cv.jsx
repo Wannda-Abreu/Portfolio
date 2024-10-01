@@ -15,20 +15,6 @@ function MyCv() {
           alt="Curriculum Vitae"
         />
       </Zoom>
-      
-      <div className="cv-button mt-2 mb-2">
-        <button>
-          <a
-            className="cv-button"
-            href="https://wanda-cv.my.canva.site/wandaabreu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver en pantalla completa
-            <FontAwesomeIcon className="cv-icon mt-2" icon={faExpand} />
-          </a>
-        </button>
-      </div>
     </div>
   );
 }
