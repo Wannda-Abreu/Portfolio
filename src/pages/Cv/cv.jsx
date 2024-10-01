@@ -15,7 +15,7 @@ function MyCv() {
 
       <div className="download-container mt-3">
         <a 
-          href="https://res.cloudinary.com/dsyfal3wa/image/upload/q_auto:best/v1727788834/wanda-abreu-cv-developer_nz1fs1.webp" 
+          href="https://drive.google.com/file/d/12e8up99Dxd2c_RmkH-IPVPdPUl0t8_k1/view?usp=drive_link" 
           className="btn btn-primary"
           download 
         >
