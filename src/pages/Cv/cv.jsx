@@ -2,6 +2,8 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faDownload } from '@fortawesome/free-solid-svg-icons'; 
+import './cv.css';
+
 
 function MyCv() {
   return (
