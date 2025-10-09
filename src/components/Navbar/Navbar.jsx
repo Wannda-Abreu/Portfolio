@@ -13,8 +13,6 @@ import {
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-import cvFile from "../WandaAbreu-CV-WebDeveloper.pdf";
-
 function CustomNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -52,28 +50,47 @@ function CustomNavbar() {
           className={`navbar-collapse ${expanded ? "show" : ""}`}
         >
           <Nav className="navbar-links ms-auto">
-            <Nav.Link as={Link} to="/aboutme" className="nav-link" onClick={closeNavbar}>
+            <Nav.Link
+              as={Link}
+              to="/aboutme"
+              className="nav-link"
+              onClick={closeNavbar}
+            >
               <FontAwesomeIcon icon={faMugHot} className="nav-icon" />
               Sobre mí
             </Nav.Link>
+
             <Nav.Link
               href="/WandaAbreu-CV-WebDeveloper.pdf"
-               target="_blank"
-                rel="noopener noreferrer"
-                 className="nav-link"
-                  onClick={closeNavbar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+              onClick={closeNavbar}
             >
-            <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
-               Ver CV
+              <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
+              Ver CV
             </Nav.Link>
-            <Nav.Link as={Link} to="/projects" className="nav-link" onClick={closeNavbar}>
+
+            <Nav.Link
+              as={Link}
+              to="/projects"
+              className="nav-link"
+              onClick={closeNavbar}
+            >
               <FontAwesomeIcon icon={faCodeBranch} className="nav-icon" />
               Proyectos
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="nav-link" onClick={closeNavbar}>
+
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              className="nav-link"
+              onClick={closeNavbar}
+            >
               <FontAwesomeIcon icon={faAddressBook} className="nav-icon" />
               Contáctame
             </Nav.Link>
+
             <Nav.Link
               as={Link}
               to="/certifications"
