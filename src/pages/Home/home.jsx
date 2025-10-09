@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+iimport { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +13,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import "./home.css";
+
+import cvFile from "../WandaAbreu-CV-WebDeveloper.pdf";
 
 const technologies = [
   { icon: faGithub, name: "GitHub", key: "github" },
@@ -131,16 +133,17 @@ export default function Home() {
             <Link to="/aboutme" className="btn-modern">
               Sobre mí
             </Link>
-            <Link to="/mycv" className="btn-modern">
+            <a
+              href={cvFile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-modern"
+            >
               Ver CV
-            </Link>
+            </a>
           </div>
         )}
       </div>
     </Container>
   );
 }
-
-
-
-
