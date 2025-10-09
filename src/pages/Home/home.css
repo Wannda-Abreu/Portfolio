@@ -140,6 +140,29 @@
   box-shadow: 0 6px 18px rgba(104, 72, 255, 0.25);
   transform: translateY(-2px);
 }
+.cv-buttons,
+.cv-button-pair {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-outline,
+.btn-aboutme.btn-secondary {
+  background: transparent;
+  color: #6848ff;
+  border: 2px solid #6848ff;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover,
+.btn-aboutme.btn-secondary:hover {
+  background: #6848ff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 
 @media (max-width: 1024px) {
   .typewriter-text {
