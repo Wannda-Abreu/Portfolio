@@ -56,18 +56,16 @@ function CustomNavbar() {
               <FontAwesomeIcon icon={faMugHot} className="nav-icon" />
               Sobre mí
             </Nav.Link>
-
-             <Nav.Link
-  href="/WandaAbreu-CV-WebDeveloper.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="nav-link"
-  onClick={closeNavbar}
->
-  <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
-  Ver CV
-</Nav.Link>
-
+            <Nav.Link
+              href="/WandaAbreu-CV-WebDeveloper.pdf"
+               target="_blank"
+                rel="noopener noreferrer"
+                 className="nav-link"
+                  onClick={closeNavbar}
+            >
+            <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
+               Ver CV
+            </Nav.Link>
             <Nav.Link as={Link} to="/projects" className="nav-link" onClick={closeNavbar}>
               <FontAwesomeIcon icon={faCodeBranch} className="nav-icon" />
               Proyectos
