@@ -57,17 +57,16 @@ function CustomNavbar() {
               Sobre mí
             </Nav.Link>
 
-            {/* ✅ Link directo al PDF importado */}
-            <Nav.Link
-              href={cvFile}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link"
-              onClick={closeNavbar}
-            >
-              <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
-              CV
-            </Nav.Link>
+             <Nav.Link
+  href="/WandaAbreu-CV-WebDeveloper.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="nav-link"
+  onClick={closeNavbar}
+>
+  <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
+  Ver CV
+</Nav.Link>
 
             <Nav.Link as={Link} to="/projects" className="nav-link" onClick={closeNavbar}>
               <FontAwesomeIcon icon={faCodeBranch} className="nav-icon" />
