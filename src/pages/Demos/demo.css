@@ -1,3 +1,4 @@
+/* 🎨 SECCIÓN GENERAL */
 section.demo-section {
   width: 100%;
   min-height: 90vh;
@@ -8,6 +9,8 @@ section.demo-section {
   background: linear-gradient(180deg, #faf8ff 0%, #ffffff 100%);
   box-sizing: border-box;
 }
+
+/* CONTENEDOR */
 .demo-content {
   display: flex;
   width: 100%;
@@ -40,6 +43,8 @@ section.demo-section {
     transform: translateY(0);
   }
 }
+
+/* TEXTO */
 .demo-text {
   flex: 1 1 400px;
   color: #3b0070;
@@ -141,6 +146,7 @@ section.demo-section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* 💻 Efecto de marco flotante */
 .demo-preview {
   background: linear-gradient(180deg, #ffffff, #f8f4ff);
   border: 1px solid rgba(160, 100, 255, 0.15);
@@ -185,6 +191,8 @@ section.demo-section {
   transform: scale(1.01);
   box-shadow: 0 14px 36px rgba(104, 72, 255, 0.25);
 }
+
+/* ----------- DESKTOP Y TABLET ----------- */
 @media (min-width: 768px) {
   .demo-content {
     gap: 3rem;
@@ -202,6 +210,8 @@ section.demo-section {
     height: 100%;
   }
 }
+
+/* ----------- TABLET ----------- */
 @media (max-width: 991px) {
   .demo-content {
     flex-direction: column;
@@ -227,6 +237,7 @@ section.demo-section {
   }
 }
 
+/* ----------- MÓVIL ----------- */
 @media (max-width: 600px) {
   section.demo-section {
     padding: 1.8rem 1rem;
@@ -282,5 +293,6 @@ section.demo-section {
     border-radius: 0.8rem;
   }
 }
+
 
 
