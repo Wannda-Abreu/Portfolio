@@ -1,33 +1,38 @@
 import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faReact, faJs } from "@fortawesome/free-brands-svg-icons";
+import { faReact, faBootstrap, faSass } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import "./demo.css";
 
-function CatchACoderDemo() {
+function SanitalDemo() {
   return (
     <section className="demo-section m-0 p-0">
       <Container fluid className="demo-content">
         <div className="demo-text">
-          <h1 className="demo-title">Catch A Coder · App interactiva</h1>
+          <h1 className="demo-title">Sanital · Clínica Digital</h1>
           <p className="demo-description">
-            Juego web educativo para reforzar conceptos de programación con una dinámica divertida.  
-            Desarrollado en React, totalmente responsive y accesible.
+            Plataforma médica centrada en el paciente.  
+            Desarrollada con enfoque UX/UI para ofrecer una experiencia fluida,  
+            moderna y accesible en la gestión de citas y servicios médicos.
           </p>
+
           <div className="language-usage">
             <FontAwesomeIcon icon={faReact} className="stack-icons" />
-            <FontAwesomeIcon icon={faJs} className="stack-icons" />
+            <FontAwesomeIcon icon={faBootstrap} className="stack-icons" />
+            <FontAwesomeIcon icon={faSass} className="stack-icons" />
           </div>
+
           <div className="demo-buttons">
             <a
-              href="https://afterdarkv1.github.io/Catch-a-Coder/"
+              href="https://www.sanital.es"
               target="_blank"
               rel="noopener noreferrer"
               className="live-demo-button"
             >
-              Jugar ahora <FontAwesomeIcon icon={faArrowRight} />
+              Ver sitio en vivo <FontAwesomeIcon icon={faArrowRight} />
             </a>
+
             <Link to="/projects" className="back-button">
               <FontAwesomeIcon icon={faArrowLeft} /> Volver
             </Link>
@@ -36,8 +41,8 @@ function CatchACoderDemo() {
 
         <div className="demo-preview">
           <iframe
-            src="https://afterdarkv1.github.io/Catch-a-Coder/"
-            title="Catch A Coder Preview"
+            src="https://www.sanital.es"
+            title="Sanital Preview"
             loading="lazy"
             allowFullScreen
           ></iframe>
@@ -47,4 +52,4 @@ function CatchACoderDemo() {
   );
 }
 
-export default CatchACoderDemo;
+export default SanitalDemo;

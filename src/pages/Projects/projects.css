@@ -1,101 +1,159 @@
 .projects-container {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: #f1effb;
-  margin-bottom: 20vh;
-}
-.card-container {
-  padding: 2vh;
-  width: 100%;
-  height: 60vh;
-}
-button.marketing-button{
-  color: blueviolet;
-  font-size: 1.1em;
-}
-button.marketing-button:hover{
-  color: blueviolet;
-  font-weight: 600;
+  background: linear-gradient(180deg, #f9f6ff 0%, #ffffff 100%);
+  min-height: 80vh;
 }
 
-.projects-description {
-  text-align: center;
-  font-size: 3vh;
-  color: #555;
+.projects-title {
+  font-size: clamp(1.2rem, 2vw, 2.2rem);
+  font-weight: 600;
+  color: #4b0082;
+  margin-bottom: 0.8rem;
 }
-div.project-title.card {
-  width: 100%;
-  color: #333;
+
+.projects-intro {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.7;
+  color: #5a4b8a;
+  max-width: 640px;
+  margin: 0 auto;
 }
-div.project-card.card {
-  width: 100%;
-  height: auto;
-  color: #333;
+
+/* Tarjetas */
+.project-card {
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(104, 72, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(104, 72, 255, 0.15);
 }
 
-.card-img-top {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.project-image-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
-.card-img-top:hover {
-  transform: scale(1.03);
-  opacity: 0.9;
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.08);
 }
 
 .project-title {
-  text-align: center;
-  color: #333;
-}
-.card-text{
-  font-size: 1em;
-  font-weight: 600;
-}
-button.demo-button {
-  background-color: transparent;
-  border: 2px solid blueviolet;
-  color: blueviolet;
-  padding: 0.3rem 0.5rem;
-  border-radius: 5px;
-  font-size: 1em;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  width: 100%;
-  text-align: center;
-}
-
-button.demo-button:hover {
+  color: #2a225a;
+  font-size: 1rem;
   font-weight: 700;
+  margin-top: 0.8rem;
 }
-@media (max-width: 1020px) {
-  .card-container {
-    flex-direction: column;
-    width: 80%;
-    height: 100%;
-  }
-  .projects-container {
-    font-size: 1.4vh;
-    height: 100%;
-    justify-content: space-between;
+
+.project-description {
+  color: #4f4f66;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.project-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-tag {
+  background: #efe9ff;
+  color: #6848ff;
+  font-weight: 600;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.8rem;
+  transition: background 0.3s ease;
+}
+
+.project-tag:hover {
+  background: #e3dcff;
+}
+
+/* Botón moderno */
+.demo-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid #6848ff;
+  color: #6848ff;
+  font-weight: 600;
+  background: rgba(104, 72, 255, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.demo-button:hover {
+  background: linear-gradient(90deg, #6848ff, #a566ff);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(104, 72, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.demo-button .cta-icon {
+  transition: transform 0.3s ease;
+}
+
+.demo-button:hover .cta-icon {
+  transform: translateX(5px);
+}
+
+/* CTA final */
+.projects-cta-text {
+  color: #4f4f66;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.projects-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 50px;
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(90deg, #6848ff, #a566ff);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(104, 72, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.projects-secondary-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(104, 72, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .project-image {
+    height: 150px;
   }
 
-  div.project-card.card {
-    display: flex;
-    margin-top: 1.5rem;
-    justify-content: space-between;
+  .projects-grid {
+    gap: 1.5rem;
   }
-  .projects-description {
-    padding: 1.8rem;
-    text-align: center;
-    font-size: 1.8vh;
+
+  .projects-cta {
+    margin-top: 3rem;
   }
 }
+

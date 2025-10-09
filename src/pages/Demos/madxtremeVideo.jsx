@@ -1,88 +1,53 @@
-import { useRef } from "react";
+import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faReact,
-  faJs,
-  faBootstrap,
-  faNodeJs,
-  faCss3Alt,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faArrowAltCircleLeft,
-  faArrowAltCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import "./demo.css";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faReact, faBootstrap, faJs } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import "./demo.css";
 
-function MadxtremeDemo() {
-  const videoRef = useRef(null);
-
-  const handlePlayVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-
-  const technologyIcons = [
-    { icon: faReact, name: "React" },
-    { icon: faJs, name: "JavaScript" },
-    { icon: faNodeJs, name: "Node.js" },
-    { icon: faBootstrap, name: "Bootstrap" },
-    { icon: faCss3Alt, name: "CSS3" },
-  ];
-
+function MadXtremDemo() {
   return (
-    <div className="video-container">
-      <div className="title-video m-2 p-4">
-        <h5>¡Bienvenido a la demo de Madxtreme!</h5>
-        <h6 className="text-video mt-3">
-          Proyecto de Web e-commerce creada para la venta de actividades
-          extremas en la sierra de Madrid, con interfaz atractiva y amigable al
-          usuario.
-        </h6>
-        <h6>
-          La aplicación incorpora varias tecnologías para su correcto
-          funcionamiento:
-        </h6>
-        <div className="language-usage mt-2">
-          {technologyIcons.map((tech, index) => (
-            <OverlayTrigger
-              key={index}
-              placement="top"
-              overlay={
-                <Tooltip id={`tooltip-${tech.name}`}>{tech.name}</Tooltip>
-              }
+    <section className="demo-section p-0">
+      <Container fluid className="demo-content p-3">
+        <div className="demo-text">
+          <h1 className="demo-title">MadXtrem · E-commerce</h1>
+          <p className="demo-description">
+            Marketplace de experiencias outdoor con diseño claro, intuitivo y enfoque en la conversión.  
+            Arquitectura optimizada y navegación fluida en React y Bootstrap.
+          </p>
+          <div className="language-usage">
+            <FontAwesomeIcon icon={faReact} className="stack-icons" />
+            <FontAwesomeIcon icon={faBootstrap} className="stack-icons" />
+            <FontAwesomeIcon icon={faJs} className="stack-icons" />
+          </div>
+          <div className="demo-buttons">
+            <a
+              href="https://madxtreme.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="live-demo-button"
             >
-              <div className="stack-icons text-white">
-                <FontAwesomeIcon icon={tech.icon} />
-              </div>
-            </OverlayTrigger>
-          ))}
+              Ver sitio en vivo <FontAwesomeIcon icon={faArrowRight} />
+            </a>
+            <Link to="/projects" className="back-button">
+              <FontAwesomeIcon icon={faArrowLeft} /> Volver
+            </Link>
+          </div>
         </div>
-        <h6 className="mt-2">
-          Haz clic en el video a continuación para ver las funcionalidades.
-        </h6>
-        <div className="play-projects-button">
-          <Link to="/projects">
-            <button className="mt-3">
-              <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleLeft} />
-                 <h6> Proyectos </h6>
-            </button>
-          </Link>
-          <button className="play-demo-button mx-5" onClick={handlePlayVideo}>
-            <FontAwesomeIcon className="mx-2" icon={faArrowAltCircleRight} />
-            <h5> Play Demo </h5>
-          </button>
+
+        <div className="demo-preview">
+          <iframe
+            src="https://madextreme.vercel.app/"
+            title="MadXtrem Preview"
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
         </div>
-      </div>
-      <video
-        ref={videoRef}
-        src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1706490641/demomadextreme_potmic.mp4"
-        controls
-      ></video>
-    </div>
+      </Container>
+    </section>
   );
 }
 
-export default MadxtremeDemo;
+export default MadXtremDemo;
+
+

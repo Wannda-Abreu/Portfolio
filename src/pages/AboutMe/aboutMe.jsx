@@ -1,93 +1,113 @@
-import { Container, Row, Col, Card, Badge } from "react-bootstrap";
+import { Container, Card, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleRight,
+  faAngleLeft,
+  faLaptopCode,
+  faPalette,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faReact,
+  faJs,
+  faCss3Alt,
+  faNodeJs,
+  faBootstrap,
+  faSass,
+} from "@fortawesome/free-brands-svg-icons";
 import { Helmet } from "react-helmet";
-
 import "./aboutMe.css";
 
-function AboutMe() {
-  const technicalSkills = [
-    "HTML",
-    "CSS",
-    "Sass",
-    "JavaScript",
-    "Typescript",
-    "React",
-    "Angular",
-    "Bootstrap",
-    "Node.js",
-    "MySQL",
-    "Figma",
-    "Adobe Creative",
-    "Wordpress",
-  ];
+const skillsWithIcons = [
+  { name: "HTML", icon: faLaptopCode },
+  { name: "CSS", icon: faCss3Alt },
+  { name: "Sass", icon: faSass },
+  { name: "JavaScript", icon: faJs },
+  { name: "Typescript", icon: faLaptopCode },
+  { name: "React", icon: faReact },
+  { name: "Angular", icon: faLaptopCode },
+  { name: "Bootstrap", icon: faBootstrap },
+  { name: "Node.js", icon: faNodeJs },
+  { name: "MySQL", icon: faLaptopCode },
+  { name: "Figma", icon: faPalette },
+  { name: "Adobe Creative", icon: faPalette },
+  { name: "Wordpress", icon: faLaptopCode },
+];
 
+function AboutMe() {
   return (
-    <Container>
+    <Container fluid className="aboutme-wrapper">
       <Helmet>
         <title>Wanda Abreu - Desarrolladora Full Stack Junior</title>
         <meta
           name="description"
-          content="Soy Wanda Abreu, una desarrolladora web Full Stack Junior con experiencia en marketing, diseño, y más. Explora mi portafolio y CV."
+          content="Soy Wanda Abreu, una desarrolladora web Full Stack Junior con enfoque UX/UI y experiencia en marketing y diseño. Descubre mis proyectos y trayectoria."
         />
       </Helmet>
-      <Row className="aboutme-container">
-        <Col md={6} className="card-section">
-          <Card>
-            <Card.Body>
-              <h3>¡Hola! Soy Wanda Abreu,</h3>
-              <Card.Text className="mt-3 ">
-                Desarrolladora web con experiencia en Marketing, Diseño Gráfico,
-                Administración de Empresas y Servicio al Cliente.
-              </Card.Text>
-              <Card.Text className="mt-3 ">
-                Mis stacks técnicos incluyen:
-              </Card.Text>
-              <div className="mt-2">
-                {technicalSkills.map((skills, index) => (
-                  <Badge key={index} className="skills-badge">
-                    {skills}
-                  </Badge>
-                ))}
-              </div>
-              <Card.Text className="card-text mt-2">
-                En búsqueda de oportunidades que me permitan expandir mi
-                conocimiento en diversas tecnologías digitales. 🚀
-              </Card.Text>
-              <Card.Text className="card-text mt-2">
-                Creo firmemente en el poder de la perseverancia, el trabajo duro
-                y la colaboración. ✨ Además de mi pasión por la tecnología,
-                disfruto de momentos de calma tejiendo 🧶 y nunca digo que no a
-                una buena taza de café.☕
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <div className="about-button-container mb-1">
-            <Link to="/projects">
-              <button className="about-button">
-                <FontAwesomeIcon icon={faAngleLeft} />
-                Proyectos
-                <FontAwesomeIcon icon={faAngleRight} />
-              </button>
-            </Link>
-            <Link to="/mycv">
-              <button className="about-button mx-5">
-                <FontAwesomeIcon icon={faAngleLeft} />
-                Ver CV
-                <FontAwesomeIcon icon={faAngleRight} />
-              </button>
-            </Link>
-          </div>
-        </Col>
-        <Col className="about-img-container p-0">
+
+      <div className="aboutme-content">
+        <div className="aboutme-photo-container mt-2">
           <img
             src="https://res.cloudinary.com/dsyfal3wa/image/upload/q_auto:best/v1727787013/linkfoto_hoipu6.avif"
-            alt="programadora-fullstack"
-            className="about-img"
+            alt="Wanda Abreu - Desarrolladora Full Stack Junior"
+            className="aboutme-photo"
+            loading="lazy"
           />
-        </Col>
-      </Row>
+          <div className="button-group">
+            <Link to="/projects" className="btn-aboutme">
+              <FontAwesomeIcon icon={faAngleLeft} /> Proyectos{" "}
+              <FontAwesomeIcon icon={faAngleRight} />
+            </Link>
+            <Link to="/mycv" className="btn-aboutme">
+              <FontAwesomeIcon icon={faAngleLeft} /> Ver CV{" "}
+              <FontAwesomeIcon icon={faAngleRight} />
+            </Link>
+          </div>
+        </div>
+
+        <div className="aboutme-text">
+          <Card.Text className="intro">
+            Desarrolladora web junior con enfoque UX/UI, que combina creatividad
+            y lógica para crear soluciones digitales atractivas y funcionales.
+            Busco retos que me impulsen a crecer y aportar valor, con pasión y
+            trabajo en equipo.
+          </Card.Text>
+
+          <h5 className="skills-title">Tecnologías & Herramientas</h5>
+          <div className="skills-container">
+            {skillsWithIcons.map(({ name, icon }, i) => (
+              <Badge key={i} className="skill-badge" title={name}>
+                <FontAwesomeIcon icon={icon} className="skill-icon" /> {name}
+              </Badge>
+            ))}
+          </div>
+
+          <div className="aboutme-education">
+            <h5>Educación & Experiencia</h5>
+            <ul>
+              <li>
+                <strong>Bootcamp Full Stack Developer</strong> – Orange Digital
+                Center / Factoría F5 (2023)
+              </li>
+              <li>
+                <strong>Taller Programación Introductoria</strong> – 42 Madrid
+                Fundación Telefónica (2023)
+              </li>
+              <li>
+                <strong>Marketing Digital</strong> – Aula CM (2019-2020)
+              </li>
+              <li>
+                <strong>BBA Marketing</strong> – Caribbean University
+                (2008-2012)
+              </li>
+              <li>
+                <strong>Experiencia Profesional:</strong> Freelancer y
+                Administrativo (2024 - Presente)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </Container>
   );
 }

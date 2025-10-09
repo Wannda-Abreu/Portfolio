@@ -1,94 +1,142 @@
-.div.nav.navbar-nav {
-  width: 100%;
-  display: flex;
-}
-
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 10vh;
-}
-nav.navbar.navbar-expand-lg {
-  display: flex;
-  width: 100%;
-}
-.navbar-collapse {
-  display: flex;
-  justify-content: flex-end;
-}
-.nav-icon {
-  display: flex;
-  align-items: center;
-  font-size: 1.1em;
-  color: #8a2be2;
-  transition: color 0.3s ease-in-out;
+  padding: 0.8rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #b37de0, #ae42f4, #5f3dc4, #b37de0);
+  border-image-slice: 1;
+  animation: borderGlow 8s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(104, 72, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
 }
 
-.nav-text {
-  display: flex;
-  padding: 0.5rem 0rem;
-  align-items: center;
-  color: blueviolet;
-  font-size: 1em;
+.navbar-container.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 20px rgba(104, 72, 255, 0.15);
 }
 
-.nav-text:hover {
-  text-decoration: underline;
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 a.name {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 1.7em;
-  color: blueviolet;
-  margin-bottom: 0;
-  width: auto;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(270deg, #ae42f4, #5f3dc4, #b37de0, #ae42f4);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 10s ease infinite;
   text-decoration: none;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
 }
 
-a.name:hover {
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
   font-weight: 600;
+  font-size: 1.05rem;
+  color: #4b3fa6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #ae42f4;
+  background-color: rgba(174, 66, 244, 0.05);
+}
+
+.nav-icon {
+  font-size: 1.1em;
+  margin-right: 0.5rem;
+  color: #7b42e0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+  transform: translateY(-2px);
+  color: #ae42f4;
+}
+
+.custom-toggler {
+  display: none;
 }
 
 @media (max-width: 991px) {
-  .navbar-collapse {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0rem;
-    width: 100%;
-    height: fit-content;
-    background-color: rgb(255, 255, 255);
-    z-index: 1;
-  }
-
-  .navbar {
-    width: 100%;
-    height: auto;
-  }
-
-  a.name {
-    font-size: 1.7em;
-  }
-
-  button.navbar-toggler {
-    font-size: 2em;
-    border: 0px solid transparent;
-    color: #8a2be2;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-  }
-  button.navbar-toggler:focus {
-    font-size: 2em;
+  .custom-toggler {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+    top: 0.9rem;
+    font-size: 1.8rem;
+    color: #5f3dc4;
+    background: none;
     border: none;
-    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    z-index: 1100;
   }
-  button.navbar-toggler:hover {
-    font-size: 2em;
+
+  .custom-toggler.open {
+    color: #ae42f4;
+    transform: rotate(90deg);
   }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 25px rgba(104, 72, 255, 0.15);
+    border-radius: 0 0 18px 18px;
+    padding: 1.5rem 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+
+  .navbar-collapse.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-image-source: linear-gradient(90deg, #b37de0, #ae42f4, #5f3dc4, #b37de0); }
+  50% { border-image-source: linear-gradient(90deg, #5f3dc4, #b37de0, #ae42f4, #5f3dc4); }
 }

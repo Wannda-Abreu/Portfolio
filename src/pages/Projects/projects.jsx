@@ -8,99 +8,133 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleRight,
+  faAngleLeft,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import "./projects.css";
 
 const projectsData = [
   {
-    title: "App para automatizar citas.",
+    title: "Sanital · Clínica digital",
     image:
-      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524574/proyecto1_iykiwt.avif",
+      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/1_chf8yx.svg",
+    link: "/sanitaldemo",
+    tooltip: "Plataforma médica centrada en el paciente.",
+    description: "Web centrada en el paciente.",
+  },
+  {
+    title: "App de citas automáticas",
+    image:
+      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/2_d7vrlf.svg",
     link: "/roperodemo",
-    tooltip: "Una aplicación para gestionar y automatizar la reserva de citas.",
-  },
-  {
-    title: "E-comerce de actividades.",
-    image:
-      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524573/proyecto2_n88i32.avif",
-    link: "/madxtremedemo",
     tooltip:
-      "Plataforma de comercio electrónico especializada en la venta de actividades y experiencias.",
+      "Interfaz funcional que optimiza la gestión de citas en tiempo real.",
+    description: "App que automatiza reservas.",
   },
   {
-    title: "App para elegir alumnos.",
+    title: "MadXtrem · E-commerce",
     image:
-      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524570/proyecto4_thduoa.avif",
+      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601983/3_hfabvz.svg",
+    link: "/madxtremedemo",
+    tooltip: "Marketplace de experiencias outdoor.",
+    description: "Marketplace de actividades.",
+  },
+  {
+    title: "Random Class App",
+    image:
+      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/4_qxiz7k.svg",
     link: "/coderdemo",
     tooltip:
-      "Herramienta para facilitar la selección de alumnos en entornos educativos.",
-  },
-  {
-    title: "Web de asesores digitales.",
-    image:
-      "https://res.cloudinary.com/dqj4pvyva/image/upload/v1706524571/proyecto3_websqj.avif",
-    link: "/crafterdemo",
-    tooltip:
-      "Sitio web dedicado a la oferta de servicios de asesoramiento digital.",
+      "App educativa que dinamiza clases con selección aleatoria.",
+    description: "App web educativa y dinámica.",
   },
 ];
 
 function Projects() {
   return (
-    <Container className="projects-container">
-      <Row className="mt-3">
-        <Col>
-          <h3 className="projects-description mb-4">
-            Selección de trabajos personales y colaborativos.
-          </h3>
+    <Container fluid className="projects-container px-4 py-4">
+      <Row className="justify-content-center text-center projects-header mb-4">
+        <Col lg={8}>
+          <h1 className="projects-title fade-in">
+            Interfaces claras, accesibles y funcionales.
+          </h1>
         </Col>
       </Row>
-      <Row className="card-container mt-3">
-        {projectsData.map((project, index) => (
-          <Col key={index} className="">
-            <Card className="project-card">
+
+      <Row className="projects-grid g-4 justify-content-center">
+        {projectsData.map((project, index) => {
+          const isExternal = project.link.startsWith("http");
+          const ActionComponent = isExternal ? "a" : Link;
+          const actionLabel = isExternal
+            ? "Explorar proyecto"
+            : "Ver demo interactiva";
+          const actionProps = isExternal
+            ? {
+                href: project.link,
+                target: "_blank",
+                rel: "noopener noreferrer",
+              }
+            : { to: project.link };
+
+          return (
+            <Col key={project.title} xs={12} sm={6} lg={3}>
               <OverlayTrigger
                 placement="top"
-                overlay={
-                  <Tooltip id={`tooltip-title-${index}`}>
-                    {project.tooltip}
-                  </Tooltip>
-                }
+                overlay={<Tooltip>{project.tooltip}</Tooltip>}
               >
-                <Link to={project.link} className="image-link">
-                  <Card.Img variant="top" src={project.image} />
-                </Link>
+                <Card className="project-card h-100">
+                  <div className="project-image-wrapper">
+                    <Card.Img
+                      variant="top"
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image"
+                      loading="lazy"
+                    />
+                  </div>
+                  <Card.Body className="d-flex flex-column text-center">
+                    <Card.Title className="project-title">
+                      {project.title}
+                    </Card.Title>
+                    <Card.Text className="project-description">
+                      {project.description}
+                    </Card.Text>
+                    <div className="mt-auto">
+                      <ActionComponent
+                        {...actionProps}
+                        className="demo-button"
+                        aria-label={`${actionLabel}: ${project.title}`}
+                      >
+                        {actionLabel}
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="cta-icon"
+                        />
+                      </ActionComponent>
+                    </div>
+                  </Card.Body>
+                </Card>
               </OverlayTrigger>
-              <Card.Body>
-                <Card.Text className="card-text">{project.title}</Card.Text>
-                <OverlayTrigger
-                  placement="top"
-                  overlay={
-                    <Tooltip id={`tooltip-demo-${index}`}>
-                      Haga clic para ver la demostración
-                    </Tooltip>
-                  }
-                >
-                  <Link to={project.link} className="demo-button-link">
-                    <button className="demo-button mt-3">Ver Demo</button>
-                  </Link>
-                </OverlayTrigger>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-        <Row className="marketing-button text-center mt-3">
-          <Link to="/marketingprojects">
-            <button className="marketing-button mt-1">
-              <FontAwesomeIcon className="button " icon={faAngleLeft} />
-              Ver Proyectos de Marketing
-              <FontAwesomeIcon className="button " icon={faAngleRight} />
-            </button>
-          </Link>
-        </Row>
+            </Col>
+          );
+        })}
       </Row>
+
+      <div className="projects-cta text-center mt-5">
+        <p className="projects-cta-text">
+          ¿Buscas colaboración en diseño o producto digital?
+        </p>
+        <Link to="/contact" className="projects-secondary-link">
+          <FontAwesomeIcon icon={faAngleLeft} />
+          Conversemos sobre tu proyecto
+          <FontAwesomeIcon icon={faAngleRight} />
+        </Link>
+      </div>
     </Container>
   );
 }
 
 export default Projects;
+

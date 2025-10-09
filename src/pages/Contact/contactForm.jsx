@@ -17,7 +17,7 @@ function ContactForm() {
   
 
   return (
-    <Container className="form-wrapper">
+    <Container fluid className="form-wrapper">
       <Form onSubmit={handleSubmit}>
         <FormGroup className="form-name-group">
           <FormLabel htmlFor="name">Nombre</FormLabel>

@@ -1,88 +1,50 @@
-import { useRef } from "react";
+import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faReact,
-  faJs,
-  faCss3Alt,
-  faBootstrap,
-  faNodeJs,
-} from "@fortawesome/free-brands-svg-icons";
-import { faT } from "@fortawesome/free-solid-svg-icons";
-import {
-  faArrowAltCircleLeft,
-  faArrowAltCircleRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import "./demo.css";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faNodeJs, faJs, faBootstrap } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import "./demo.css";
 
 function RoperoSolidarioDemo() {
-  const videoRef = useRef(null);
-
-  const handlePlayVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
-  };
-  const technologies = [
-    { icon: faReact, name: "React" },
-    { icon: faJs, name: "JavaScript" },
-    { icon: faNodeJs, name: "Node.js" },
-    { icon: faBootstrap, name: "Bootstrap" },
-    { icon: faCss3Alt, name: "CSS3" },
-    { icon: faT, name: "TypeScript" },
-  ];
-
-  const renderTechIcon = (tech, index) => (
-    <OverlayTrigger
-      key={index}
-      placement="top"
-      overlay={<Tooltip id={`tooltip-tech-${index}`}>{tech.name}</Tooltip>}
-    >
-      <div className="stack-icons text-white">
-        {tech.isText ? tech.name : <FontAwesomeIcon icon={tech.icon} />}
-      </div>
-    </OverlayTrigger>
-  );
-
   return (
-    <div className="video-container p-4">
-      <div className="title-video p-3">
-        <h5>¡Bienvenido a la demo de Ropero solidario!</h5>
-        <h6 className="text-video mt-2">
-          Proyecto creado para la fundación San José, con el fin de automatizar
-          citas. La plataforma se centra en proporcionar una interfaz amigable y
-          accesible.
-        </h6>
-        <h6 className="mt-2">
-          La aplicación incorpora la siguientes tecnologías de desarrollo web
-          para asegurar una experiencia fluida y responsiva:
-        </h6>
-        <div className="language-usage p-2">
-          {technologies.map(renderTechIcon)}
+    <section className="demo-section m-0 p-0">
+      <Container fluid className="demo-content">
+        <div className="demo-text">
+          <h1 className="demo-title">Ropero Solidario · App Web</h1>
+          <p className="demo-description">
+            Plataforma para gestionar donaciones de ropa y reservas automáticas.  
+            Centrada en accesibilidad, experiencia de usuario y optimización backend con Node.js.
+          </p>
+          <div className="language-usage">
+            <FontAwesomeIcon icon={faNodeJs} className="stack-icons" />
+            <FontAwesomeIcon icon={faJs} className="stack-icons" />
+            <FontAwesomeIcon icon={faBootstrap} className="stack-icons" />
+          </div>
+          <div className="demo-buttons">
+            <a
+              href="https://wannda-abreu.github.io/ropero-solidario/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="live-demo-button"
+            >
+              Explorar demo <FontAwesomeIcon icon={faArrowRight} />
+            </a>
+            <Link to="/projects" className="back-button">
+              <FontAwesomeIcon icon={faArrowLeft} /> Volver
+            </Link>
+          </div>
         </div>
-        <h6 className="mt-1">
-          Haz clic en el video a continuación para ver las funcionalidades.
-        </h6>
-        <div className="play-projects-button mt-1">
-          <Link to="/projects">
-            <button className="">
-              <FontAwesomeIcon icon={faArrowAltCircleLeft} className="mx-2" />
-              <h6> Proyectos </h6>
-            </button>
-          </Link>
-          <button className="play-demo-button mx-5" onClick={handlePlayVideo}>
-            <FontAwesomeIcon icon={faArrowAltCircleRight} className="mx-2" />
-            <h5> Play Demo </h5>
-          </button>
+
+        <div className="demo-preview">
+          <iframe
+            src="https://wannda-abreu.github.io/ropero-solidario/"
+            title="Ropero Solidario Preview"
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
         </div>
-      </div>
-      <video
-        ref={videoRef}
-        src="https://res.cloudinary.com/dqj4pvyva/video/upload/v1706490641/roperosolidariodemo_zzto2d.mp4"
-        controls
-      ></video>
-    </div>
+      </Container>
+    </section>
   );
 }
 
