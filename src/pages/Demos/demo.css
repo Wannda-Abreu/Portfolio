@@ -14,7 +14,7 @@ section.demo-section {
 .demo-content {
   display: flex;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -46,7 +46,7 @@ section.demo-section {
 
 /* TEXTO */
 .demo-text {
-  flex: 1 1 400px;
+  flex: 1 1 420px;
   color: #3b0070;
   display: flex;
   flex-direction: column;
@@ -131,47 +131,26 @@ section.demo-section {
   color: #fff;
 }
 
-/* DEMO PREVIEW */
+/* DEMO PREVIEW — versión mejorada */
 .demo-preview {
-  flex: 1 1 500px;
+  flex: 1 1 650px;
+  max-width: 800px;
+  width: 100%;
+  height: 480px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 1.2rem;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(104, 72, 255, 0.15);
-  position: relative;
-  aspect-ratio: 16 / 9;
-  background: #f7f5ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 💻 Efecto de marco flotante */
-.demo-preview {
   background: linear-gradient(180deg, #ffffff, #f8f4ff);
   border: 1px solid rgba(160, 100, 255, 0.15);
   box-shadow: 0 8px 25px rgba(104, 72, 255, 0.15),
     inset 0 0 12px rgba(174, 66, 244, 0.05);
-}
-
-.demo-preview::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 15%;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0)
-  );
-  pointer-events: none;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
+  position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
 .demo-preview:hover {
-  transform: translateY(-4px);
   box-shadow: 0 14px 36px rgba(104, 72, 255, 0.25),
     inset 0 0 14px rgba(174, 66, 244, 0.08);
 }
@@ -183,32 +162,23 @@ section.demo-section {
   border: none;
   border-radius: 1.2rem;
   object-fit: cover;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.demo-preview:hover iframe,
-.demo-preview:hover video {
-  transform: scale(1.01);
-  box-shadow: 0 14px 36px rgba(104, 72, 255, 0.25);
-}
-
-/* ----------- DESKTOP Y TABLET ----------- */
-@media (min-width: 768px) {
-  .demo-content {
-    gap: 3rem;
-    padding: 3rem 2.5rem;
-  }
-
-  .demo-preview {
-    flex: 1 1 600px;
-    max-width: 700px;
-    aspect-ratio: 16 / 9;
-    transform: scale(1.05);
-  }
-
-  .demo-preview iframe {
-    height: 100%;
-  }
+/* reflejo superior */
+.demo-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  pointer-events: none;
 }
 
 /* ----------- TABLET ----------- */
@@ -226,9 +196,9 @@ section.demo-section {
 
   .demo-preview {
     order: 2;
+    height: 400px;
     width: 100%;
     max-width: 700px;
-    aspect-ratio: 16 / 9;
     margin-top: 1rem;
   }
 
@@ -271,7 +241,7 @@ section.demo-section {
   .demo-buttons {
     flex-direction: column;
     gap: 0.8rem;
-    margin-bottom: 0.6rem; /* menos espacio antes de la vista */
+    margin-bottom: 0.4rem;
   }
 
   .live-demo-button,
@@ -281,16 +251,15 @@ section.demo-section {
   }
 
   .demo-preview {
-    margin-top: 0.5rem;
+    height: 360px;
+    margin-top: 0.3rem;
     width: 100%;
     max-width: 420px;
-    aspect-ratio: 3 / 4;
-    height: auto;
-    border-radius: 0.8rem;
+    border-radius: 0.9rem;
   }
 
   .demo-preview iframe {
-    border-radius: 0.8rem;
+    border-radius: 0.9rem;
   }
 }
 
