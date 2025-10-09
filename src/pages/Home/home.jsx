@@ -14,8 +14,6 @@ import {
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import "./home.css";
 
-import cvFile from "../WandaAbreu-CV-WebDeveloper.pdf";
-
 const technologies = [
   { icon: faGithub, name: "GitHub", key: "github" },
   { icon: faHtml5, name: "HTML5", key: "html5" },
@@ -134,7 +132,7 @@ export default function Home() {
               Sobre mí
             </Link>
             <a
-              href={cvFile}
+              href="/WandaAbreu-CV-WebDeveloper.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-modern"
