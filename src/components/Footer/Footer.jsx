@@ -1,11 +1,36 @@
+import React, { useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Footer.css";
 
 function Footer() {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const updatePadding = () => {
+      if (footerRef.current) {
+        document.body.style.paddingBottom = `${footerRef.current.offsetHeight}px`;
+      }
+    };
+    updatePadding();
+
+    let ro;
+    if (typeof ResizeObserver !== "undefined" && footerRef.current) {
+      ro = new ResizeObserver(updatePadding);
+      ro.observe(footerRef.current);
+    }
+    window.addEventListener("resize", updatePadding);
+
+    return () => {
+      if (ro) ro.disconnect();
+      window.removeEventListener("resize", updatePadding);
+      document.body.style.paddingBottom = "";
+    };
+  }, []);
+
   return (
-    <footer className="footer-container">
+    <footer ref={footerRef} className="footer-container">
       <Container fluid className="footer-content">
         <a href="mailto:wabreud@gmail.com" className="footer-name">
           wabreud@gmail.com
@@ -41,5 +66,3 @@ function Footer() {
 }
 
 export default Footer;
-
-
