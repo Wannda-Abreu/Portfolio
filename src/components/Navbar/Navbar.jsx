@@ -11,7 +11,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import "./navbar.css";
+import "./Navbar.css";
 
 function CustomNavbar() {
   const [scrolled, setScrolled] = useState(false);
