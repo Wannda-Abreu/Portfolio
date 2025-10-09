@@ -1,27 +1,34 @@
-div.aboutme-wrapper.container{
-  width: 100%;
-}
 .aboutme-wrapper {
   background: linear-gradient(180deg, #f9f6ff 0%, #ffffff 100%);
-  padding: 1.5rem;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
-  min-height: 80vh;
+  align-items: center;
+  min-height: 90vh;
   box-sizing: border-box;
 }
 
 .aboutme-content {
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 2rem;
-  width: 90vw;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(103, 55, 202, 0.12);
-  padding: 2rem 2.5rem;
+  width: 95%;
+  max-width: 1100px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(103, 55, 202, 0.1);
+  padding: 2.5rem 3rem;
   border: 1px solid rgba(174, 66, 244, 0.08);
   animation: fadeInCard 0.9s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.aboutme-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(103, 55, 202, 0.15);
 }
 
 @keyframes fadeInCard {
@@ -29,17 +36,19 @@ div.aboutme-wrapper.container{
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* FOTO + BOTONES */
 .aboutme-photo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
   gap: 1rem;
+  flex: 0 0 280px;
+  margin: 0 auto;
 }
 
 .aboutme-photo {
-  width: 10rem;
-  height: 12rem;
+  width: 11rem;
+  height: 13rem;
   border-radius: 25% 25% 45% 45% / 30% 30% 55% 55%;
   object-fit: cover;
   box-shadow: 0 6px 18px rgba(138, 79, 255, 0.25);
@@ -47,8 +56,8 @@ div.aboutme-wrapper.container{
 }
 
 .aboutme-photo:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 28px rgba(138, 79, 255, 0.35);
+  transform: scale(1.05);
+  box-shadow: 0 12px 26px rgba(138, 79, 255, 0.35);
 }
 
 .button-group {
@@ -61,15 +70,14 @@ div.aboutme-wrapper.container{
 
 .btn-aboutme {
   background: linear-gradient(90deg, #7b42e0, #ae42f4);
-  color: white;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
   border: none;
-  padding: 0.45rem 1.3rem;
-  border-radius: 18px;
+  padding: 0.5rem 1.4rem;
+  border-radius: 20px;
   display: flex;
   align-items: center;
-  margin-top: .3rem;
   gap: 0.4rem;
   box-shadow: 0 4px 10px rgba(138, 79, 255, 0.25);
   transition: all 0.3s ease;
@@ -77,24 +85,27 @@ div.aboutme-wrapper.container{
 
 .btn-aboutme:hover {
   background: linear-gradient(90deg, #ae42f4, #7b42e0);
-  transform: scale(1.04);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(138, 79, 255, 0.35);
 }
 
+/* TEXTO */
 .aboutme-text {
   flex: 1;
   color: #3b0070;
   font-family: "Inter", "Segoe UI", sans-serif;
+  text-align: left;
 }
 
 .intro {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: #3a006f;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .skills-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
   color: #5a25d6;
@@ -104,22 +115,23 @@ div.aboutme-wrapper.container{
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 0.8rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .skill-badge {
   background: linear-gradient(135deg, #b37de0, #8a4fff);
   color: #fff;
   font-weight: 600;
-  font-size: 0.8rem;
-  padding: 0.35rem 1rem;
-  border-radbtius: 20px;
+  font-size: 0.85rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 20px;
   box-shadow: 0 2px 6px rgba(138, 79, 255, 0.25);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-badge:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(138, 79, 255, 0.35);
 }
 
 .aboutme-education h5 {
@@ -141,17 +153,22 @@ div.aboutme-wrapper.container{
   color: #5f3dc4;
 }
 
+/* RESPONSIVE */
 @media (max-width: 991px) {
   .aboutme-content {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 1.8rem 1.5rem;
-    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .aboutme-photo-container {
+    margin-bottom: 1rem;
   }
 
   .aboutme-photo {
-    width: 9rem;
-    height: 10.5rem;
+    width: 9.5rem;
+    height: 11rem;
   }
 
   .intro {
@@ -164,12 +181,27 @@ div.aboutme-wrapper.container{
 }
 
 @media (max-width: 480px) {
+  .aboutme-content {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .aboutme-photo {
+    width: 8.5rem;
+    height: 9.8rem;
+  }
+
   .btn-aboutme {
-    font-size: 0.85rem;
-    padding: 0.4rem 1.1rem;
+    font-size: 0.8rem;
+    padding: 0.45rem 1rem;
   }
 
   .skill-badge {
     font-size: 0.75rem;
+    padding: 0.35rem 0.9rem;
+  }
+
+  .intro {
+    font-size: 0.95rem;
   }
 }
+
