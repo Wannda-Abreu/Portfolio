@@ -152,8 +152,26 @@
 .aboutme-education li strong {
   color: #5f3dc4;
 }
+.cv-button-pair {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-/* RESPONSIVE */
+.btn-aboutme.btn-secondary {
+  background: transparent;
+  color: #6848ff;
+  border: 2px solid #6848ff;
+  transition: all 0.3s ease;
+}
+
+.btn-aboutme.btn-secondary:hover {
+  background: #6848ff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 991px) {
   .aboutme-content {
     flex-direction: column;
@@ -209,5 +227,6 @@
   .intro {
     font-size: 0.95rem;
   }
+
 }
 
