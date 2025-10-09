@@ -18,8 +18,6 @@ import {
 import { Helmet } from "react-helmet";
 import "./aboutMe.css";
 
-import cvFile from "../WandaAbreu-CV-WebDeveloper.pdf";
-
 const skillsWithIcons = [
   { name: "HTML", icon: faLaptopCode },
   { name: "CSS", icon: faCss3Alt },
@@ -55,20 +53,30 @@ function AboutMe() {
             className="aboutme-photo"
             loading="lazy"
           />
+
           <div className="button-group">
             <Link to="/projects" className="btn-aboutme">
               <FontAwesomeIcon icon={faAngleLeft} /> Proyectos{" "}
               <FontAwesomeIcon icon={faAngleRight} />
             </Link>
-            <a
-              href={cvFile}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-aboutme"
-            >
-              <FontAwesomeIcon icon={faAngleLeft} /> Ver CV{" "}
-              <FontAwesomeIcon icon={faAngleRight} />
-            </a>
+
+            <div className="cv-button-pair">
+              <a
+                href="/WandaAbreu-CV-WebDeveloper.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-aboutme"
+              >
+                Ver CV
+              </a>
+              <a
+                href="/WandaAbreu-CV-WebDeveloper.pdf"
+                download="WandaAbreu-CV.pdf"
+                className="btn-aboutme btn-secondary"
+              >
+                Descargar
+              </a>
+            </div>
           </div>
         </div>
 
@@ -120,3 +128,4 @@ function AboutMe() {
 }
 
 export default AboutMe;
+
