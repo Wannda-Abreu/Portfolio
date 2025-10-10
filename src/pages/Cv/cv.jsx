@@ -1,33 +1,38 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload, faFilePdf } from "@fortawesome/free-solid-svg-icons";
-import "./cv.css";
+import './cv.css';
 
-const CV_PDF = "https://res.cloudinary.com/dqj4pvyva/image/upload/fl_attachment:Wanda_Abreu_CV.pdf/v1759972967/wanda-abreu-Cv-_web_mlrdhc.pdf";
+const CV_IMG =
+  'https://res.cloudinary.com/dqj4pvyva/image/upload/v1759972967/wanda-abreu-Cv-_web_mlrdhc.avif';
 
 export default function MyCv() {
-  return (
-    <section className="cv-section mt-0 pt-2">
-      <div className="cv-container">
-        <div className="cv-actions">
-          <a
-            href={CV_PDF}
-            className="cv-btn primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faFilePdf} />
-            Ver CV en PDF
-          </a>
+  const downloadUrl = `${CV_IMG}?fl_attachment=Wanda_Abreu_CV`;
 
-          <a
-            href={CV_PDF}
-            download="Wanda_Abreu_CV.pdf"
-            className="cv-btn ghost"
-          >
-            <FontAwesomeIcon icon={faDownload} />
-            Descargar CV
-          </a>
-        </div>
+  return (
+    <section className="cv-page">
+      <div className="cv-toolbar">
+        <a
+          href={CV_IMG}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cv-btn"
+        >
+          Ver a pantalla completa
+        </a>
+        <a
+          href={downloadUrl}
+          className="cv-btn cv-btn-primary"
+        >
+          Descargar CV
+        </a>
+      </div>
+
+      <div className="cv-stage">
+        <img
+          src={CV_IMG}
+          alt="CV de Wanda Abreu"
+          className="cv-img"
+          loading="eager"
+          decoding="sync"
+        />
       </div>
     </section>
   );
