@@ -57,7 +57,7 @@ const router = createBrowserRouter([
           element: <AboutMe/>
         },
         {
-          path: "/mycv",
+          path: "/cv",
           element: <MyCv/>
         },
         {

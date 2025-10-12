@@ -81,7 +81,7 @@ export default function Home() {
                 key={key}
                 className="stack-icon-wrapper"
                 style={{
-                  animation: `fadeSlideUp 0.6s ease-out forwards`,
+                  animation: "fadeSlideUp 0.6s ease-out forwards",
                   animationDelay: `${index * 0.12}s`,
                 }}
                 title={name}
@@ -131,14 +131,9 @@ export default function Home() {
             <Link to="/aboutme" className="btn-modern">
               Sobre mí
             </Link>
-            <a
-              href="/WandaAbreu-CV-WebDeveloper.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-modern"
-            >
+            <Link to="/cv" className="btn-modern">
               Ver CV
-            </a>
+            </Link>
           </div>
         )}
       </div>

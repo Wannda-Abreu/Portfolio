@@ -61,21 +61,9 @@ function AboutMe() {
             </Link>
 
             <div className="cv-button-pair">
-              <a
-                href="/WandaAbreu-CV-WebDeveloper.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-aboutme"
-              >
+              <Link to="/cv" className="btn-aboutme">
                 Ver CV
-              </a>
-              <a
-                href="/WandaAbreu-CV-WebDeveloper.pdf"
-                download="WandaAbreu-CV.pdf"
-                className="btn-aboutme btn-secondary"
-              >
-                Descargar
-              </a>
+              </Link>
             </div>
           </div>
         </div>

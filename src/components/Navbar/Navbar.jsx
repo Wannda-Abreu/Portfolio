@@ -60,11 +60,16 @@ function CustomNavbar() {
               Sobre mí
             </Nav.Link>
 
-           <Nav.Link as={Link} to="/cv" className="nav-link">
-             <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
-               CV
-           </Nav.Link>
-            
+            <Nav.Link
+              as={Link}
+              to="/cv"
+              className="nav-link"
+              onClick={closeNavbar}
+            >
+              <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
+              CV
+            </Nav.Link>
+
             <Nav.Link
               as={Link}
               to="/projects"
