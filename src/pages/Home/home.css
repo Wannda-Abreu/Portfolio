@@ -2,10 +2,12 @@
   background: linear-gradient(-45deg, #e9e3ff, #d3c8ff, #c1b5ff, #f1edff);
   background-size: 400% 400%;
   animation: gradientFlow 18s ease infinite;
-  min-height: 80vh;
+  min-height: calc(100dvh - var(--navbar-height, 72px));
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3.5rem);
+  box-sizing: border-box;
 }
 
 @keyframes gradientFlow {
@@ -15,10 +17,16 @@
 }
 
 .home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
   text-align: center;
-  padding: 2rem;
-  max-width: 900px;
+  padding: clamp(2rem, 5vw, 3rem);
+  width: min(100%, 960px);
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .typewriter-text {
@@ -54,8 +62,8 @@
 .stack-icons-container {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
-  margin: 1.5rem 0 1.8rem;
+  gap: clamp(0.9rem, 2.5vw, 1.4rem);
+  margin: clamp(1rem, 3vw, 1.6rem) 0 clamp(1.1rem, 3.2vw, 1.8rem);
   flex-wrap: wrap;
   color: #4c3dff;
 }
@@ -83,9 +91,9 @@
 .info-cards-container {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: clamp(1rem, 3vw, 1.6rem);
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin: clamp(1.4rem, 4vw, 2rem) 0;
 }
 
 .info-card {
@@ -117,7 +125,7 @@
 
 /* ===== Botones ===== */
 .home-button-container {
-  margin-top: 1.8rem;
+  margin-top: clamp(1.2rem, 3.5vw, 1.8rem);
 }
 
 .btn-modern {
