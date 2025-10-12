@@ -37,18 +37,6 @@
   box-shadow: 0 10px 24px rgba(104, 72, 255, .18);
 }
 
-.cv-btn-primary {
-  background: linear-gradient(90deg, #6848ff, #a566ff);
-  color: #fff;
-  border: 0;
-  box-shadow: 0 10px 24px rgba(104, 72, 255, .25);
-}
-
-.cv-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(104, 72, 255, .35);
-}
-
 .cv-stage {
   width: 100%;
   display: grid;
