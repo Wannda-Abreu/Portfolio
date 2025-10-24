@@ -12,7 +12,7 @@ function RoperoSolidarioDemo() {
         <div className="demo-text">
           <h1 className="demo-title">Ropero Solidario · App Web</h1>
           <p className="demo-description">
-            Plataforma para gestionar donaciones de ropa y reservas automáticas.  
+            Plataforma para gestionar donaciones de ropa y reservas automáticas.
             Centrada en accesibilidad, experiencia de usuario y optimización backend con Node.js.
           </p>
           <div className="language-usage">
@@ -27,7 +27,7 @@ function RoperoSolidarioDemo() {
               rel="noopener noreferrer"
               className="live-demo-button"
             >
-              Explorar demo <FontAwesomeIcon icon={faArrowRight} />
+              Ver sitio en vivo <FontAwesomeIcon icon={faArrowRight} />
             </a>
             <Link to="/projects" className="back-button">
               <FontAwesomeIcon icon={faArrowLeft} /> Volver

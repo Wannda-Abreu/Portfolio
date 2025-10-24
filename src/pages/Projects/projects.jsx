@@ -29,7 +29,7 @@ const projectsData = [
   },
   {
     title: "Random Class App",
-    image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/4_qxiz7k.svg",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1761267910/undefined_1_zohvpi.png",
     link: "/coderdemo",
     tooltip: "App educativa que dinamiza clases con selección aleatoria.",
     description: "App web gamificada.",

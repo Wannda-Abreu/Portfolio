@@ -7,13 +7,12 @@ import "./demo.css";
 
 function MadXtremDemo() {
   return (
-    <section className="demo-section p-0">
-      <Container fluid className="demo-content p-3">
+    <section className="demo-section m-0 p-0">
+      <Container fluid className="demo-content">
         <div className="demo-text">
           <h1 className="demo-title">MadXtrem · E-commerce</h1>
           <p className="demo-description">
-            Marketplace de experiencias outdoor con diseño claro, intuitivo y enfoque en la conversión.  
-            Arquitectura optimizada y navegación fluida en React y Bootstrap.
+            Marketplace de experiencias outdoor con diseño claro e intuitivo y foco en conversión. Navegación fluida con React y Bootstrap.
           </p>
           <div className="language-usage">
             <FontAwesomeIcon icon={faReact} className="stack-icons" />
@@ -22,7 +21,7 @@ function MadXtremDemo() {
           </div>
           <div className="demo-buttons">
             <a
-              href="https://madxtreme.vercel.app/"
+              href="https://madextreme.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="live-demo-button"
@@ -49,5 +48,3 @@ function MadXtremDemo() {
 }
 
 export default MadXtremDemo;
-
-

@@ -12,17 +12,15 @@ function SanitalDemo() {
         <div className="demo-text">
           <h1 className="demo-title">Sanital · Clínica Digital</h1>
           <p className="demo-description">
-            Plataforma médica centrada en el paciente.  
-            Desarrollada con enfoque UX/UI para ofrecer una experiencia fluida,  
+            Plataforma médica centrada en el paciente.
+            Desarrollada con enfoque UX/UI para ofrecer una experiencia fluida,
             moderna y accesible en la gestión de citas y servicios médicos.
           </p>
-
           <div className="language-usage">
             <FontAwesomeIcon icon={faReact} className="stack-icons" />
             <FontAwesomeIcon icon={faBootstrap} className="stack-icons" />
             <FontAwesomeIcon icon={faSass} className="stack-icons" />
           </div>
-
           <div className="demo-buttons">
             <a
               href="https://www.sanital.es"
@@ -32,13 +30,11 @@ function SanitalDemo() {
             >
               Ver sitio en vivo <FontAwesomeIcon icon={faArrowRight} />
             </a>
-
             <Link to="/projects" className="back-button">
               <FontAwesomeIcon icon={faArrowLeft} /> Volver
             </Link>
           </div>
         </div>
-
         <div className="demo-preview">
           <iframe
             src="https://www.sanital.es"

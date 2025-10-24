@@ -10,9 +10,10 @@ function CatchACoderDemo() {
     <section className="demo-section m-0 p-0">
       <Container fluid className="demo-content">
         <div className="demo-text">
-          <h1 className="demo-title">Catch A Coder · App interactiva</h1>
+          <h1 className="demo-title">Catch A Coder · App Interactiva</h1>
           <p className="demo-description">
-            Juego web educativo para reforzar conceptos de programación con una dinámica divertida.  
+            Juego web educativo diseñado para reforzar conceptos de programación 
+            mediante una dinámica divertida e interactiva. 
             Desarrollado en React, totalmente responsive y accesible.
           </p>
           <div className="language-usage">
@@ -21,22 +22,21 @@ function CatchACoderDemo() {
           </div>
           <div className="demo-buttons">
             <a
-              href="https://afterdarkv1.github.io/Catch-a-Coder/"
+              href="https://catch-a-coder-wanda.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="live-demo-button"
             >
-              Jugar ahora <FontAwesomeIcon icon={faArrowRight} />
+              Ver sitio en vivo <FontAwesomeIcon icon={faArrowRight} />
             </a>
             <Link to="/projects" className="back-button">
               <FontAwesomeIcon icon={faArrowLeft} /> Volver
             </Link>
           </div>
         </div>
-
         <div className="demo-preview">
           <iframe
-            src="https://afterdarkv1.github.io/Catch-a-Coder/"
+            src="https://catch-a-coder-wanda.vercel.app/"
             title="Catch A Coder Preview"
             loading="lazy"
             allowFullScreen
