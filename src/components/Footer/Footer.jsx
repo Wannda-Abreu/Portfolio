@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -13,17 +13,19 @@ function Footer() {
         document.body.style.paddingBottom = `${footerRef.current.offsetHeight}px`;
       }
     };
+
     updatePadding();
 
-    let ro;
+    let observer;
     if (typeof ResizeObserver !== "undefined" && footerRef.current) {
-      ro = new ResizeObserver(updatePadding);
-      ro.observe(footerRef.current);
+      observer = new ResizeObserver(updatePadding);
+      observer.observe(footerRef.current);
     }
+
     window.addEventListener("resize", updatePadding);
 
     return () => {
-      if (ro) ro.disconnect();
+      if (observer) observer.disconnect();
       window.removeEventListener("resize", updatePadding);
       document.body.style.paddingBottom = "";
     };
@@ -37,7 +39,7 @@ function Footer() {
         </a>
 
         <p className="footer-credit">
-          © {new Date().getFullYear()} Wanda Abreu — Diseñado con intención y café ☕
+          &copy; {new Date().getFullYear()} Wanda Abreu — Diseñado con intención y café
         </p>
 
         <div className="footer-icons">
@@ -66,3 +68,4 @@ function Footer() {
 }
 
 export default Footer;
+

@@ -1,12 +1,12 @@
 .footer-container {
   width: 100%;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(14px) saturate(180%);
   -webkit-backdrop-filter: blur(14px) saturate(180%);
   border-top: 2px solid transparent;
   border-image: linear-gradient(90deg, #b37de0, #ae42f4, #5f3dc4, #b37de0);
   border-image-slice: 1;
-  box-shadow: 0 -4px 16px rgba(104, 72, 255, 0.08);
+  box-shadow: 0 -4px 16px rgba(104, 72, 255, 0.12);
   animation:
     borderGlow 8s ease-in-out infinite,
     lightSweep 14s ease-in-out infinite;
@@ -18,7 +18,7 @@
   bottom: 0;
   left: 0;
   z-index: 999;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .footer-container:hover {
@@ -51,7 +51,7 @@
 }
 
 .footer-icon-link {
-  color: #7a42e0;
+  color: #6426c8;
   font-size: 1.4rem;
   transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -63,11 +63,12 @@
 }
 
 .footer-credit {
-  font-size: 0.9rem;
-  color: #6b6b6b;
-  opacity: 0.85;
+  font-size: 0.95rem;
+  color: #23123d;
+  font-weight: 600;
   text-align: center;
   flex: 1;
+  letter-spacing: 0.01em;
 }
 
 @keyframes borderGlow {
@@ -95,8 +96,10 @@
 }
 
 /* Espacio inferior para evitar que el footer tape contenido */
-main, .main-content, .page-content {
-  padding-bottom: 100px; /* ajustá según la altura del footer */
+main,
+.main-content,
+.page-content {
+  padding-bottom: 100px;
 }
 
 @keyframes lightSweep {
@@ -123,7 +126,7 @@ main, .main-content, .page-content {
 
   .footer-credit {
     order: 3;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .footer-icons {

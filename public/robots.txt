@@ -1,0 +1,6 @@
+# robots.txt generated to keep Lighthouse happy and allow indexing
+User-agent: *
+Allow: /
+
+# If you add a sitemap in the future, reference it here:
+# Sitemap: https://tu-dominio.com/sitemap.xml

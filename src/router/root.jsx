@@ -9,9 +9,9 @@ function Root() {
   return (
     <>
       {!isMacramePage && <Header />}
-      <div>
+      <main id="main-content" role="main" className="app-main">
         <Outlet />
-      </div>
+      </main>
       {!isMacramePage && <Footer />}
     </>
   );
