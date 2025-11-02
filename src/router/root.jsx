@@ -4,8 +4,6 @@ import Footer from "../components/Footer/Footer";
 
 function Root() {
   const location = useLocation();
-
-  // Condicionar el renderizado del Header y Footer
   const isMacramePage = location.pathname === "/macrame";
 
   return (

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,6 +21,13 @@ const projectsData = [
     description: "App que automatiza reservas.",
   },
   {
+    title: "Panel de Administrador",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1761352532/undefined_2_yeteo1.png",
+    link: "/dashboarddemo",
+    tooltip: "Dashboard para administrar aplicación de citas automatizadas.",
+    description: "Dashboard profesional.",
+  },
+  {
     title: "MadXtrem · E-commerce",
     image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601983/3_hfabvz.svg",
     link: "/madxtremedemo",
@@ -38,6 +45,7 @@ const projectsData = [
 
 function Projects() {
   const carouselRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   const scroll = (direction) => {
     if (carouselRef.current) {
@@ -46,11 +54,33 @@ function Projects() {
     }
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered && carouselRef.current) {
+        const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
+        const currentScroll = carouselRef.current.scrollLeft;
+
+        if (currentScroll >= maxScroll - 10) {
+          carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          carouselRef.current.scrollBy({ left: 350, behavior: "smooth" });
+        }
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
   return (
-    <Container fluid className="projects-container py-4 mb-0 mt-0">
+    <Container
+      fluid
+      className="projects-container py-3 mb-0 mt-1"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <Row className="justify-content-center text-center projects-header mb-0">
         <Col lg={8}>
-          <h1 className="projects-title fade-in">
+          <h1 className="projects-title fade-in text-center">
             Interfaces claras, accesibles y funcionales.
           </h1>
         </Col>
@@ -61,7 +91,7 @@ function Projects() {
           <FontAwesomeIcon icon={faAngleLeft} />
         </button>
 
-        <div className="carousel-track" ref={carouselRef}>
+        <div className="carousel-track p-0" ref={carouselRef}>
           {projectsData.map((project) => {
             const isExternal = project.link.startsWith("http");
             const ActionComponent = isExternal ? "a" : Link;
@@ -70,9 +100,13 @@ function Projects() {
               : { to: project.link };
 
             return (
-              <OverlayTrigger key={project.title} placement="top" overlay={<Tooltip>{project.tooltip}</Tooltip>}>
+              <OverlayTrigger
+                key={project.title}
+                placement="top"
+                overlay={<Tooltip>{project.tooltip}</Tooltip>}
+              >
                 <Card className="project-card h-100">
-                  <div className="project-image-wrapper ">
+                  <div className="project-image-wrapper">
                     <Card.Img
                       variant="top"
                       src={project.image}
@@ -83,7 +117,9 @@ function Projects() {
                   </div>
                   <Card.Body className="d-flex flex-column text-center">
                     <Card.Title className="project-title">{project.title}</Card.Title>
-                    <Card.Text className="project-description">{project.description}</Card.Text>
+                    <Card.Text className="project-description">
+                      {project.description}
+                    </Card.Text>
                     <div className="mt-auto">
                       <ActionComponent {...actionProps} className="demo-button">
                         Ver demo interactiva
@@ -103,7 +139,9 @@ function Projects() {
       </div>
 
       <div className="projects-cta text-center mt-0">
-        <p className="projects-cta-text mt-0">¿Buscas colaboración en diseño o producto digital?</p>
+        <p className="projects-cta-text mt-0">
+          ¿Buscas colaboración en diseño o producto digital?
+        </p>
         <Link to="/contact" className="projects-secondary-link">
           <FontAwesomeIcon icon={faAngleLeft} />
           Conversemos sobre tu proyecto

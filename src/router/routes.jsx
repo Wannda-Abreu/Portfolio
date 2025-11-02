@@ -5,7 +5,6 @@ import Projects from "../pages/Projects/projects";
 import RoperoSolidarioDemo from "../pages/Demos/roperoSolidario";
 import MadxtremeDemo from "../pages/Demos/madxtremeVideo";
 import CatchACoderDemo from "../pages/Demos/catchACoderDemo";
-import CrafterDemo from "../pages/Demos/sanitalDemo.jsx";
 import AboutMe from '../pages/AboutMe/aboutMe';
 import MyCv from '../pages/Cv/cv';
 import ContactForm from '../pages/Contact/contactForm';
@@ -13,6 +12,7 @@ import MarketingProjects from '../pages/MarketingProjects/marketingProjects.jsx'
 import CertificationsPage from "../pages/Certifications/certifications.jsx";
 import MacrameLanding from "../pages/Macrame/MacrameLanding.jsx";
 import SanitalDemo from "../pages/Demos/sanitalDemo.jsx";
+import DashboardDemo from "../pages/Demos/dashboardDemo.jsx";
 
 
 const router = createBrowserRouter([
@@ -39,6 +39,10 @@ const router = createBrowserRouter([
         {
           path: "/roperodemo",
           element: <RoperoSolidarioDemo/>
+        },
+         {
+          path: "/dashboarddemo",
+          element: <DashboardDemo/>
         },
         {
           path: "/madxtremedemo",
