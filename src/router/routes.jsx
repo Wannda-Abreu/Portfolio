@@ -1,18 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "./root"
-import Home from "../pages/Home/home";
-import Projects from "../pages/Projects/projects";
-import RoperoSolidarioDemo from "../pages/Demos/roperoSolidario";
-import MadxtremeDemo from "../pages/Demos/madxtremeVideo";
-import CatchACoderDemo from "../pages/Demos/catchACoderDemo";
-import AboutMe from '../pages/AboutMe/aboutMe';
-import MyCv from '../pages/Cv/cv';
-import ContactForm from '../pages/Contact/contactForm';
-import MarketingProjects from '../pages/MarketingProjects/marketingProjects.jsx';
-import CertificationsPage from "../pages/Certifications/certifications.jsx";
-import MacrameLanding from "../pages/Macrame/MacrameLanding.jsx";
-import SanitalDemo from "../pages/Demos/sanitalDemo.jsx";
-import DashboardDemo from "../pages/Demos/dashboardDemo.jsx";
+import { lazy } from "react";
+import Root from "./root";
+
+const Home = lazy(() => import("../pages/Home/home"));
+const Projects = lazy(() => import("../pages/Projects/projects"));
+const MarketingProjects = lazy(() => import("../pages/MarketingProjects/marketingProjects.jsx"));
+const CertificationsPage = lazy(() => import("../pages/Certifications/certifications.jsx"));
+const RoperoSolidarioDemo = lazy(() => import("../pages/Demos/roperoSolidario.jsx"));
+const DashboardDemo = lazy(() => import("../pages/Demos/dashboardDemo.jsx"));
+const MadxtremeDemo = lazy(() => import("../pages/Demos/madxtremeVideo.jsx"));
+const CatchACoderDemo = lazy(() => import("../pages/Demos/catchACoderDemo.jsx"));
+const SanitalDemo = lazy(() => import("../pages/Demos/sanitalDemo.jsx"));
+const AboutMe = lazy(() => import("../pages/AboutMe/aboutMe.jsx"));
+const MyCv = lazy(() => import("../pages/Cv/cv.jsx"));
+const ContactForm = lazy(() => import("../pages/Contact/contactForm.jsx"));
+const MacrameLanding = lazy(() => import("../pages/Macrame/MacrameLanding.jsx"));
 
 
 const router = createBrowserRouter([

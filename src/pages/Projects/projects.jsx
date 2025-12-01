@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,7 +45,6 @@ const projectsData = [
 
 function Projects() {
   const carouselRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   const scroll = (direction) => {
     if (carouselRef.current) {
@@ -56,28 +55,20 @@ function Projects() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isHovered && carouselRef.current) {
-        const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
-        const currentScroll = carouselRef.current.scrollLeft;
-
-        if (currentScroll >= maxScroll - 10) {
-          carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          carouselRef.current.scrollBy({ left: 350, behavior: "smooth" });
-        }
+      if (!carouselRef.current) return;
+      const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
+      const currentScroll = carouselRef.current.scrollLeft;
+      if (currentScroll >= maxScroll - 10) {
+        carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        carouselRef.current.scrollBy({ left: 350, behavior: "smooth" });
       }
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, []);
 
   return (
-    <Container
-      fluid
-      className="projects-container py-3 mb-0 mt-1"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <Container fluid className="projects-container py-3 mb-0 mt-1">
       <Row className="justify-content-center text-center projects-header mb-0">
         <Col lg={8}>
           <h1 className="projects-title fade-in text-center">
