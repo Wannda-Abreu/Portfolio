@@ -8,27 +8,39 @@ import "./certifications.css";
 
 const certificationsData = [
   {
-    title: "Digitalización aplicada al sector productivo: capacitación en tareas informáticas avanzadas y seguridad en la red.",
+    title: "Google Google Project Management",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1775402556/Coursera_MORUA1GXFR3P_2_zexs2s_page-0001_yud6fp.jpg",
+    tooltip: "Haga clic para ver el diploma",
+    contentType: "image",
+  },
+  {
+    title: "Digitalización aplicada al sector Productivo",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/c_fit/a_180/v1717074875/diploma_digitalizacion_1_nayytn.avif",
-    tooltip: "Haz clic para ver el diploma",
+    tooltip: "Haga clic para ver el diploma",
     contentType: "image",
   },
   {
-    title: "Certificación en Programación Android: creación y distribución de apps, ciclo de vida e interfaz gráfica.",
+    title: "Programación en sistemas Android",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/c_fit/v1717074236/diploma-curso-android_axd8ok.avif",
-    tooltip: "Haz clic para ver el diploma",
+    tooltip: "Haga clic para ver el diploma",
     contentType: "image",
   },
   {
-    title: "Certificación en C++/C avanzado: POO, punteros, clases, herencia y manejo de entrada/salida.",
+    title: "Certificación en C++/C avanzado",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/c_fit/v1717074141/DiplomaaprovechamientoNascor-CPP_ta3oss.avif",
-    tooltip: "Haz clic para ver el diploma",
+    tooltip: "Haga clic para ver el diploma",
     contentType: "image",
   },
   {
-    title: "Badge: Working in a Digital World — Habilidades profesionales: colaboración, comunicación y resolución de problemas.",
+    title: "Badge: Working in a Digital World",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/c_fit/v1717074128/Working_in_a_Digital_World__Professional_Skills_Badge20240530-7-3pmsqa_v5327p.avif",
-    tooltip: "Haz clic para ver el diploma",
+    tooltip: "Haga clic para ver el diploma",
+    contentType: "image",
+  },
+    {
+    title: "Grado de administración comercial en el area de marketing.",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/w_1080,h_700,c_fit/v1775403271/diploma_caribean_page-0001_ehq0ik.jpg",
+    tooltip: "Haga clic para ver el diploma",
     contentType: "image",
   },
 ];
@@ -37,74 +49,80 @@ function CertificationsPage() {
   const moreCertificationsRef = useRef(null);
 
   const scrollToMoreCertifications = () => {
-    moreCertificationsRef.current?.scrollIntoView({ behavior: "smooth" });
+    moreCertificationsRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   };
 
-  const firstThree = certificationsData.slice(0, 3);
-  const remaining = certificationsData.slice(3);
+  const firstThreeCertifications = certificationsData.slice(0, 3);
+  const remainingCertifications = certificationsData.slice(3);
+
+  const renderCertificationCard = (certification, index) => (
+    <Col key={index} className="mb-4">
+      <Card className="certification-card h-100">
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip id={`tooltip-${index}`}>{certification.tooltip}</Tooltip>}
+        >
+          <div className="image-container">
+            {certification.contentType === "pdf" ? (
+              <embed
+                src={certification.contentUrl}
+                className="certification-pdf"
+                type="application/pdf"
+              />
+            ) : (
+              <Zoom zoomMargin={40} overlayBgColorEnd="rgba(0, 0, 0, 0.75)">
+                <img
+                  src={certification.contentUrl}
+                  className="certification-image"
+                  alt={certification.title}
+                />
+              </Zoom>
+            )}
+          </div>
+        </OverlayTrigger>
+
+        <Card.Body className="text-container">
+          <Card.Text className="certification-description">
+            {certification.title}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+  );
 
   return (
-    <section className="certifications-section m-1 p-3">
-      <Container className="certifications-container">
-        <h2 className="certifications-title">Certificaciones y Diplomas</h2>
+    <Container className="certifications-container">
+      <Row>
+        <Col>
+          <h4 className="certifications-title mb-4">Certificaciones y Diplomas</h4>
+        </Col>
+      </Row>
 
-        <Row xs={1} md={2} lg={3} className="g-4">
-          {firstThree.map((cert, index) => (
-            <Col key={index}>
-              <Card className="cert-card">
-                <OverlayTrigger
-                  placement="top"
-                  overlay={<Tooltip id={`tooltip-${index}`}>{cert.tooltip}</Tooltip>}
-                >
-                  <div className="image-wrapper">
-                    {cert.contentType === "pdf" ? (
-                      <embed src={cert.contentUrl} type="application/pdf" className="cert-pdf" />
-                    ) : (
-                      <Zoom zoomMargin={40} overlayBgColorEnd="rgba(0, 0, 0, 0.75)">
-                        <img src={cert.contentUrl} alt="Diploma" className="cert-image" />
-                      </Zoom>
-                    )}
-                  </div>
-                </OverlayTrigger>
-                <Card.Body className="cert-body">
-                  <Card.Text className="cert-description">{cert.title}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+      <Row xs={1} md={2} lg={3} className="g-4">
+        {firstThreeCertifications.map((certification, index) =>
+          renderCertificationCard(certification, index)
+        )}
+      </Row>
 
-        <div className="scroll-down" onClick={scrollToMoreCertifications}>
-          <FontAwesomeIcon icon={faAngleDown} size="2x" />
-        </div>
+      <div className="text-center my-4 scroll-down-wrapper" onClick={scrollToMoreCertifications}>
+        <FontAwesomeIcon icon={faAngleDown} size="3x" className="scroll-down-icon" />
+      </div>
 
-        <Row xs={1} md={2} lg={3} className="g-4 mt-4" ref={moreCertificationsRef}>
-          {remaining.map((cert, index) => (
-            <Col key={index}>
-              <Card className="cert-card">
-                <OverlayTrigger
-                  placement="top"
-                  overlay={<Tooltip id={`tooltip-${index + 3}`}>{cert.tooltip}</Tooltip>}
-                >
-                  <div className="image-wrapper">
-                    {cert.contentType === "pdf" ? (
-                      <embed src={cert.contentUrl} type="application/pdf" className="cert-pdf" />
-                    ) : (
-                      <Zoom zoomMargin={40} overlayBgColorEnd="rgba(0, 0, 0, 0.75)">
-                        <img src={cert.contentUrl} alt="Diploma" className="cert-image" />
-                      </Zoom>
-                    )}
-                  </div>
-                </OverlayTrigger>
-                <Card.Body className="cert-body">
-                  <Card.Text className="cert-description">{cert.title}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    </section>
+      <Row
+        xs={1}
+        md={2}
+        lg={3}
+        className="g-4 more-certifications-row"
+        ref={moreCertificationsRef}
+      >
+        {remainingCertifications.map((certification, index) =>
+          renderCertificationCard(certification, index + 3)
+        )}
+      </Row>
+    </Container>
   );
 }
 
