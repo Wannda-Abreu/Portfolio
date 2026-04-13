@@ -1,5 +1,4 @@
-﻿import { Container } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+﻿import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faReact, faBootstrap, faSass } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
@@ -7,8 +6,8 @@ import "./demo.css";
 
 function SanitalDemo() {
   return (
-    <section className="demo-section m-0 p-0">
-      <Container fluid className="demo-content">
+    <section className="demo-section">
+      <div className="demo-content">
         <div className="demo-text">
           <h1 className="demo-title">Sanital · Clínica digital</h1>
           <p className="demo-description">
@@ -41,9 +40,9 @@ function SanitalDemo() {
             title="Sanital Preview"
             loading="lazy"
             allowFullScreen
-          ></iframe>
+          />
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

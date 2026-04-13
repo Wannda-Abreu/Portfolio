@@ -1,5 +1,4 @@
 ﻿import { useRef, useEffect } from "react";
-import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -82,16 +81,16 @@ function Projects() {
   }, []);
 
   return (
-    <Container fluid className="projects-container page-shell">
-      <Row className="justify-content-center text-center projects-header">
-        <Col lg={9}>
+    <div className="projects-container page-shell">
+      <div className="projects-header">
+        <div className="projects-header-copy">
           <span className="section-kicker">Proyectos seleccionados</span>
           <h1 className="projects-title">Interfaces claras, accesibles y funcionales.</h1>
-          <p className="section-subtitle mx-auto">
+          <p className="section-subtitle projects-subtitle">
             Una mezcla de proyectos personales, demos interactivas y webs orientadas a negocio.
           </p>
-        </Col>
-      </Row>
+        </div>
+      </div>
 
       <div className="carousel-wrapper">
         <button className="carousel-btn left" onClick={() => scroll("left")} aria-label="Desplazar proyectos a la izquierda">
@@ -107,33 +106,26 @@ function Projects() {
               : { to: project.link };
 
             return (
-              <OverlayTrigger
-                key={project.title}
-                placement="top"
-                overlay={<Tooltip>{project.tooltip}</Tooltip>}
-              >
-                <Card className="project-card h-100">
-                  <div className="project-image-wrapper">
-                    <Card.Img
-                      variant="top"
-                      src={project.image}
-                      alt={project.title}
-                      className="project-image"
-                      loading="lazy"
-                    />
+              <article key={project.title} className="project-card" title={project.tooltip}>
+                <div className="project-image-wrapper">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="project-card-body">
+                  <h2 className="project-title">{project.title}</h2>
+                  <p className="project-description">{project.description}</p>
+                  <div className="project-card-actions">
+                    <ActionComponent {...actionProps} className="demo-button">
+                      Ver demo
+                      <FontAwesomeIcon icon={faArrowRight} className="cta-icon" />
+                    </ActionComponent>
                   </div>
-                  <Card.Body className="d-flex flex-column text-center">
-                    <Card.Title className="project-title">{project.title}</Card.Title>
-                    <Card.Text className="project-description">{project.description}</Card.Text>
-                    <div className="mt-auto">
-                      <ActionComponent {...actionProps} className="demo-button">
-                        Ver demo
-                        <FontAwesomeIcon icon={faArrowRight} className="cta-icon" />
-                      </ActionComponent>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </OverlayTrigger>
+                </div>
+              </article>
             );
           })}
         </div>
@@ -143,7 +135,7 @@ function Projects() {
         </button>
       </div>
 
-      <div className="projects-cta text-center">
+      <div className="projects-cta">
         <p className="projects-cta-text">¿Buscas colaboración en diseño o producto digital?</p>
         <Link to="/contact" className="projects-secondary-link">
           <FontAwesomeIcon icon={faAngleLeft} />
@@ -151,7 +143,7 @@ function Projects() {
           <FontAwesomeIcon icon={faAngleRight} />
         </Link>
       </div>
-    </Container>
+    </div>
   );
 }
 

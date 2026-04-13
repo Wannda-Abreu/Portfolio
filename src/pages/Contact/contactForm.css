@@ -25,6 +25,10 @@
   padding: 1.3rem;
 }
 
+.contact-field + .contact-field {
+  margin-top: 1rem;
+}
+
 .contact-form .form-label {
   color: var(--heading);
   font-weight: 800;

@@ -1,5 +1,4 @@
-import { useForm, ValidationError } from "@formspree/react";
-import { Form, FormGroup, FormControl, FormLabel, Container } from "react-bootstrap";
+﻿import { useForm, ValidationError } from "@formspree/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faEnvelopeCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import "./contactForm.css";
@@ -9,20 +8,18 @@ function ContactForm() {
 
   if (state.succeeded) {
     return (
-      <Container fluid className="contact-page page-shell">
+      <div className="contact-page page-shell">
         <section className="contact-success glass-panel">
           <FontAwesomeIcon icon={faEnvelopeCircleCheck} className="contact-success-icon" />
           <h1>Mensaje enviado</h1>
-          <p>
-            Gracias por escribir. Revisaré tu mensaje y te responderé lo antes posible.
-          </p>
+          <p>Gracias por escribir. Revisaré tu mensaje y te responderé lo antes posible.</p>
         </section>
-      </Container>
+      </div>
     );
   }
 
   return (
-    <Container fluid className="contact-page page-shell">
+    <div className="contact-page page-shell">
       <section className="contact-layout glass-panel">
         <div className="contact-copy">
           <span className="section-kicker">Contacto</span>
@@ -35,10 +32,11 @@ function ContactForm() {
           </p>
         </div>
 
-        <Form className="contact-form surface-card" onSubmit={handleSubmit}>
-          <FormGroup className="mb-3">
-            <FormLabel htmlFor="name">Nombre</FormLabel>
-            <FormControl
+        <form className="contact-form surface-card" onSubmit={handleSubmit}>
+          <div className="contact-field">
+            <label className="form-label" htmlFor="name">Nombre</label>
+            <input
+              className="form-control"
               type="text"
               id="name"
               name="name"
@@ -47,11 +45,12 @@ function ContactForm() {
               autoComplete="name"
             />
             <ValidationError prefix="Nombre" field="name" errors={state.errors} />
-          </FormGroup>
+          </div>
 
-          <FormGroup className="mb-3">
-            <FormLabel htmlFor="email">Correo electrónico</FormLabel>
-            <FormControl
+          <div className="contact-field">
+            <label className="form-label" htmlFor="email">Correo electrónico</label>
+            <input
+              className="form-control"
               type="email"
               id="email"
               name="email"
@@ -60,12 +59,12 @@ function ContactForm() {
               autoComplete="email"
             />
             <ValidationError prefix="Email" field="email" errors={state.errors} />
-          </FormGroup>
+          </div>
 
-          <FormGroup className="mb-3">
-            <FormLabel htmlFor="message">Mensaje</FormLabel>
-            <FormControl
-              as="textarea"
+          <div className="contact-field">
+            <label className="form-label" htmlFor="message">Mensaje</label>
+            <textarea
+              className="form-control"
               id="message"
               name="message"
               placeholder="Explícame el proyecto, el objetivo y el tipo de ayuda que necesitas"
@@ -73,15 +72,15 @@ function ContactForm() {
               required
             />
             <ValidationError prefix="Mensaje" field="message" errors={state.errors} />
-          </FormGroup>
+          </div>
 
           <button className="contact-button" type="submit" disabled={state.submitting}>
             {state.submitting ? "Enviando..." : "Enviar mensaje"}
             <FontAwesomeIcon icon={faArrowRight} />
           </button>
-        </Form>
+        </form>
       </section>
-    </Container>
+    </div>
   );
 }
 

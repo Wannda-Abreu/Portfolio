@@ -29,7 +29,6 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0.8;
-  animation: borderGlow 8s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -42,7 +41,12 @@
   position: relative;
   z-index: 1;
   width: min(100%, var(--container));
+  margin: 0 auto;
   padding-inline: clamp(1rem, 2vw, 1.75rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .brand-mark {
@@ -77,10 +81,8 @@
   font-size: 1.1rem;
   font-weight: 700;
   background: linear-gradient(270deg, #ae42f4, #5f3dc4, #b37de0, #ae42f4);
-  background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientShift 10s ease infinite;
 }
 
 .brand-copy small {
@@ -92,8 +94,15 @@
 }
 
 .navbar-links {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-left: auto;
+}
+
+.navbar-collapse {
+  flex: 1 1 auto;
+  display: flex;
 }
 
 .nav-link {
@@ -167,6 +176,7 @@
   }
 
   .navbar-collapse {
+    display: block;
     position: absolute;
     top: calc(100% + 0.7rem);
     left: 0.75rem;
@@ -189,8 +199,10 @@
   }
 
   .navbar-links {
+    flex-direction: column;
     align-items: stretch;
     gap: 0.4rem;
+    margin-left: 0;
   }
 
   .brand-wordmark {
@@ -202,14 +214,4 @@
     width: 100%;
     justify-content: flex-start;
   }
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes borderGlow {
-  0%, 100% { filter: hue-rotate(0deg); opacity: 0.75; }
-  50% { filter: hue-rotate(18deg); opacity: 1; }
 }

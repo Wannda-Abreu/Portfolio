@@ -1,5 +1,4 @@
-﻿import { Container } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+﻿import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faNodeJs, faJs, faBootstrap } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
@@ -7,15 +6,14 @@ import "./demo.css";
 
 function DashboardDemo() {
   return (
-    <section className="demo-section m-0 p-0">
-      <Container fluid className="demo-content">
+    <section className="demo-section">
+      <div className="demo-content">
         <div className="demo-text">
           <h1 className="demo-title">Dashboard profesional · App web</h1>
           <p className="demo-description">
-            Plataforma web colaborativa desarrollada para la administración de
-            una aplicación de citas. Permite configurar roles de acceso y citas en tiempo
-            real. Este proyecto fue realizado en equipo, integrando diseño UX/UI y desarrollo
-            front-end con enfoque en usabilidad y rendimiento.
+            Plataforma web colaborativa desarrollada para la administración de una aplicación de citas.
+            Permite configurar roles de acceso y citas en tiempo real. Este proyecto fue realizado en equipo,
+            integrando diseño UX/UI y desarrollo front-end con enfoque en usabilidad y rendimiento.
           </p>
           <div className="language-usage">
             <FontAwesomeIcon icon={faNodeJs} className="stack-icons" />
@@ -43,9 +41,9 @@ function DashboardDemo() {
             title="Dashboard Preview"
             loading="lazy"
             allowFullScreen
-          ></iframe>
+          />
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

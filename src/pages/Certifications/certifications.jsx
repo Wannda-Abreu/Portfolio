@@ -1,5 +1,4 @@
 ﻿import { useRef } from "react";
-import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Zoom from "react-medium-image-zoom";
@@ -56,51 +55,45 @@ function CertificationsPage() {
   const remainingCertifications = certificationsData.slice(3);
 
   const renderCertificationCard = (certification, index) => (
-    <Col key={index} className="mb-4">
-      <Card className="certification-card h-100">
-        <OverlayTrigger placement="top" overlay={<Tooltip id={`tooltip-${index}`}>{certification.tooltip}</Tooltip>}>
-          <div className="image-container">
-            {certification.contentType === "pdf" ? (
-              <embed src={certification.contentUrl} className="certification-pdf" type="application/pdf" />
-            ) : (
-              <Zoom zoomMargin={40} overlayBgColorEnd="rgba(0, 0, 0, 0.75)">
-                <img src={certification.contentUrl} className="certification-image" alt={certification.title} />
-              </Zoom>
-            )}
-          </div>
-        </OverlayTrigger>
+    <article key={index} className="certification-card" title={certification.tooltip}>
+      <div className="image-container">
+        {certification.contentType === "pdf" ? (
+          <embed src={certification.contentUrl} className="certification-pdf" type="application/pdf" />
+        ) : (
+          <Zoom zoomMargin={40} overlayBgColorEnd="rgba(0, 0, 0, 0.75)">
+            <img src={certification.contentUrl} className="certification-image" alt={certification.title} loading="lazy" />
+          </Zoom>
+        )}
+      </div>
 
-        <Card.Body className="text-container">
-          <Card.Text className="certification-description">{certification.title}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+      <div className="text-container">
+        <p className="certification-description">{certification.title}</p>
+      </div>
+    </article>
   );
 
   return (
-    <Container className="certifications-container page-shell">
-      <Row className="justify-content-center text-center">
-        <Col lg={9}>
-          <span className="section-kicker">Formación</span>
-          <h1 className="certifications-title mb-3">Certificaciones y diplomas</h1>
-          <p className="section-subtitle mx-auto">
-            Formación técnica que refuerza mi perfil en desarrollo, diseño y negocio digital.
-          </p>
-        </Col>
-      </Row>
+    <div className="certifications-container page-shell">
+      <div className="certifications-intro">
+        <span className="section-kicker">Formación</span>
+        <h1 className="certifications-title">Certificaciones y diplomas</h1>
+        <p className="section-subtitle certifications-subtitle">
+          Formación técnica que refuerza mi perfil en desarrollo, diseño y negocio digital.
+        </p>
+      </div>
 
-      <Row xs={1} md={2} lg={3} className="g-4">
+      <div className="certifications-grid">
         {firstThreeCertifications.map((certification, index) => renderCertificationCard(certification, index))}
-      </Row>
+      </div>
 
       <button className="certifications-scroll-button" onClick={scrollToMoreCertifications} type="button" aria-label="Ver más certificaciones">
         <FontAwesomeIcon icon={faAngleDown} className="scroll-down-icon" />
       </button>
 
-      <Row xs={1} md={2} lg={3} className="g-4 more-certifications-row" ref={moreCertificationsRef}>
+      <div className="certifications-grid more-certifications-row" ref={moreCertificationsRef}>
         {remainingCertifications.map((certification, index) => renderCertificationCard(certification, index + 3))}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 }
 

@@ -1,13 +1,7 @@
-﻿import { Container, Badge } from "react-bootstrap";
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faBriefcase, faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
-import {
-  faReact,
-  faJs,
-  faNodeJs,
-  faBootstrap,
-} from "@fortawesome/free-brands-svg-icons";
+import { faReact, faJs, faNodeJs, faBootstrap } from "@fortawesome/free-brands-svg-icons";
 import { Helmet } from "react-helmet";
 import "./aboutMe.css";
 
@@ -46,7 +40,7 @@ const timeline = [
 
 function AboutMe() {
   return (
-    <Container fluid className="aboutme-wrapper page-shell">
+    <div className="aboutme-wrapper page-shell">
       <Helmet>
         <title>Wanda Abreu - Desarrolladora Frontend y UX/UI</title>
         <meta
@@ -62,16 +56,18 @@ function AboutMe() {
             alt="Wanda Abreu"
             className="aboutme-photo"
             loading="lazy"
+            width="272"
+            height="340"
           />
 
           <div className="about-block surface-card about-skills-panel">
             <h2>Tecnologías y herramientas</h2>
             <div className="skills-container">
               {skillsWithIcons.map(({ name, icon }) => (
-                <Badge key={name} className="skill-badge" title={name}>
+                <span key={name} className="skill-badge" title={name}>
                   <FontAwesomeIcon icon={icon} className="skill-icon" />
                   {name}
-                </Badge>
+                </span>
               ))}
             </div>
           </div>
@@ -111,7 +107,7 @@ function AboutMe() {
           </div>
         </div>
       </section>
-    </Container>
+    </div>
   );
 }
 

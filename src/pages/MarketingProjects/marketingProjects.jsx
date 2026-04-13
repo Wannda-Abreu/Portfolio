@@ -1,42 +1,41 @@
-import { useRef } from "react";
-import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
+锘縤mport { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import "./marketingprojects.css";
 
 const marketingProjectsData = [
   {
-    title: "Gesti髇 y crecimiento de la cuenta de Instagram del Hotel Caballero Errante.",
+    title: "Gesti贸n y crecimiento de la cuenta de Instagram del Hotel Caballero Errante.",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712245707/Untitled_1280_x_1090_px_wqhb8y.mp4",
-    tooltip: "Haz clic para ver la demostraci髇",
+    tooltip: "Haz clic para ver la demostraci贸n",
     contentType: "video",
   },
   {
-    title: "Optimizaci髇 del perfil de Google My Business del Hotel Caballero Errante.",
+    title: "Optimizaci贸n del perfil de Google My Business del Hotel Caballero Errante.",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712246879/Untitled_1280_x_1090_px_2_pdtode.mp4",
-    tooltip: "Haz clic para ver la demostraci髇",
+    tooltip: "Haz clic para ver la demostraci贸n",
     contentType: "video",
   },
   {
-    title: "Gesti髇 de cuenta de Instagram para Izar Tourist Rentals, aumentando el engagement.",
+    title: "Gesti贸n de cuenta de Instagram para Izar Tourist Rentals, aumentando el engagement.",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712247267/Untitled_1280_x_1090_px_3_dy2gvv.mp4",
-    tooltip: "Haz clic para ver la demostraci髇",
+    tooltip: "Haz clic para ver la demostraci贸n",
     contentType: "video",
   },
   {
-    title: "Creaci髇 de blog informativo para la web del Hotel Caballero Errante.",
+    title: "Creaci贸n de blog informativo para la web del Hotel Caballero Errante.",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712246722/Untitled_1280_x_1090_px_1_rgrveo.mp4",
-    tooltip: "Haz clic para ver la demostraci髇",
+    tooltip: "Haz clic para ver la demostraci贸n",
     contentType: "video",
   },
   {
-    title: "Blog personal: art韈ulo '緿髇de reservar hoteles? consejos esenciales'.",
+    title: "Blog personal: art铆culo '驴D贸nde reservar hoteles? consejos esenciales'.",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712250169/Untitled_1280_x_1090_px_6_t1ag8a.mp4",
-    tooltip: "Haz clic para ver la demostraci髇",
+    tooltip: "Haz clic para ver la demostraci贸n",
     contentType: "video",
   },
   {
-    title: "Creaci髇 y dise駉 de logos, reflejando identidad visual y posicionamiento.",
+    title: "Creaci贸n y dise帽o de logos, reflejando identidad visual y posicionamiento.",
     contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1712273843/Untitled_1280_x_1090_px_2_apbrw1.png",
     tooltip: "Haz clic para ampliar la pieza",
     contentType: "image",
@@ -54,51 +53,45 @@ function MarketingProjects() {
   const remainingProjects = marketingProjectsData.slice(3);
 
   const renderProject = (project, index) => (
-    <Col key={index}>
-      <Card className="marketing-card h-100">
-        <OverlayTrigger placement="top" overlay={<Tooltip id={`tooltip-${index}`}>{project.tooltip}</Tooltip>}>
-          <div className="marketing-media-frame">
-            {project.contentType === "video" ? (
-              <video controls className="marketing-video">
-                <source src={project.contentUrl} type="video/mp4" />
-                Tu navegador no soporta el reproductor de v韉eo.
-              </video>
-            ) : (
-              <img src={project.contentUrl} className="marketing-image" alt={project.title} />
-            )}
-          </div>
-        </OverlayTrigger>
-        <Card.Body className="marketing-card-body">
-          <Card.Text className="marketing-description">{project.title}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+    <article key={index} className="marketing-card" title={project.tooltip}>
+      <div className="marketing-media-frame">
+        {project.contentType === "video" ? (
+          <video controls className="marketing-video" preload="metadata">
+            <source src={project.contentUrl} type="video/mp4" />
+            Tu navegador no soporta el reproductor de v铆deo.
+          </video>
+        ) : (
+          <img src={project.contentUrl} className="marketing-image" alt={project.title} loading="lazy" />
+        )}
+      </div>
+      <div className="marketing-card-body">
+        <p className="marketing-description">{project.title}</p>
+      </div>
+    </article>
   );
 
   return (
-    <Container className="marketing-page page-shell">
-      <Row className="text-center justify-content-center">
-        <Col lg={9}>
-          <span className="section-kicker">Marketing digital</span>
-          <h1 className="marketing-title">Contenido, posicionamiento y piezas visuales para negocio.</h1>
-          <p className="section-subtitle mx-auto">
-            Una selecci髇 de trabajos orientados a crecimiento org醤ico, presencia digital y narrativa de marca.
-          </p>
-        </Col>
-      </Row>
+    <div className="marketing-page page-shell">
+      <div className="marketing-intro">
+        <span className="section-kicker">Marketing digital</span>
+        <h1 className="marketing-title">Contenido, posicionamiento y piezas visuales para negocio.</h1>
+        <p className="section-subtitle marketing-subtitle">
+          Una selecci贸n de trabajos orientados a crecimiento org谩nico, presencia digital y narrativa de marca.
+        </p>
+      </div>
 
-      <Row xs={1} md={2} lg={3} className="g-4">
+      <div className="marketing-grid">
         {firstThreeProjects.map(renderProject)}
-      </Row>
+      </div>
 
-      <button className="marketing-scroll-button" onClick={scrollToMoreProjects} type="button" aria-label="Ver m醩 proyectos de marketing">
+      <button className="marketing-scroll-button" onClick={scrollToMoreProjects} type="button" aria-label="Ver m谩s proyectos de marketing">
         <FontAwesomeIcon icon={faAngleDown} className="scroll-down-icon" />
       </button>
 
-      <Row xs={1} md={2} lg={3} className="g-4" ref={moreProjectsRef}>
+      <div className="marketing-grid" ref={moreProjectsRef}>
         {remainingProjects.map((project, index) => renderProject(project, index + 3))}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 }
 

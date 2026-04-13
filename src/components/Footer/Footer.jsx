@@ -1,12 +1,11 @@
-﻿import { Container } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+﻿import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Footer.css";
 
 function Footer() {
   return (
     <footer className="footer-container">
-      <Container fluid className="footer-content">
+      <div className="footer-content">
         <div className="footer-intro">
           <span className="footer-kicker">Disponible para proyectos freelance y colaboraciones</span>
           <a href="mailto:wabreud@gmail.com" className="footer-name">
@@ -14,7 +13,7 @@ function Footer() {
           </a>
         </div>
 
-        <p className="footer-credit">2026 Wanda Abreu — Diseñado con intención y café</p>
+        <p className="footer-credit">2026 Wanda Abreu - Diseñado con intención y café</p>
 
         <div className="footer-icons">
           <a
@@ -36,7 +35,7 @@ function Footer() {
             <FontAwesomeIcon icon={faGithub} />
           </a>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }

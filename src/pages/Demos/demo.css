@@ -23,24 +23,12 @@ section.demo-section {
   padding: 2rem;
   box-shadow: 0 8px 28px rgba(104, 72, 255, 0.12);
   border: 1px solid rgba(174, 66, 244, 0.08);
-  animation: fadeInCard 1s ease;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .demo-content:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(104, 72, 255, 0.15);
-}
-
-@keyframes fadeInCard {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .demo-text {
@@ -275,9 +263,7 @@ section.demo-section {
   background: linear-gradient(135deg, var(--tint-from, #6848ff), var(--tint-to, #a566ff));
   mix-blend-mode: color;
   opacity: 0;
-  transition: opacity .45s ease, transform .6s ease, background-position .6s ease;
-  background-size: 220% 220%;
-  background-position: 0% 50%;
+  transition: opacity .45s ease, transform .6s ease;
   pointer-events: none;
 }
 
@@ -285,7 +271,6 @@ section.demo-section {
 .project-card:focus-within .project-image-wrapper::after {
   opacity: .55;
   transform: scale(1.04);
-  background-position: 100% 50%;
 }
 
 .project-card {
@@ -317,13 +302,12 @@ section.demo-section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .6s cubic-bezier(.22,.61,.36,1), filter .4s ease;
+  transition: transform .6s cubic-bezier(.22,.61,.36,1);
 }
 
 .project-card:hover .project-image,
 .project-card:focus-within .project-image {
   transform: scale(1.06);
-  filter: brightness(1.05) saturate(1.12);
 }
 
 @media (prefers-reduced-motion: reduce) {

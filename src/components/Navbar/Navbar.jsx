@@ -1,5 +1,4 @@
 ﻿import { useEffect, useState } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -34,24 +33,19 @@ function CustomNavbar() {
   const closeNavbar = () => setExpanded(false);
 
   return (
-    <Navbar
-      expand="lg"
-      className={`navbar-container ${scrolled ? "scrolled" : ""}`}
-      expanded={expanded}
-    >
-      <Container fluid className="navbar-inner">
-        <Navbar.Brand as={Link} to="/" className="brand-mark" onClick={closeNavbar}>
-          <span className="brand-wordmark" aria-hidden="true">
-            W/D
-          </span>
+    <header className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
+      <div className="navbar-inner">
+        <Link to="/" className="brand-mark" onClick={closeNavbar}>
+          <span className="brand-wordmark" aria-hidden="true">W/D</span>
           <span className="brand-copy">
             <strong>Wanda Abreu</strong>
             <small>UX/UI + Frontend</small>
           </span>
-        </Navbar.Brand>
+        </Link>
 
         <button
           className={`custom-toggler ${expanded ? "open" : ""}`}
+          aria-controls="primary-navigation"
           aria-label="Abrir navegación"
           aria-expanded={expanded}
           onClick={() => setExpanded((prev) => !prev)}
@@ -60,15 +54,11 @@ function CustomNavbar() {
           <FontAwesomeIcon icon={expanded ? faXmark : faBars} />
         </button>
 
-        <Navbar.Collapse
-          id="primary-navigation"
-          className={`navbar-collapse ${expanded ? "show" : ""}`}
-        >
-          <Nav className="navbar-links ms-auto">
+        <div id="primary-navigation" className={`navbar-collapse ${expanded ? "show" : ""}`}>
+          <nav className="navbar-links" aria-label="Principal">
             {navItems.map((item) => (
-              <Nav.Link
+              <NavLink
                 key={item.to}
-                as={NavLink}
                 to={item.to}
                 end={item.to === "/"}
                 className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
@@ -76,21 +66,20 @@ function CustomNavbar() {
               >
                 <FontAwesomeIcon icon={item.icon} className="nav-icon" />
                 {item.label}
-              </Nav.Link>
+              </NavLink>
             ))}
-            <Nav.Link
-              as={NavLink}
+            <NavLink
               to="/contact"
               className={({ isActive }) => `nav-link nav-link-cta ${isActive ? "active" : ""}`}
               onClick={closeNavbar}
             >
               <FontAwesomeIcon icon={faEnvelopeOpenText} className="nav-icon" />
               Hablemos
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+            </NavLink>
+          </nav>
+        </div>
+      </div>
+    </header>
   );
 }
 

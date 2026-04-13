@@ -1,5 +1,4 @@
 ﻿import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -79,9 +78,12 @@ function TypeWriter({ text, speed = 55, className = "", onComplete }) {
   }, [text, speed, onComplete]);
 
   return (
-    <span className={className}>
-      {displayed}
-      <span className="typewriter-cursor" aria-hidden="true">|</span>
+    <span className={`typewriter-shell ${className}`}>
+      <span className="typewriter-placeholder" aria-hidden="true">{text}</span>
+      <span className="typewriter-live">
+        {displayed}
+        <span className="typewriter-cursor" aria-hidden="true">|</span>
+      </span>
     </span>
   );
 }
@@ -91,7 +93,7 @@ export default function Home() {
   const [taglineDone, setTaglineDone] = useState(false);
 
   return (
-    <Container fluid className="home-main-container page-shell">
+    <div className="home-main-container page-shell">
       <section className="hero-panel glass-panel">
         <div className="hero-copy">
           <span className="section-kicker">Portfolio de Wanda Abreu</span>
@@ -106,9 +108,7 @@ export default function Home() {
                 />
               </h1>
             ) : (
-              <h1 className="section-title hero-type-title">
-                ¡Hola! Soy Wanda Abreu
-              </h1>
+              <h1 className="section-title hero-type-title">¡Hola! Soy Wanda Abreu</h1>
             )}
 
             {introDone && !taglineDone ? (
@@ -187,6 +187,6 @@ export default function Home() {
           </article>
         ))}
       </section>
-    </Container>
+    </div>
   );
 }

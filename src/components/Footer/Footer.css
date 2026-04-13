@@ -30,7 +30,6 @@
   mask-composite: exclude;
   pointer-events: none;
   opacity: 0.78;
-  animation: footerGlow 10s ease-in-out infinite;
 }
 
 .footer-intro {
@@ -49,13 +48,11 @@
 
 .footer-name {
   background: linear-gradient(270deg, #ae42f4, #5f3dc4, #b37de0, #ae42f4);
-  background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   font-weight: 800;
   font-size: 1rem;
-  animation: footerTextShift 10s ease infinite;
 }
 
 .footer-name:hover,
@@ -102,14 +99,4 @@
   .footer-intro {
     align-items: center;
   }
-}
-
-@keyframes footerTextShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes footerGlow {
-  0%, 100% { filter: hue-rotate(0deg); opacity: 0.72; }
-  50% { filter: hue-rotate(18deg); opacity: 1; }
 }
