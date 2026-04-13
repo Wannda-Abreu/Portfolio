@@ -1,65 +1,69 @@
 .cv-page {
-  width: 100%;
-  min-height: calc(100vh - 9vh - 9vh);
-  background: linear-gradient(180deg, #f8f5ff 0%, #ffffff 100%);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding: 1.25rem 1rem 2rem;
-  box-sizing: border-box;
+}
+
+.cv-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  text-align: center;
+  align-items: center;
+}
+
+.cv-title {
+  font-size: clamp(2rem, 5vw, 3.4rem);
 }
 
 .cv-toolbar {
   display: flex;
-  gap: .8rem;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .cv-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: .7rem 1.25rem;
+  min-height: 52px;
+  padding: 0.9rem 1.35rem;
   border-radius: 999px;
-  font-weight: 600;
-  font-size: .95rem;
   text-decoration: none;
-  background: rgba(104, 72, 255, .08);
-  color: #6848ff;
-  border: 2px solid #6848ff;
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), #18998f);
+  color: white;
+  box-shadow: 0 18px 30px rgba(15, 118, 110, 0.22);
 }
 
-.cv-btn:hover {
+.cv-btn:hover,
+.cv-btn:focus-visible {
   transform: translateY(-2px);
-  background: rgba(104, 72, 255, .12);
-  box-shadow: 0 10px 24px rgba(104, 72, 255, .18);
+  box-shadow: 0 22px 34px rgba(15, 118, 110, 0.28);
 }
 
 .cv-stage {
   width: 100%;
-  display: grid;
-  place-items: center;
-  padding-bottom: .5rem;
+  background: rgba(255, 252, 247, 0.92);
+  border: 1px solid rgba(21, 32, 51, 0.08);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-.cv-img {
-  width: min(900px, 92vw);
-  height: auto;
-  border-radius: 18px;
-  object-fit: contain;
-  box-shadow: 0 12px 34px rgba(104, 72, 255, .18);
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-
-.cv-img:hover {
-  transform: scale(1.01);
-  box-shadow: 0 16px 44px rgba(104, 72, 255, .28);
+.cv-frame {
+  width: 100%;
+  min-height: 78vh;
+  border: 0;
+  display: block;
+  background: white;
 }
 
 @media (max-width: 768px) {
-  .cv-page { padding: 1rem .75rem 1.5rem; }
-  .cv-img { width: 94vw; border-radius: 14px; }
-  .cv-btn { width: 100%; }
+  .cv-btn {
+    width: 100%;
+  }
+
+  .cv-frame {
+    min-height: 68vh;
+  }
 }

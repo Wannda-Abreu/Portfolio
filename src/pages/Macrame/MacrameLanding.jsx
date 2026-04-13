@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import "./MacrameLanding.css";
 
 const MacrameLanding = () => {
@@ -41,7 +41,7 @@ const MacrameLanding = () => {
     },
     {
       id: 4,
-      title: "Lamparas",
+      title: "Lámparas",
       description: "Hecho a mano con hilos de algodón 100% natural.",
       images: [
         "https://res.cloudinary.com/dsyfal3wa/image/upload/v1731870538/1731870415711_yn0qqw.jpg",
@@ -53,7 +53,7 @@ const MacrameLanding = () => {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(
-    projects.map(() => 0) // Initialize each image index at 0
+    projects.map(() => 0)
   );
 
   const updateImageIndex = () => {
@@ -63,14 +63,14 @@ const MacrameLanding = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(updateImageIndex, 5000); // Change images every 5000 ms
-    return () => clearInterval(interval); // Clear the interval on component unmount
+    const interval = setInterval(updateImageIndex, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="macrame-container">
       <header className="macrame-header">
-        <h1>Macramé Artesanal</h1>
+        <h1>Macramé artesanal</h1>
         <p>Descubre piezas únicas hechas a mano con amor y creatividad.</p>
       </header>
 
@@ -117,4 +117,3 @@ const MacrameLanding = () => {
 };
 
 export default MacrameLanding;
-

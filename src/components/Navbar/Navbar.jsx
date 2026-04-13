@@ -1,29 +1,36 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMugHot,
-  faSeedling,
-  faCodeBranch,
-  faAddressBook,
-  faCertificate,
+  faUser,
+  faFileLines,
+  faBriefcase,
+  faEnvelopeOpenText,
+  faAward,
   faBars,
-  faTimes,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+
+const navItems = [
+  { to: "/aboutme", label: "Sobre mí", icon: faUser },
+  { to: "/cv", label: "CV", icon: faFileLines },
+  { to: "/projects", label: "Proyectos", icon: faBriefcase },
+  { to: "/certifications", label: "Certificaciones", icon: faAward },
+];
 
 function CustomNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 18);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleNavbar = () => setExpanded(!expanded);
   const closeNavbar = () => setExpanded(false);
 
   return (
@@ -33,71 +40,52 @@ function CustomNavbar() {
       expanded={expanded}
     >
       <Container fluid className="navbar-inner">
-        <Navbar.Brand as={Link} to="/" className="name">
-          Wanda Abreu
+        <Navbar.Brand as={Link} to="/" className="brand-mark" onClick={closeNavbar}>
+          <span className="brand-wordmark" aria-hidden="true">
+            W/D
+          </span>
+          <span className="brand-copy">
+            <strong>Wanda Abreu</strong>
+            <small>UX/UI + Frontend</small>
+          </span>
         </Navbar.Brand>
 
         <button
           className={`custom-toggler ${expanded ? "open" : ""}`}
-          aria-label="Toggle navigation"
-          onClick={toggleNavbar}
+          aria-label="Abrir navegación"
+          aria-expanded={expanded}
+          onClick={() => setExpanded((prev) => !prev)}
+          type="button"
         >
-          <FontAwesomeIcon icon={expanded ? faTimes : faBars} />
+          <FontAwesomeIcon icon={expanded ? faXmark : faBars} />
         </button>
 
         <Navbar.Collapse
-          id="basic-navbar-nav"
+          id="primary-navigation"
           className={`navbar-collapse ${expanded ? "show" : ""}`}
         >
           <Nav className="navbar-links ms-auto">
+            {navItems.map((item) => (
+              <Nav.Link
+                key={item.to}
+                as={NavLink}
+                to={item.to}
+                end={item.to === "/"}
+                className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+                onClick={closeNavbar}
+              >
+                <FontAwesomeIcon icon={item.icon} className="nav-icon" />
+                {item.label}
+              </Nav.Link>
+            ))}
             <Nav.Link
-              as={Link}
-              to="/aboutme"
-              className="nav-link"
-              onClick={closeNavbar}
-            >
-              <FontAwesomeIcon icon={faMugHot} className="nav-icon" />
-              Sobre mí
-            </Nav.Link>
-
-            <Nav.Link
-              as={Link}
-              to="/cv"
-              className="nav-link"
-              onClick={closeNavbar}
-            >
-              <FontAwesomeIcon icon={faSeedling} className="nav-icon" />
-              CV
-            </Nav.Link>
-
-            <Nav.Link
-              as={Link}
-              to="/projects"
-              className="nav-link"
-              onClick={closeNavbar}
-            >
-              <FontAwesomeIcon icon={faCodeBranch} className="nav-icon" />
-              Proyectos
-            </Nav.Link>
-
-            <Nav.Link
-              as={Link}
+              as={NavLink}
               to="/contact"
-              className="nav-link"
+              className={({ isActive }) => `nav-link nav-link-cta ${isActive ? "active" : ""}`}
               onClick={closeNavbar}
             >
-              <FontAwesomeIcon icon={faAddressBook} className="nav-icon" />
-              Contáctame
-            </Nav.Link>
-
-            <Nav.Link
-              as={Link}
-              to="/certifications"
-              className="nav-link"
-              onClick={closeNavbar}
-            >
-              <FontAwesomeIcon icon={faCertificate} className="nav-icon" />
-              Certificados educativos
+              <FontAwesomeIcon icon={faEnvelopeOpenText} className="nav-icon" />
+              Hablemos
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

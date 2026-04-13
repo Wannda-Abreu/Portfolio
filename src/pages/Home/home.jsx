@@ -1,7 +1,15 @@
-import { useState, useEffect } from "react";
+﻿import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faArrowUpRightFromSquare,
+  faBullhorn,
+  faCode,
+  faGears,
+  faPenRuler,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faReact,
   faGithub,
@@ -9,33 +17,61 @@ import {
   faNodeJs,
   faHtml5,
   faCss3Alt,
-  faBootstrap,
 } from "@fortawesome/free-brands-svg-icons";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import "./home.css";
 
 const technologies = [
-  { icon: faGithub, name: "GitHub", key: "github" },
-  { icon: faHtml5, name: "HTML5", key: "html5" },
-  { icon: faReact, name: "React", key: "react" },
-  { icon: faJs, name: "JavaScript", key: "javascript" },
-  { icon: faCss3Alt, name: "CSS3", key: "css3" },
-  { icon: faBootstrap, name: "Bootstrap", key: "bootstrap" },
-  { icon: faNodeJs, name: "Node.js", key: "nodejs" },
-  { icon: faDatabase, name: "MySQL", key: "mysql" },
+  { icon: faHtml5, name: "HTML" },
+  { icon: faCss3Alt, name: "CSS" },
+  { icon: faJs, name: "JavaScript" },
+  { icon: faReact, name: "React" },
+  { icon: faNodeJs, name: "Node.js" },
+  { icon: faGithub, name: "GitHub" },
 ];
 
-function TypeWriter({ text, speed = 70, onComplete }) {
+const services = [
+  {
+    icon: faBullhorn,
+    title: "Consultoría de marketing digital",
+    copy: "Estrategia, presencia online y acciones orientadas a mejorar visibilidad y conversión.",
+  },
+  {
+    icon: faCode,
+    title: "Desarrollo web",
+    copy: "Webs funcionales, responsive y pensadas para comunicar con claridad y escalar mejor.",
+  },
+  {
+    icon: faGears,
+    title: "Automatización de procesos",
+    copy: "Soluciones para ahorrar tiempo, reducir tareas repetitivas y ordenar flujos de trabajo.",
+  },
+  {
+    icon: faPenRuler,
+    title: "Diseño",
+    copy: "Diseño visual y UX/UI con foco en coherencia, legibilidad y experiencia de usuario.",
+  },
+];
+
+const stats = [
+  { value: "2+", label: "Años creando proyectos" },
+  { value: "10+", label: "Proyectos completados" },
+  { value: "10", label: "Tecnologías dominadas" },
+];
+
+function TypeWriter({ text, speed = 55, className = "", onComplete }) {
   const [displayed, setDisplayed] = useState("");
 
   useEffect(() => {
-    let i = 0;
+    let index = 0;
+    setDisplayed("");
+
     const interval = setInterval(() => {
-      setDisplayed(text.slice(0, i + 1));
-      i++;
-      if (i === text.length) {
+      index += 1;
+      setDisplayed(text.slice(0, index));
+
+      if (index >= text.length) {
         clearInterval(interval);
-        onComplete && onComplete();
+        if (onComplete) onComplete();
       }
     }, speed);
 
@@ -43,100 +79,114 @@ function TypeWriter({ text, speed = 70, onComplete }) {
   }, [text, speed, onComplete]);
 
   return (
-    <h2 className="typewriter-text">
+    <span className={className}>
       {displayed}
-      <span className="cursor">|</span>
-    </h2>
+      <span className="typewriter-cursor" aria-hidden="true">|</span>
+    </span>
   );
 }
 
 export default function Home() {
-  const [firstTextDone, setFirstTextDone] = useState(false);
-  const [showStacks, setShowStacks] = useState(false);
-  const [secondTextDone, setSecondTextDone] = useState(false);
-
-  useEffect(() => {
-    if (firstTextDone) setShowStacks(true);
-  }, [firstTextDone]);
+  const [introDone, setIntroDone] = useState(false);
+  const [taglineDone, setTaglineDone] = useState(false);
 
   return (
-    <Container fluid className="home-main-container">
-      <div className="home-section">
-        {!firstTextDone ? (
-          <TypeWriter
-            text="¡Hola! Soy Wanda Abreu"
-            speed={70}
-            onComplete={() => setFirstTextDone(true)}
-          />
-        ) : (
-          <h1 className="typewriter-text static-text name-gradient">
-            ¡Hola! Soy Wanda Abreu
-          </h1>
-        )}
+    <Container fluid className="home-main-container page-shell">
+      <section className="hero-panel glass-panel">
+        <div className="hero-copy">
+          <span className="section-kicker">Portfolio de Wanda Abreu</span>
 
-        {showStacks && (
-          <div className="stack-icons-container">
-            {technologies.map(({ icon, key, name }, index) => (
-              <div
-                key={key}
-                className="stack-icon-wrapper"
-                style={{
-                  animation: "fadeSlideUp 0.6s ease-out forwards",
-                  animationDelay: `${index * 0.12}s`,
-                }}
-                title={name}
-              >
-                <FontAwesomeIcon icon={icon} size="2x" />
-              </div>
+          <div className="hero-type-block">
+            {!introDone ? (
+              <h1 className="section-title hero-type-title">
+                <TypeWriter
+                  text="¡Hola! Soy Wanda Abreu"
+                  speed={65}
+                  onComplete={() => setIntroDone(true)}
+                />
+              </h1>
+            ) : (
+              <h1 className="section-title hero-type-title">
+                ¡Hola! Soy Wanda Abreu
+              </h1>
+            )}
+
+            {introDone && !taglineDone ? (
+              <p className="hero-type-tagline">
+                <TypeWriter
+                  text="Diseño y desarrollo experiencias web funcionales."
+                  speed={45}
+                  onComplete={() => setTaglineDone(true)}
+                />
+              </p>
+            ) : null}
+
+            {taglineDone ? (
+              <p className="hero-type-tagline hero-type-tagline-static">
+                Diseño y desarrollo experiencias web funcionales.
+              </p>
+            ) : null}
+          </div>
+
+          <div className="hero-actions">
+            <Link to="/projects" className="button-primary">
+              Ver proyectos
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
+            <Link to="/contact" className="button-secondary">
+              Contactar
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </Link>
+          </div>
+
+          <div className="hero-stats">
+            {stats.map((stat) => (
+              <article key={stat.label} className="hero-stat surface-card">
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </article>
             ))}
           </div>
-        )}
+        </div>
 
-        {showStacks && !secondTextDone && (
-          <TypeWriter
-            text="Diseño y desarrollo experiencias web funcionales."
-            speed={60}
-            onComplete={() => setSecondTextDone(true)}
-          />
-        )}
+        <aside className="hero-side">
+          <div className="hero-note surface-card">
+            <span>Enfoque principal</span>
+            <h2>UX/UI, landing pages, portfolios y productos web visualmente consistentes.</h2>
+            <p>
+              Si quieres una web clara, bien presentada y que transmita confianza, tenemos que hablar.
+            </p>
+          </div>
 
-        {secondTextDone && (
-          <h2 className="typewriter-text static-text sparkle-gradient">
-            Diseño y desarrollo experiencias web funcionales.
-          </h2>
-        )}
-
-        {secondTextDone && (
-          <div className="info-cards-container">
-            <div className="info-card">
-              <h3>2+</h3>
-              <p>Años creando proyectos</p>
-            </div>
-            <div className="info-card">
-              <h3>10+</h3>
-              <p>Proyectos completados</p>
-            </div>
-            <div className="info-card">
-              <h3>10</h3>
-              <p>Tecnologías dominadas</p>
+          <div className="tech-strip surface-card">
+            <p>Tecnologías con las que trabajo</p>
+            <div className="tech-grid">
+              {technologies.map(({ icon, name }) => (
+                <div key={name} className="tech-pill">
+                  <FontAwesomeIcon icon={icon} />
+                  <span>{name}</span>
+                </div>
+              ))}
             </div>
           </div>
-        )}
+        </aside>
+      </section>
 
-        {secondTextDone && (
-          <div className="home-button-container">
-            <Link to="/projects" className="btn-modern">
-              Ver proyectos
-            </Link>
-            <Link to="/aboutme" className="btn-modern">
-              Sobre mí
-            </Link>
-            <Link to="/cv" className="btn-modern">
-              Ver CV
-            </Link>
-          </div>
-        )}
-      </div>
+      <section className="home-services-block">
+        <p className="home-services-intro">CONTÁCTAME SI NECESITAS:</p>
+      </section>
+
+      <section className="home-strengths">
+        {services.map((item) => (
+          <article key={item.title} className="strength-card surface-card">
+            <div className="strength-icon">
+              <FontAwesomeIcon icon={item.icon} />
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </section>
     </Container>
   );
 }

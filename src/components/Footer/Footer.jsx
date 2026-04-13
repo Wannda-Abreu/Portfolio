@@ -1,46 +1,20 @@
-import { useEffect, useRef } from "react";
-import { Container } from "react-bootstrap";
+﻿import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./Footer.css";
 
 function Footer() {
-  const footerRef = useRef(null);
-
-  useEffect(() => {
-    const updatePadding = () => {
-      if (footerRef.current) {
-        document.body.style.paddingBottom = `${footerRef.current.offsetHeight}px`;
-      }
-    };
-
-    updatePadding();
-
-    let observer;
-    if (typeof ResizeObserver !== "undefined" && footerRef.current) {
-      observer = new ResizeObserver(updatePadding);
-      observer.observe(footerRef.current);
-    }
-
-    window.addEventListener("resize", updatePadding);
-
-    return () => {
-      if (observer) observer.disconnect();
-      window.removeEventListener("resize", updatePadding);
-      document.body.style.paddingBottom = "";
-    };
-  }, []);
-
   return (
-    <footer ref={footerRef} className="footer-container">
+    <footer className="footer-container">
       <Container fluid className="footer-content">
-        <a href="mailto:wabreud@gmail.com" className="footer-name">
-          wabreud@gmail.com
-        </a>
+        <div className="footer-intro">
+          <span className="footer-kicker">Disponible para proyectos freelance y colaboraciones</span>
+          <a href="mailto:wabreud@gmail.com" className="footer-name">
+            wabreud@gmail.com
+          </a>
+        </div>
 
-        <p className="footer-credit">
-          &copy; {new Date().getFullYear()} Wanda Abreu — Diseñado con intención y café
-        </p>
+        <p className="footer-credit">2026 Wanda Abreu — Diseñado con intención y café</p>
 
         <div className="footer-icons">
           <a
@@ -68,4 +42,3 @@ function Footer() {
 }
 
 export default Footer;
-

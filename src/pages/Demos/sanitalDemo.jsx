@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+﻿import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faReact, faBootstrap, faSass } from "@fortawesome/free-brands-svg-icons";
@@ -10,7 +10,7 @@ function SanitalDemo() {
     <section className="demo-section m-0 p-0">
       <Container fluid className="demo-content">
         <div className="demo-text">
-          <h1 className="demo-title">Sanital · Clínica Digital</h1>
+          <h1 className="demo-title">Sanital · Clínica digital</h1>
           <p className="demo-description">
             Plataforma médica centrada en el paciente.
             Desarrollada con enfoque UX/UI para ofrecer una experiencia fluida,

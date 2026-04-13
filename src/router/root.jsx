@@ -8,27 +8,17 @@ function Root() {
   const isMacramePage = location.pathname === "/macrame";
 
   return (
-    <>
+    <div className="app-shell">
+      <a href="#main-content" className="skip-link">Saltar al contenido</a>
       {!isMacramePage && <Header />}
       <main id="main-content" role="main" className="app-main">
-        <Suspense
-          fallback={
-            <div
-              style={{ padding: "3rem 1rem", textAlign: "center", fontWeight: 600 }}
-              aria-live="polite"
-            >
-              Cargando…
-            </div>
-          }
-        >
+        <Suspense fallback={<div className="loading-fallback">Cargando...</div>}>
           <Outlet />
         </Suspense>
       </main>
       {!isMacramePage && <Footer />}
-    </>
+    </div>
   );
 }
 
 export default Root;
-
-

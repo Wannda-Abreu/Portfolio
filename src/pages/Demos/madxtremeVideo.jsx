@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+﻿import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faReact, faBootstrap, faJs } from "@fortawesome/free-brands-svg-icons";
@@ -12,7 +12,8 @@ function MadXtremDemo() {
         <div className="demo-text">
           <h1 className="demo-title">MadXtrem · E-commerce</h1>
           <p className="demo-description">
-            Marketplace de experiencias outdoor con diseño claro e intuitivo y foco en conversión. Navegación fluida con React y Bootstrap.
+            Marketplace de experiencias outdoor con diseño claro e intuitivo y foco en conversión.
+            Navegación fluida con React y Bootstrap.
           </p>
           <div className="language-usage">
             <FontAwesomeIcon icon={faReact} className="stack-icons" />

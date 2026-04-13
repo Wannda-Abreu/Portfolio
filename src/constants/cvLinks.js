@@ -1,7 +1,7 @@
-const CLOUDINARY_BASE = "https://res.cloudinary.com/dqj4pvyva";
-const CV_PUBLIC_ID = "wanda-abreu-Cv-_web_mlrdhc";
-const CV_IMAGE_EXTENSION = "avif";
-const VERSION = "v1759972967";
+const GOOGLE_DRIVE_FILE_ID = "1q7v3_P6u_oKfBm2S7FJq-W22Z4AW5Y66";
 
-export const CV_IMAGE_URL = `${CLOUDINARY_BASE}/image/upload/${VERSION}/${CV_PUBLIC_ID}.${CV_IMAGE_EXTENSION}`;
-export const CV_PREVIEW_URL = CV_IMAGE_URL;
+export const CV_OPEN_URL =
+  `https://drive.google.com/file/d/${GOOGLE_DRIVE_FILE_ID}/view?usp=sharing`;
+
+export const CV_EMBED_URL =
+  `https://drive.google.com/file/d/${GOOGLE_DRIVE_FILE_ID}/preview`;

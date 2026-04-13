@@ -1,122 +1,105 @@
-import { useRef } from 'react';
-import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { useRef } from "react";
+import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import "./marketingprojects.css";
 
 const marketingProjectsData = [
-    {
-      title: "Gesti贸n y crecimiento de la cuenta de Instagram del Hotel Caballero Errante.",
-      contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712245707/Untitled_1280_x_1090_px_wqhb8y.mp4",
-      tooltip: "Haga clic para ver la demostraci贸n",
-      contentType: "video",
-    },
-    {
-      title: "Optimizaci贸n del perfil de Google My Business del Hotel Caballero Errante.",
-      contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712246879/Untitled_1280_x_1090_px_2_pdtode.mp4",
-      tooltip: "Haga clic para ver la demostraci贸n",
-      contentType: "video",
-    },
-    {
-      title: "Gesti贸n de cuenta de Instagram Izar Tourist Rentals, aumentando el engagement.",
-      contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712247267/Untitled_1280_x_1090_px_3_dy2gvv.mp4",
-      tooltip: "Haga clic para ver la demostraci贸n",
-      contentType: "video"
-    },
-    {
-      title: "Creaci贸n de Blog informativo para la web del Hotel Caballero Errante.",
-      contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712246722/Untitled_1280_x_1090_px_1_rgrveo.mp4",
-      tooltip: "Haga clic para ver la demostraci贸n",
-      contentType: "video"
-    },
-    {
-      title: "Blog personal, art铆culo 驴D贸nde reservar hoteles? consejos esenciales.",
-      contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712250169/Untitled_1280_x_1090_px_6_t1ag8a.mp4",
-      tooltip: "Haga clic para ver la demostraci贸n",
-      contentType: "video"
-    },
-    {
-      title: "Creaci贸n y dise帽o de logos, reflejando su esencia e identidad visual.",
-      contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1712273843/Untitled_1280_x_1090_px_2_apbrw1.png",
-      contentType: "image"
-    },
-  ];
+  {
+    title: "Gesti髇 y crecimiento de la cuenta de Instagram del Hotel Caballero Errante.",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712245707/Untitled_1280_x_1090_px_wqhb8y.mp4",
+    tooltip: "Haz clic para ver la demostraci髇",
+    contentType: "video",
+  },
+  {
+    title: "Optimizaci髇 del perfil de Google My Business del Hotel Caballero Errante.",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712246879/Untitled_1280_x_1090_px_2_pdtode.mp4",
+    tooltip: "Haz clic para ver la demostraci髇",
+    contentType: "video",
+  },
+  {
+    title: "Gesti髇 de cuenta de Instagram para Izar Tourist Rentals, aumentando el engagement.",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712247267/Untitled_1280_x_1090_px_3_dy2gvv.mp4",
+    tooltip: "Haz clic para ver la demostraci髇",
+    contentType: "video",
+  },
+  {
+    title: "Creaci髇 de blog informativo para la web del Hotel Caballero Errante.",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712246722/Untitled_1280_x_1090_px_1_rgrveo.mp4",
+    tooltip: "Haz clic para ver la demostraci髇",
+    contentType: "video",
+  },
+  {
+    title: "Blog personal: art韈ulo '緿髇de reservar hoteles? consejos esenciales'.",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/video/upload/v1712250169/Untitled_1280_x_1090_px_6_t1ag8a.mp4",
+    tooltip: "Haz clic para ver la demostraci髇",
+    contentType: "video",
+  },
+  {
+    title: "Creaci髇 y dise駉 de logos, reflejando identidad visual y posicionamiento.",
+    contentUrl: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1712273843/Untitled_1280_x_1090_px_2_apbrw1.png",
+    tooltip: "Haz clic para ampliar la pieza",
+    contentType: "image",
+  },
+];
 
 function MarketingProjects() {
-    
   const moreProjectsRef = useRef(null);
 
   const scrollToMoreProjects = () => {
-    moreProjectsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    moreProjectsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  
+
   const firstThreeProjects = marketingProjectsData.slice(0, 3);
   const remainingProjects = marketingProjectsData.slice(3);
 
+  const renderProject = (project, index) => (
+    <Col key={index}>
+      <Card className="marketing-card h-100">
+        <OverlayTrigger placement="top" overlay={<Tooltip id={`tooltip-${index}`}>{project.tooltip}</Tooltip>}>
+          <div className="marketing-media-frame">
+            {project.contentType === "video" ? (
+              <video controls className="marketing-video">
+                <source src={project.contentUrl} type="video/mp4" />
+                Tu navegador no soporta el reproductor de v韉eo.
+              </video>
+            ) : (
+              <img src={project.contentUrl} className="marketing-image" alt={project.title} />
+            )}
+          </div>
+        </OverlayTrigger>
+        <Card.Body className="marketing-card-body">
+          <Card.Text className="marketing-description">{project.title}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+  );
+
   return (
-    <Container className="projects-container">
-      <Row>
-        <Col>
-          <h3 className="projects-description mt-3 mb-3">Proyectos de Marketing Digital</h3>
+    <Container className="marketing-page page-shell">
+      <Row className="text-center justify-content-center">
+        <Col lg={9}>
+          <span className="section-kicker">Marketing digital</span>
+          <h1 className="marketing-title">Contenido, posicionamiento y piezas visuales para negocio.</h1>
+          <p className="section-subtitle mx-auto">
+            Una selecci髇 de trabajos orientados a crecimiento org醤ico, presencia digital y narrativa de marca.
+          </p>
         </Col>
       </Row>
-      <Row xs={1} md={2} lg={3}>
-        {firstThreeProjects.map((project, index) => (
-          <Col key={index}>
-            <Card className="project-card">
-            <OverlayTrigger placement="top" overlay={<Tooltip id={`tooltip-${index + 3}`}>{project.tooltip}</Tooltip>}>
-            <div className='video-container'>
-                  {project.contentType === "video" ? (
-                    <video controls className="project-video">
-                      <source src={project.contentUrl} type="video/mp4" />
-                      Tu navegador no soporta el tag de video.
-                    </video>
-                  ) : (
-                    <img src={project.contentUrl} className="project-image" alt="Project visual representation" />
-                  )}
-                </div>
-              </OverlayTrigger>
-              <Card.Body className='text-container'>
-                <Card.Text className='project-description p-1'>{project.title}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
+
+      <Row xs={1} md={2} lg={3} className="g-4">
+        {firstThreeProjects.map(renderProject)}
       </Row>
-      <div className="text-center my-3" onClick={scrollToMoreProjects}>
-        <FontAwesomeIcon icon={faAngleDown} size="3x" className="scroll-down-icon" />
-      </div>
+
+      <button className="marketing-scroll-button" onClick={scrollToMoreProjects} type="button" aria-label="Ver m醩 proyectos de marketing">
+        <FontAwesomeIcon icon={faAngleDown} className="scroll-down-icon" />
+      </button>
+
       <Row xs={1} md={2} lg={3} className="g-4" ref={moreProjectsRef}>
-        {remainingProjects.map((project, index) => (
-          <Col key={index}>
-            <Card className="project-card">
-              <OverlayTrigger placement="top" overlay={<Tooltip id={`tooltip-${index + 3}`}>{project.tooltip}</Tooltip>}>
-                <div className='video-container'>
-                  {project.contentType === "video" ? (
-                    <video controls className="project-video">
-                      <source src={project.contentUrl} type="video/mp4" />
-                      Tu navegador no soporta el tag de video.
-                    </video>
-                  ) : (
-                    <div className='video-container '>
-                    <img src={project.contentUrl} className="project-image" alt="Project visual representation" />
-                    </div>
-                  )}
-                </div>
-              </OverlayTrigger>
-              <Card.Body className='text-container'>
-                <Card.Text className='project-description p-1'>{project.title}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
+        {remainingProjects.map((project, index) => renderProject(project, index + 3))}
       </Row>
     </Container>
   );
 }
 
 export default MarketingProjects;
-
-
-
-

@@ -1,119 +1,118 @@
-import { Container, Card, Badge } from "react-bootstrap";
+﻿import { Container, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleRight,
-  faAngleLeft,
-  faLaptopCode,
-  faPalette,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faBriefcase, faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 import {
   faReact,
   faJs,
-  faCss3Alt,
   faNodeJs,
   faBootstrap,
-  faSass,
 } from "@fortawesome/free-brands-svg-icons";
 import { Helmet } from "react-helmet";
 import "./aboutMe.css";
 
 const skillsWithIcons = [
-  { name: "HTML", icon: faLaptopCode },
-  { name: "CSS", icon: faCss3Alt },
-  { name: "Sass", icon: faSass },
-  { name: "JavaScript", icon: faJs },
-  { name: "Typescript", icon: faLaptopCode },
   { name: "React", icon: faReact },
-  { name: "Angular", icon: faLaptopCode },
+  { name: "JavaScript", icon: faJs },
+  { name: "TypeScript", icon: faBriefcase },
+  { name: "Angular", icon: faBriefcase },
   { name: "Bootstrap", icon: faBootstrap },
   { name: "Node.js", icon: faNodeJs },
-  { name: "MySQL", icon: faLaptopCode },
-  { name: "Figma", icon: faPalette },
-  { name: "Adobe Creative", icon: faPalette },
-  { name: "Wordpress", icon: faLaptopCode },
+  { name: "MySQL", icon: faBriefcase },
+  { name: "Figma", icon: faBriefcase },
+  { name: "Adobe Creative", icon: faBriefcase },
+  { name: "WordPress", icon: faBriefcase },
+];
+
+const timeline = [
+  {
+    title: "Formación intensiva en desarrollo web completo: frontend, backend y metodologías ágiles.",
+    meta: "Orange Digital Center · 2023",
+  },
+  {
+    title: "Marketing Digital",
+    meta: "Aula CM · 2019 – 2020",
+    description: "Estrategias digitales, redes sociales, SEO y gestión de campañas online.",
+  },
+  {
+    title: "Máster en Dirección de Empresas",
+    meta: "Universidad Nebrija · 2018",
+  },
+  {
+    title: "Grado en Marketing",
+    meta: "Caribbean University · 2008 – 2012",
+  },
 ];
 
 function AboutMe() {
   return (
-    <Container fluid className="aboutme-wrapper">
+    <Container fluid className="aboutme-wrapper page-shell">
       <Helmet>
-        <title>Wanda Abreu - Desarrolladora Full Stack Junior</title>
+        <title>Wanda Abreu - Desarrolladora Frontend y UX/UI</title>
         <meta
           name="description"
-          content="Soy Wanda Abreu, una desarrolladora web Full Stack Junior con enfoque UX/UI y experiencia en marketing y diseño. Descubre mis proyectos y trayectoria."
+          content="Wanda Abreu, desarrolladora frontend con enfoque UX/UI y experiencia en marketing digital y diseño de producto."
         />
       </Helmet>
 
-      <div className="aboutme-content">
-        <div className="aboutme-photo-container mt-2">
+      <section className="aboutme-content glass-panel">
+        <div className="aboutme-photo-column">
           <img
-            src="https://res.cloudinary.com/dsyfal3wa/image/upload/q_auto:best/v1727787013/linkfoto_hoipu6.avif"
-            alt="Wanda Abreu - Desarrolladora Full Stack Junior"
+            src="https://res.cloudinary.com/dsyfal3wa/image/upload/v1776098778/62bad579-94e7-4066-9b43-d555e75e1677_otb4r5.jpg"
+            alt="Wanda Abreu"
             className="aboutme-photo"
             loading="lazy"
           />
 
-          <div className="button-group">
-            <Link to="/projects" className="btn-aboutme">
-              <FontAwesomeIcon icon={faAngleLeft} /> Proyectos{" "}
-              <FontAwesomeIcon icon={faAngleRight} />
-            </Link>
-
-            <div className="cv-button-pair">
-              <Link to="/cv" className="btn-aboutme">
-                Ver CV
-              </Link>
+          <div className="about-block surface-card about-skills-panel">
+            <h2>Tecnologías y herramientas</h2>
+            <div className="skills-container">
+              {skillsWithIcons.map(({ name, icon }) => (
+                <Badge key={name} className="skill-badge" title={name}>
+                  <FontAwesomeIcon icon={icon} className="skill-icon" />
+                  {name}
+                </Badge>
+              ))}
             </div>
           </div>
         </div>
 
         <div className="aboutme-text">
-          <Card.Text className="intro">
-            Desarrolladora web junior con enfoque UX/UI, que combina creatividad
-            y lógica para crear soluciones digitales atractivas y funcionales.
-            Busco retos que me impulsen a crecer y aportar valor, con pasión y
-            trabajo en equipo.
-          </Card.Text>
+          <span className="section-kicker">Sobre mí</span>
+          <h1 className="section-title about-title">Perfil profesional</h1>
+          <p className="section-subtitle">
+            Desarrolladora web junior con enfoque UX/UI, que combina creatividad y lógica para crear
+            soluciones digitales atractivas y funcionales. Busco retos que me impulsen a crecer y
+            aportar valor, con pasión y trabajo en equipo.
+          </p>
 
-          <h5 className="skills-title">Tecnologías & Herramientas</h5>
-          <div className="skills-container">
-            {skillsWithIcons.map(({ name, icon }, i) => (
-              <Badge key={i} className="skill-badge" title={name}>
-                <FontAwesomeIcon icon={icon} className="skill-icon" /> {name}
-              </Badge>
-            ))}
-          </div>
-
-          <div className="aboutme-education">
-            <h5>Educación & Experiencia</h5>
-            <ul>
-              <li>
-                <strong>Bootcamp Full Stack Developer</strong> – Orange Digital
-                Center / Factoría F5 (2023)
-              </li>
-              <li>
-                <strong>Taller Programación Introductoria</strong> – 42 Madrid
-                Fundación Telefónica (2023)
-              </li>
-              <li>
-                <strong>Marketing Digital</strong> – Aula CM (2019-2020)
-              </li>
-              <li>
-                <strong>BBA Marketing</strong> – Caribbean University
-                (2008-2012)
-              </li>
-              <li>
-                <strong>Experiencia Profesional:</strong> Freelancer y
-                Administrativo (2024 - Presente)
-              </li>
+          <div className="about-block surface-card">
+            <h2>Formación y experiencia</h2>
+            <ul className="about-timeline">
+              {timeline.map((item) => (
+                <li key={`${item.title}-${item.meta}`}>
+                  <strong>{item.title}</strong>
+                  <span>{item.meta}</span>
+                  {item.description ? <p>{item.description}</p> : null}
+                </li>
+              ))}
             </ul>
           </div>
+
+          <div className="aboutme-actions">
+            <Link to="/projects" className="button-primary">
+              Ver proyectos
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
+            <Link to="/cv" className="button-secondary">
+              Ver CV
+              <FontAwesomeIcon icon={faFileArrowDown} />
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
     </Container>
   );
 }
 
 export default AboutMe;
-

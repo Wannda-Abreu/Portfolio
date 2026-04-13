@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+﻿import { Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faNodeJs, faJs, faBootstrap } from "@fortawesome/free-brands-svg-icons";
@@ -10,7 +10,7 @@ function RoperoSolidarioDemo() {
     <section className="demo-section m-0 p-0">
       <Container fluid className="demo-content">
         <div className="demo-text">
-          <h1 className="demo-title">Ropero Solidario · App Web</h1>
+          <h1 className="demo-title">Ropero Solidario · App web</h1>
           <p className="demo-description">
             Plataforma para gestionar donaciones de ropa y reservas automáticas.
             Centrada en accesibilidad, experiencia de usuario y optimización backend con Node.js.

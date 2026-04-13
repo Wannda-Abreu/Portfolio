@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+﻿import { useRef, useEffect } from "react";
 import { Container, Card, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,28 @@ import "./projects.css";
 
 const projectsData = [
   {
-    title: "Sanital · Clínica digital",
+    title: "Enlinea Digital",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776091000/Captura_de_pantalla_2026-04-13_163257_trozoa.png",
+    link: "https://wannda-abreu.github.io/EnlineaDigital/",
+    tooltip: "Proyecto web de servicios digitales.",
+    description: "Web de servicios digitales.",
+  },
+  {
+    title: "MulticolorPlus",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776091000/Captura_de_pantalla_2026-04-13_163439_ejleiq.png",
+    link: "https://wannda-abreu.github.io/MulticolorPlus/",
+    tooltip: "Marketplace de productos de tecnología.",
+    description: "Marketplace de productos de tecnología.",
+  },
+  {
+    title: "ECOMERCIA",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776091000/Captura_de_pantalla_2026-04-13_163026_x9dwek.png",
+    link: "https://wannda-abreu.github.io/ecoDigital/",
+    tooltip: "E-commerce que ofrece digitalización para artesanos.",
+    description: "E-commerce de digitalización para artesanos.",
+  },
+  {
+    title: "Sanital",
     image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/1_chf8yx.svg",
     link: "/sanitaldemo",
     tooltip: "Plataforma médica centrada en el paciente.",
@@ -17,29 +38,22 @@ const projectsData = [
     title: "App de citas automáticas",
     image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/2_d7vrlf.svg",
     link: "/roperodemo",
-    tooltip: "Interfaz funcional que optimiza la gestión de citas en tiempo real.",
+    tooltip: "Interfaz funcional para gestionar citas en tiempo real.",
     description: "App que automatiza reservas.",
   },
   {
     title: "Panel de Administrador",
     image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1761352532/undefined_2_yeteo1.png",
     link: "/dashboarddemo",
-    tooltip: "Dashboard para administrar aplicación de citas automatizadas.",
+    tooltip: "Dashboard para administrar la aplicación de citas.",
     description: "Dashboard profesional.",
   },
   {
-    title: "MadXtrem · E-commerce",
+    title: "MadXtrem",
     image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601983/3_hfabvz.svg",
     link: "/madxtremedemo",
     tooltip: "Marketplace de experiencias outdoor.",
     description: "Marketplace de actividades.",
-  },
-  {
-    title: "Random Class App",
-    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1761267910/undefined_1_zohvpi.png",
-    link: "/coderdemo",
-    tooltip: "App educativa que dinamiza clases con selección aleatoria.",
-    description: "App web gamificada.",
   },
 ];
 
@@ -68,21 +82,23 @@ function Projects() {
   }, []);
 
   return (
-    <Container fluid className="projects-container py-3 mb-0 mt-1">
-      <Row className="justify-content-center text-center projects-header mb-0">
-        <Col lg={8}>
-          <h1 className="projects-title fade-in text-center">
-            Interfaces claras, accesibles y funcionales.
-          </h1>
+    <Container fluid className="projects-container page-shell">
+      <Row className="justify-content-center text-center projects-header">
+        <Col lg={9}>
+          <span className="section-kicker">Proyectos seleccionados</span>
+          <h1 className="projects-title">Interfaces claras, accesibles y funcionales.</h1>
+          <p className="section-subtitle mx-auto">
+            Una mezcla de proyectos personales, demos interactivas y webs orientadas a negocio.
+          </p>
         </Col>
       </Row>
 
       <div className="carousel-wrapper">
-        <button className="carousel-btn left" onClick={() => scroll("left")}>
+        <button className="carousel-btn left" onClick={() => scroll("left")} aria-label="Desplazar proyectos a la izquierda">
           <FontAwesomeIcon icon={faAngleLeft} />
         </button>
 
-        <div className="carousel-track p-0" ref={carouselRef}>
+        <div className="carousel-track" ref={carouselRef}>
           {projectsData.map((project) => {
             const isExternal = project.link.startsWith("http");
             const ActionComponent = isExternal ? "a" : Link;
@@ -108,12 +124,10 @@ function Projects() {
                   </div>
                   <Card.Body className="d-flex flex-column text-center">
                     <Card.Title className="project-title">{project.title}</Card.Title>
-                    <Card.Text className="project-description">
-                      {project.description}
-                    </Card.Text>
+                    <Card.Text className="project-description">{project.description}</Card.Text>
                     <div className="mt-auto">
                       <ActionComponent {...actionProps} className="demo-button">
-                        Ver demo interactiva
+                        Ver demo
                         <FontAwesomeIcon icon={faArrowRight} className="cta-icon" />
                       </ActionComponent>
                     </div>
@@ -124,15 +138,13 @@ function Projects() {
           })}
         </div>
 
-        <button className="carousel-btn right" onClick={() => scroll("right")}>
+        <button className="carousel-btn right" onClick={() => scroll("right")} aria-label="Desplazar proyectos a la derecha">
           <FontAwesomeIcon icon={faAngleRight} />
         </button>
       </div>
 
-      <div className="projects-cta text-center mt-0">
-        <p className="projects-cta-text mt-0">
-          ¿Buscas colaboración en diseño o producto digital?
-        </p>
+      <div className="projects-cta text-center">
+        <p className="projects-cta-text">¿Buscas colaboración en diseño o producto digital?</p>
         <Link to="/contact" className="projects-secondary-link">
           <FontAwesomeIcon icon={faAngleLeft} />
           Conversemos sobre tu proyecto
