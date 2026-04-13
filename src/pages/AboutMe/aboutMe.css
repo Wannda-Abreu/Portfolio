@@ -69,13 +69,13 @@
 .skills-container .badge.skill-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 0.95rem;
+  gap: 0.38rem;
+  padding: 0.4rem 0.62rem;
   border-radius: 999px;
   background: rgba(167, 122, 255, 0.22) !important;
   color: var(--accent-strong) !important;
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.72rem;
   border: 1px solid rgba(255, 255, 255, 0.45) !important;
   box-shadow: 0 10px 22px rgba(124, 77, 255, 0.14);
   backdrop-filter: blur(14px);
@@ -91,6 +91,7 @@
 
 .skill-icon {
   color: var(--accent);
+  font-size: 0.74rem;
 }
 
 .about-timeline {

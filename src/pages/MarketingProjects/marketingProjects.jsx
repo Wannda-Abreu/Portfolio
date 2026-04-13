@@ -74,10 +74,7 @@ function MarketingProjects() {
     <div className="marketing-page page-shell">
       <div className="marketing-intro">
         <span className="section-kicker">Marketing digital</span>
-        <h1 className="marketing-title">Contenido, posicionamiento y piezas visuales para negocio.</h1>
-        <p className="section-subtitle marketing-subtitle">
-          Una selección de trabajos orientados a crecimiento orgánico, presencia digital y narrativa de marca.
-        </p>
+        <h1 className="marketing-title">Contenido, posicionamiento y diseño visual para negocios</h1>
       </div>
 
       <div className="marketing-grid">
