@@ -7,7 +7,7 @@ import "./projects.css";
 const projectsData = [
   {
     title: "Enlinea Digital",
-    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776091000/Captura_de_pantalla_2026-04-13_163257_trozoa.png",
+    image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776333945/Captura_de_pantalla_2026-04-16_120456_db0oao.png",
     link: "https://wannda-abreu.github.io/EnlineaDigital/",
     tooltip: "Proyecto web de servicios digitales.",
     description: "Web de servicios digitales.",

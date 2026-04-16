@@ -21,7 +21,7 @@
 .projects-title {
   margin: 0;
   font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-size: clamp(1.65rem, 4vw, 2.8rem);
   line-height: 1.04;
   color: var(--heading);
   text-wrap: balance;
@@ -37,7 +37,7 @@
 .carousel-track {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(290px, 1fr);
+  grid-auto-columns: minmax(360px, 1fr);
   gap: 1rem;
   align-items: stretch;
   overflow-x: auto;
@@ -59,7 +59,7 @@
   overflow: hidden;
   background: rgba(255, 252, 247, 0.92);
   box-shadow: var(--shadow-soft);
-  height: 462px;
+  height: 520px;
 }
 
 .project-card:hover,
@@ -70,10 +70,10 @@
 
 .project-image-wrapper {
   width: 100%;
-  height: 252px;
-  flex: 0 0 252px;
+  height: 330px;
+  flex: 0 0 330px;
   background: linear-gradient(135deg, rgba(124, 77, 255, 0.14), rgba(194, 107, 255, 0.16));
-  padding: 0.55rem;
+  padding: 0.7rem;
 }
 
 .project-image {
@@ -90,8 +90,8 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1 1 auto;
-  padding: 1rem 1.05rem 1.1rem;
-  gap: 0.55rem;
+  padding: 0.75rem 0.9rem 0.85rem;
+  gap: 0.35rem;
 }
 
 .project-card-actions {
@@ -101,9 +101,9 @@
 .project-title {
   margin: 0;
   color: var(--heading);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
-  min-height: 3.1rem;
+  min-height: 2.4rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -113,9 +113,9 @@
 .project-description {
   margin: 0;
   color: var(--text-soft);
-  font-size: 0.9rem;
-  line-height: 1.45;
-  min-height: 2.7rem;
+  font-size: 0.84rem;
+  line-height: 1.35;
+  min-height: 2.2rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -128,12 +128,13 @@
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.85rem 1rem;
+  margin-top: 0.2rem;
+  padding: 0.72rem 0.95rem;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--accent-strong), var(--accent));
   color: white;
   text-decoration: none;
+  font-size: 0.92rem;
   font-weight: 700;
 }
 
@@ -205,7 +206,7 @@
   }
 
   .carousel-track {
-    grid-auto-columns: 88%;
+    grid-auto-columns: 92%;
   }
 
   .carousel-btn {
@@ -213,6 +214,6 @@
   }
 
   .project-card {
-    height: 450px;
+    height: 500px;
   }
 }
