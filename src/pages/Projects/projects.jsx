@@ -7,6 +7,7 @@ import "./projects.css";
 const projectsData = [
   {
     title: "Enlinea Digital",
+    category: "Servicios digitales",
     image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776333945/Captura_de_pantalla_2026-04-16_120456_db0oao.png",
     link: "https://wannda-abreu.github.io/EnlineaDigital/",
     tooltip: "Proyecto web de servicios digitales.",
@@ -14,6 +15,7 @@ const projectsData = [
   },
   {
     title: "MulticolorPlus",
+    category: "Marketplace",
     image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776091000/Captura_de_pantalla_2026-04-13_163439_ejleiq.png",
     link: "https://wannda-abreu.github.io/MulticolorPlus/",
     tooltip: "Marketplace de productos de tecnología.",
@@ -21,6 +23,7 @@ const projectsData = [
   },
   {
     title: "ECOMERCIA",
+    category: "E-commerce",
     image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1776091000/Captura_de_pantalla_2026-04-13_163026_x9dwek.png",
     link: "https://wannda-abreu.github.io/ecoDigital/",
     tooltip: "E-commerce que ofrece digitalización para artesanos.",
@@ -28,6 +31,7 @@ const projectsData = [
   },
   {
     title: "Sanital",
+    category: "Health UX/UI",
     image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/1_chf8yx.svg",
     link: "/sanitaldemo",
     tooltip: "Plataforma médica centrada en el paciente.",
@@ -35,6 +39,7 @@ const projectsData = [
   },
   {
     title: "App de citas automáticas",
+    category: "Producto digital",
     image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601982/2_d7vrlf.svg",
     link: "/roperodemo",
     tooltip: "Interfaz funcional para gestionar citas en tiempo real.",
@@ -42,6 +47,7 @@ const projectsData = [
   },
   {
     title: "Panel de Administrador",
+    category: "Dashboard",
     image: "https://res.cloudinary.com/dsyfal3wa/image/upload/v1761352532/undefined_2_yeteo1.png",
     link: "/dashboarddemo",
     tooltip: "Dashboard para administrar la aplicación de citas.",
@@ -49,6 +55,7 @@ const projectsData = [
   },
   {
     title: "MadXtrem",
+    category: "Marketplace",
     image: "https://res.cloudinary.com/dqj4pvyva/image/upload/v1759601983/3_hfabvz.svg",
     link: "/madxtremedemo",
     tooltip: "Marketplace de experiencias outdoor.",
@@ -108,6 +115,9 @@ function Projects() {
             return (
               <article key={project.title} className="project-card" title={project.tooltip}>
                 <div className="project-image-wrapper">
+                  <div className="project-image-overlay">
+                    <span className="project-chip">{project.category}</span>
+                  </div>
                   <img
                     src={project.image}
                     alt={project.title}
@@ -116,6 +126,7 @@ function Projects() {
                   />
                 </div>
                 <div className="project-card-body">
+                  <span className="project-kicker">{project.tooltip}</span>
                   <h2 className="project-title">{project.title}</h2>
                   <p className="project-description">{project.description}</p>
                   <div className="project-card-actions">
